@@ -1,0 +1,22 @@
+# Array of rings in the level
+Rings:
+  # Test Ring 1
+  - Origin:     [0, 0, -5]
+    Normal:     [0, 0, 1]
+    Scale:      [1, 1, 1]
+    # Pieces of the ring
+    Sections:
+      # Full ring shape
+      - Min:  [0, 0, 2]
+        Max:  [360, 4, 2.1]
+      # Small platforms
+      - Min:  [0, 0, 1]
+        Max:  [45, 2, 1.1]
+      - Min:  [-15, 2, 0.9]
+        Max:  [60, 4, 1.1]
+# Finish the level before time runs out
+Script:   "TimedGame.lua"
+# Use a space skybox
+Skybox:   "Space"
+
+
