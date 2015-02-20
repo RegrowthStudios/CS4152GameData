@@ -19,4 +19,5 @@ Script:   "TimedGame.lua"
 # Use a space skybox
 Skybox:   "Space"
 
-
+# Player data
+PlayerOrigin: [ 0.0, 0.0, 10.0 ]
