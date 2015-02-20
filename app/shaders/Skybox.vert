@@ -8,7 +8,7 @@ in vec3 vPosition;
 out vec3 fDirection;
 
 void main() {
-  vec3 worldPos = vPosition * 50.0;
+  vec3 worldPos = vPosition;
   fDirection = vPosition;
   gl_Position = unVP * vec4(vPosition, 1);
 }
