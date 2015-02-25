@@ -1,24 +1,24 @@
 InitialPlatformCount: 12
 PlatformMinimumWidth: 1.0
 PlatformHeight: 1.0
-PlatformTextureSize: [96, 64]
+PlatformTextureSize: [192, 128]
 
 # Texture Information
 PlatformFaceXNeg:
-  Texture: "Editor/brick.png"
+  Texture: "Editor/panel.jpg"
   DestinationPixel: [0, 0]
 PlatformFaceXPos:
-  Texture: "Editor/brick.png"
-  DestinationPixel: [32, 0]
-PlatformFaceYNeg:
-  Texture: "Editor/brick.png"
+  Texture: "Editor/panel.jpg"
   DestinationPixel: [64, 0]
+PlatformFaceYNeg:
+  Texture: "Editor/silver.jpg"
+  DestinationPixel: [128, 0]
 PlatformFaceYPos:
-  Texture: "Editor/brick.png"
-  DestinationPixel: [0, 32]
+  Texture: "Editor/silver.jpg"
+  DestinationPixel: [0, 64]
 PlatformFaceZNeg:
-  Texture: "Editor/brick.png"
-  DestinationPixel: [32, 32]
+  Texture: "Editor/panel.jpg"
+  DestinationPixel: [64, 64]
 PlatformFaceZPos:
-  Texture: "Editor/brick.png"
-  DestinationPixel: [64, 32]
+  Texture: "Editor/panel.jpg"
+  DestinationPixel: [128, 64]
