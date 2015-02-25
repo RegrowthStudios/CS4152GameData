@@ -5,20 +5,20 @@ PlatformTextureSize: [192, 128]
 
 # Texture Information
 PlatformFaceXNeg:
-  Texture: "Editor/panel.jpg"
+  Texture: "Editor/wall.png"
   DestinationPixel: [0, 0]
 PlatformFaceXPos:
-  Texture: "Editor/panel.jpg"
+  Texture: "Editor/wall.png"
   DestinationPixel: [64, 0]
 PlatformFaceYNeg:
-  Texture: "Editor/silver.jpg"
+  Texture: "Editor/wall.png"
   DestinationPixel: [128, 0]
 PlatformFaceYPos:
-  Texture: "Editor/silver.jpg"
+  Texture: "Editor/floor.png"
   DestinationPixel: [0, 64]
 PlatformFaceZNeg:
-  Texture: "Editor/panel.jpg"
+  Texture: "Editor/wall.png"
   DestinationPixel: [64, 64]
 PlatformFaceZPos:
-  Texture: "Editor/panel.jpg"
+  Texture: "Editor/wall.png"
   DestinationPixel: [128, 64]
