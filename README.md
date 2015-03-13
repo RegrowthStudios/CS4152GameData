@@ -1,9 +1,10 @@
 # ARRAY
 
 ## Main Menu
-"Enter" to go to gameplay screen (loads level "Data/GameProto/level.le")
+Press New Game and select a level to play it
 
-"L" to go to level editor screen
+Press Level Editor to go to the level editor
+
 
 ## Gameplay
 WASD, Space to jump
@@ -12,7 +13,7 @@ Mouse to look
 
 "["/"]" to rotate the last ring you touched
 
-There is no "win" screen or end goal yet implemented
+Touch a red block in the level to win
 
 ## Level Editor
 Middle mouse to orbit
@@ -23,7 +24,14 @@ Mouse wheel zoom
 
 Left click to delete block
 
-Right click to add block/set full ring/delete full ring
+Right click:
+
+ * Add block
+ * Set full ring
+ * Delete full ring
+ * Add start block
+ * Add end block
+ * Add turret
 
 "=" to add a new ring
 
@@ -33,7 +41,7 @@ Right click to add block/set full ring/delete full ring
 
 "W"/"S" to translate ring
 
-"1"/"2"/"3" set the right click tool to respective operations
+"1"-"6" set the right click tool to respective operations
 
 F2 to load level
 
