@@ -1,0 +1,18 @@
+Name:
+  Name: Projectile
+Position:
+  Position: [0, 0, 0]
+RenderMesh:
+  Mesh: Projectile
+BulletObject:
+  Body:
+    Friction: 0.0
+    Restitution: 0.3
+    LinearDamping: 0.0
+    AngularDamping: 0.0
+    Mass: 0.4
+    ObjectType: Projectile
+    BodyType: Dynamic
+  Shape:
+    Type: Sphere
+    Radius: 0.3
