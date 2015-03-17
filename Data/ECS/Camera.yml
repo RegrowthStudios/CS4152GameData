@@ -1,0 +1,8 @@
+Name:
+  Name: Camera
+Position:
+  Position: [0, 0, 0]
+Offset:
+  Position: [0, 1, 0]
+Eye:
+  FieldOfView: 120.0

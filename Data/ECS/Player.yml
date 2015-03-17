@@ -1,0 +1,23 @@
+Name:
+  Name: Player
+Position:
+  Position: [0, 0, 0]
+RenderMesh:
+  Mesh: Projectile
+RingOrienting:
+  OrientationStrength: 9.0
+  SurfaceTouchFactor: 2.0
+BulletObject:
+  Body:
+    Friction: 0.0
+    Restitution: 0.0
+    LinearDamping: 0.95
+    AngularDamping: 0.97
+    AngularFactor: 1.0
+    Mass: 1.0
+    ObjectType: Player
+    BodyType: Character
+  Shape:
+    Type: Capsule
+    Radius: 0.3
+    Height: 0.4
