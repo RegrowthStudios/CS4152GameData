@@ -21,3 +21,7 @@ BulletObject:
     Type: Capsule
     Radius: 0.3
     Height: 0.4
+Character:
+  SpringLength: 1.0
+  SpringRestDisplacement: 0.75
+  SpringPower: 100.0
