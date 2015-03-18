@@ -1,0 +1,20 @@
+Name:
+  Name: Goal
+Position:
+  Position: [0, 0, 0]
+RenderMesh:
+  Mesh: Projectile
+Offset:
+  Position: [0.0, 0.0, 0.0]
+BulletObject:
+  Body:
+    Friction: 0.0
+    Restitution: 0.0
+    LinearDamping: 0.0
+    AngularDamping: 0.0
+    Mass: 0.0
+    ObjectType: Goal
+    BodyType: Sensor
+  Shape:
+    Type: Box
+    HalfSize: [0.5, 1.0, 0.5]
