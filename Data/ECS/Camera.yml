@@ -3,7 +3,7 @@ Name:
 Position:
   Position: [0, 0, 0]
 Offset:
-  Position: [0, 1, 0]
+  Position: [0, 0, 0]
 Eye:
   FieldOfView: 120.0
   Pitch: 0.0
