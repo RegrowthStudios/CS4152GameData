@@ -5,7 +5,7 @@ Position:
 RenderMesh:
   Mesh: Projectile
 RingOrienting:
-  OrientationStrength: 9.0
+  OrientationStrength: 19.0
   SurfaceTouchFactor: 2.0
 BulletObject:
   Body:
@@ -19,9 +19,9 @@ BulletObject:
     BodyType: Character
   Shape:
     Type: Capsule
-    Radius: 0.3
+    Radius: 0.2
     Height: 0.4
 Character:
   SpringLength: 1.0
   SpringRestDisplacement: 0.75
-  SpringPower: 100.0
+  SpringPower: 80.0
