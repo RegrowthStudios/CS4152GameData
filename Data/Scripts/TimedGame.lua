@@ -6,11 +6,12 @@ function onGameUpdate (dt)
   timeElapsed = timeElapsed + dt
   
   if timeElapsed > goalTime then
-    -- Set To End State
-    print("Lolz, you suck, I'll give you 0.122 seconds")
+    -- Debug Print
+    print("Lolz, you suck, I'll give you 10 extra seconds")
+    goalTime = goalTime + 10.0
+
+    -- Set To End State (Does Nothing Yet)
     State_setGameState(gameState, 100)
-    goalTime = goalTime + 0.122
-    make_Turret(gameState)
   else
     -- Show Countdown
     print(goalTime - timeElapsed)
