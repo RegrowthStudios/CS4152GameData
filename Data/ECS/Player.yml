@@ -11,8 +11,8 @@ BulletObject:
   Body:
     Friction: 0.0
     Restitution: 0.0
-    LinearDamping: 0.95
-    AngularDamping: 0.97
+    LinearDamping: 0.98
+    AngularDamping: 0.99
     AngularFactor: 1.0
     Mass: 1.0
     ObjectType: Player
