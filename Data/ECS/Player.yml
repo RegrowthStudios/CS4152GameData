@@ -25,3 +25,6 @@ Character:
   SpringLength: 1.0
   SpringRestDisplacement: 0.75
   SpringPower: 80.0
+Script:
+  Name: debugAddForce
+  ExecutionRate: 120
