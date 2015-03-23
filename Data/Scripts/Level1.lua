@@ -3,7 +3,7 @@ function onGameUpdate (dt)
   State_applyRingTorque(gameState, 2, 30000)
 end
 
-[[ 
+--[[ 
 
 Dialogue for Level 1:
 onStart:
