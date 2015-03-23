@@ -3,7 +3,7 @@ BinaryData: Binary/level-1.le
 
 # Scripts loaded for the level
 Scripts:
-  - TimedGame.lua
+  - Level1.lua
 
 # Update function to call from the script
 UpdateScript: onGameUpdate
