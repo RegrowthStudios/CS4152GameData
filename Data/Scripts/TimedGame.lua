@@ -18,6 +18,4 @@ function onGameUpdate (dt)
   end
 end
 
-function registerFuncs (env)
-  register(env, "onGameUpdate", "onGameUpdate")
-end
+Vorb.register("onGameUpdate", onGameUpdate)

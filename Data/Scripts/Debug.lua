@@ -8,6 +8,4 @@ function debugAddForce (eID, dt)
   end
 end
 
-function registerFuncs (env)
-  register(env, "debugAddForce", "debugAddForce")
-end
+Vorb.register("debugAddForce", debugAddForce)

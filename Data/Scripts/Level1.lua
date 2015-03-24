@@ -3,7 +3,7 @@ function onGameUpdate (dt)
   State_applyRingTorque(gameState, 2, 30000)
 end
 
-[[ 
+--[[ 
 
 Dialogue for Level 1:
 onStart:
@@ -47,8 +47,6 @@ universe will be much better off without all this crap, and you, in it."
 
 
 
-]]
+--]]
 
-function registerFuncs (env)
-  register(env, "onGameUpdate", "onGameUpdate")
-end
+Vorb.register("onGameUpdate", onGameUpdate)
