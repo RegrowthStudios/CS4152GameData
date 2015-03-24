@@ -1,6 +1,8 @@
 # Voxel data (maybe ECS too)
 BinaryData: Binary/level-1.le
 
+Environment: v2
+
 # Scripts loaded for the level
 Scripts:
   - Level1.lua
