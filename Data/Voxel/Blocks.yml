@@ -1,0 +1,49 @@
+Metal:
+  Weight: 1.0
+  TexPosX: Metal
+  TexNegX: Metal
+  TexPosY: Metal
+  TexNegY: Metal
+  TexPosZ: Metal
+  TexNegZ: Metal
+Goal:
+  Weight: 0.0
+  TexPosX: Red
+  TexNegX: Red
+  TexPosY: Red
+  TexNegY: Red
+  TexPosZ: Red
+  TexNegZ: Red
+Type1:
+  Weight: 0.0
+  TexPosX: Toxic
+  TexNegX: Toxic
+  TexPosY: Blue
+  TexNegY: Black
+  TexPosZ: Black
+  TexNegZ: Black
+Type2:
+  Weight: 0.0
+  TexPosX: Black
+  TexNegX: Black
+  TexPosY: Flesh
+  TexNegY: Black
+  TexPosZ: Black
+  TexNegZ: Black
+Type3:
+  Weight: 0.0
+  TexPosX: Black
+  TexNegX: Black
+  TexPosY: Black
+  TexNegY: Black
+  TexPosZ: Black
+  TexNegZ: Black
+Type4:
+  Weight: 0.0
+  TexPosX: Black
+  TexNegX: Black
+  TexPosY: Black
+  TexNegY: Black
+  TexPosZ: Black
+  TexNegZ: Black
+  

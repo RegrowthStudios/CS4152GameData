@@ -1,0 +1,56 @@
+# Texture Atlas
+Textures:
+  - Data\Textures\Blocks1.png
+
+# Texture Indexing
+Black:
+  ConnectionMode: Single
+  TextureIndex: [0, 0, 0]
+Toxic:
+  ConnectionMode: Single
+  TextureIndex: [1, 0, 0]
+Flesh:
+  ConnectionMode: Single
+  TextureIndex: [2, 0, 0]
+Red:
+  ConnectionMode: Single
+  TextureIndex: [3, 0, 0]
+Purple:
+  ConnectionMode: Single
+  TextureIndex: [4, 0, 0]
+White:
+  ConnectionMode: Single
+  TextureIndex: [5, 0, 0]
+Blue:
+  ConnectionMode: Single
+  TextureIndex: [6, 0, 0]
+SkyBlue:
+  ConnectionMode: Single
+  TextureIndex: [7, 0, 0]
+Green:
+  ConnectionMode: Single
+  TextureIndex: [0, 1, 0]
+Rock:
+  ConnectionMode: Single
+  TextureIndex: [1, 1, 0]
+Gray:
+  ConnectionMode: Single
+  TextureIndex: [2, 1, 0]
+Navy:
+  ConnectionMode: Single
+  TextureIndex: [3, 1, 0]
+Metal:
+  ConnectionMode: Single
+  TextureIndex: [4, 1, 0]
+RustyMetal:
+  ConnectionMode: Single
+  TextureIndex: [5, 1, 0]
+Maroon:
+  ConnectionMode: Single
+  TextureIndex: [6, 1, 0]
+Orange:
+  ConnectionMode: Single
+  TextureIndex: [7, 1, 0]
+SpaceWolf:
+  ConnectionMode: Single
+  TextureIndex: [0, 2, 0]
