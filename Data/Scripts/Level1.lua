@@ -1,8 +1,30 @@
+messageTime = 0.0
+clear = true
+
 function onGameUpdate (dt)
-  State_setRingMass(gameState, 0, 0)
-  State_applyRingTorque(gameState, 2, 30000)
+  messageTime = messageTime + dt
+  if messageTime > 6.0 then
+    clear = true
+    Client.setMessage("")
+  end
 end
 
+function onRingContact(id)  
+  print(id)
+  if id == 3 and clear == true then
+    Client.setMessage("Good morning, or night, I'm not sure.")
+    messageTime = 0.0
+    clear = false
+  elseif id == 5 and clear == true then
+    Client.setMessage("Oh, you left that first ring?  Neat.")
+    messageTime = 0.0
+    clear = false
+  elseif id == 7 and clear == true then
+    Client.setMessage("You've got circuits in your brain that let\n you rotate green rings like this one.")
+    messageTime = 0.0
+    clear = false
+  end
+end
 --[[ 
 
 Dialogue for Level 1:
@@ -50,3 +72,4 @@ universe will be much better off without all this crap, and you, in it."
 --]]
 
 Vorb.register("onGameUpdate", onGameUpdate)
+Vorb.register("onRingContact", onRingContact)

@@ -9,3 +9,5 @@ Scripts:
 
 # Update function to call from the script
 UpdateScript: onGameUpdate
+
+ContactScript: onRingContact
