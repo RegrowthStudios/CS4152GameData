@@ -3,34 +3,43 @@ messageQueue = {}
 flags = {}
 flags["touched3"] = false
 flags["touched5"] = false
+flags["touched6"] = false
 flags["touched7"] = false
 
 
 function onGameUpdate (dt)
   messageTime = messageTime + dt
-  if messageTime > 10.0 then
+  if messageTime > 5.0 then
+    Client.setMessage(" ")
+  end
+  if messageTime > 5.5 then
     if tablelength(messageQueue) > 0 then
       Client.setMessage(table.remove(messageQueue, 1))
       messageTime = 0.0
     else 
-      Client.setMessage(" ")
+      Client.hideHUD()
     end
   end
 end
 
 function onRingContact(id) 
   if id == 3 and not flags["touched3"] then 
-    table.insert(messageQueue, "I just erased your memory, so you might feel a bit confused about your environment.")
-    table.insert(messageQueue, "You're on the Array, humanity's last message to the stars.")
-    table.insert(messageQueue, "Gravity, centrifigual force or something is holding you to the inside of the Array's rings.")
+    table.insert(messageQueue, "I recently erased your memory,")
+    table.insert(messageQueue, "so you might feel a bit confused about your environment.")
     flags["touched3"] = true 
   end
   if id == 5 and not flags["touched5"] then
     table.insert(messageQueue, "Oh, so you left that first ring?  Neat.")
+    table.insert(messageQueue, "Spacebar to jump.")
     flags["touched5"] = true
   end
+  if id == 6 and not flags["touched6"] then
+    table.insert(messageQueue, "You're on the Array,")
+    table.insert(messageQueue, "the last record of humanity in the universe.")
+    flags["touched6"] = true
+  end
   if id == 7 and not flags["touched7"] then
-    table.insert(messageQueue, "You've got circuits in your brain that let you rotate green rings like this one.")
+    table.insert(messageQueue, "You can rotate green rings like this one with Q and E.")
     flags["touched7"] = true
   end
 end
