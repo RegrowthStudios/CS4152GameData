@@ -1,29 +1,44 @@
-messageTime = 0.0
-clear = true
+messageTime = 100000.0
+messageQueue = {}
+flags = {}
+flags["touched3"] = false
+flags["touched5"] = false
+flags["touched7"] = false
+
 
 function onGameUpdate (dt)
   messageTime = messageTime + dt
   if messageTime > 6.0 then
-    clear = true
-    Client.setMessage("")
+    if tablelength(messageQueue) > 0 then
+      Client.setMessage(table.remove(messageQueue, 1))
+      messageTime = 0.0
+    else 
+      Client.setMessage(" ")
+    end
   end
 end
 
-function onRingContact(id)  
-  print(id)
-  if id == 3 and clear == true then
-    Client.setMessage("Good morning, or night, I'm not sure.")
-    messageTime = 0.0
-    clear = false
-  elseif id == 5 and clear == true then
-    Client.setMessage("Oh, you left that first ring?  Neat.")
-    messageTime = 0.0
-    clear = false
-  elseif id == 7 and clear == true then
-    Client.setMessage("You've got circuits in your brain that let\n you rotate green rings like this one.")
-    messageTime = 0.0
-    clear = false
+function onRingContact(id) 
+  if id == 3 and not flags["touched3"] then 
+    table.insert(messageQueue, "I just erased your memory, so you might feel a bit confused about your environment.")
+    table.insert(messageQueue, "I just erased your memory, so you might feel a bit confused about your environment.")
+
+    flags["touched3"] = true 
   end
+  if id == 5 and not flags["touched5"] then
+    table.insert(messageQueue, "Oh, so you left that first ring?  Neat.")
+    flags["touched5"] = true
+  end
+  if id == 7 and not flags["touched7"] then
+    table.insert(messageQueue, "You've got circuits in your brain that let you rotate green rings like this one.")
+    flags["touched7"] = true
+  end
+end
+
+function tablelength(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
 end
 --[[ 
 
