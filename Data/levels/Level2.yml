@@ -1,9 +1,14 @@
 # Voxel data (maybe ECS too)
 BinaryData: Binary/level-2.le
 
+Environment: v1
+
+
 # Scripts loaded for the level
 Scripts:
-  - TimedGame.lua
+  - Level2.lua
 
 # Update function to call from the script
 UpdateScript: onGameUpdate
+
+ContactScript: onRingContact
