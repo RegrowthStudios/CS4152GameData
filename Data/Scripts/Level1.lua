@@ -1,6 +1,6 @@
 function onGameUpdate (dt)
-  State_setRingMass(gameState, 0, 0)
-  State_applyRingTorque(gameState, 2, 30000)
+  -- State_setRingMass(gameState, 0, 0)
+  -- State_applyRingTorque(gameState, 2, 30000)
 end
 
 --[[ 
