@@ -8,7 +8,7 @@ flags["touched7"] = false
 
 function onGameUpdate (dt)
   messageTime = messageTime + dt
-  if messageTime > 6.0 then
+  if messageTime > 10.0 then
     if tablelength(messageQueue) > 0 then
       Client.setMessage(table.remove(messageQueue, 1))
       messageTime = 0.0
@@ -21,8 +21,8 @@ end
 function onRingContact(id) 
   if id == 3 and not flags["touched3"] then 
     table.insert(messageQueue, "I just erased your memory, so you might feel a bit confused about your environment.")
-    table.insert(messageQueue, "I just erased your memory, so you might feel a bit confused about your environment.")
-
+    table.insert(messageQueue, "You're on the Array, humanity's last message to the stars.")
+    table.insert(messageQueue, "Gravity, centrifigual force or something is holding you to the inside of the Array's rings.")
     flags["touched3"] = true 
   end
   if id == 5 and not flags["touched5"] then
