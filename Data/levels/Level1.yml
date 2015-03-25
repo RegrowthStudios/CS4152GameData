@@ -8,6 +8,7 @@ Scripts:
   - Level1.lua
 
 # Update function to call from the script
+BuildScript: onGameBuild
 UpdateScript: onGameUpdate
 
 ContactScript: onRingContact

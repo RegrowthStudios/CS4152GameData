@@ -1,2 +1,12 @@
 # Voxel data (maybe ECS too)
 BinaryData: Binary/LE-level.le
+
+Environment: v2
+
+# Scripts loaded for the level
+Scripts:
+  - Level1.lua
+
+# Update function to call from the script
+BuildScript: onGameBuild
+UpdateScript: onGameUpdate

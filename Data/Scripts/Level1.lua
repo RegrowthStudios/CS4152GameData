@@ -6,6 +6,14 @@ flags["touched5"] = false
 flags["touched6"] = false
 flags["touched7"] = false
 
+function onGameBuild()
+  eID = ECS.Templates.Eiffel()
+  cID = ECS.getComponentID("Position", eID)
+  z = -20.0
+  y = 0.0
+  x = -1.0
+  ECS.Position.setPosition(cID, x, y, z)
+end
 
 function onGameUpdate (dt)
   messageTime = messageTime + dt
@@ -95,5 +103,6 @@ universe will be much better off without all this crap, and you, in it."
 
 --]]
 
+Vorb.register("onGameBuild", onGameBuild)
 Vorb.register("onGameUpdate", onGameUpdate)
 Vorb.register("onRingContact", onRingContact)
