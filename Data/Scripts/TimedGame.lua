@@ -17,7 +17,9 @@ end
  
 function onTurretUpdate(entityID,dt)
 
+	--Every interval time spawn a projectile
 	if math.floor(math.fmod(projectileCounter,projectileInterval))==0 then
+		ECS.Rotation.rotate(entityID,3)
 		componentID=ECS.getComponentID("Position",entityID)
 		x,y,z=ECS.Position.getPosition(componentID)
 		--Put projectile into the position turrent/ set position
@@ -28,6 +30,7 @@ function onTurretUpdate(entityID,dt)
 		ECS.BulletObject.createBody(componentID)
 		ECS.BulletObject.applyForce(componentID,x,y,z)
 	end
+	
 	projectileCounter=projectileCounter+1
 end
 
