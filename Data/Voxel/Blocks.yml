@@ -1,4 +1,4 @@
-Metal:
+Platform:
   Weight: 1.0
   TexPosX: Metal
   TexNegX: Metal
@@ -6,7 +6,23 @@ Metal:
   TexNegY: Metal
   TexPosZ: Metal
   TexNegZ: Metal
+Spawn:
+  Weight: 0.0
+  TexPosX: Red
+  TexNegX: Red
+  TexPosY: SpaceWolf
+  TexNegY: SpaceWolf
+  TexPosZ: Red
+  TexNegZ: Red
 Goal:
+  Weight: 0.0
+  TexPosX: Red
+  TexNegX: Red
+  TexPosY: Red
+  TexNegY: Red
+  TexPosZ: Red
+  TexNegZ: Red
+Turret:
   Weight: 0.0
   TexPosX: Red
   TexNegX: Red
