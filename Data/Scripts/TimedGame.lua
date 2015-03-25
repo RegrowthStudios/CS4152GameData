@@ -11,7 +11,6 @@ function onGameUpdate (dt)
     goalTime = goalTime + 10.0
 
     -- Set To End State (Does Nothing Yet)
-    State_setGameState(gameState, 100)
   else
     -- Show Countdown
     print(goalTime - timeElapsed)
