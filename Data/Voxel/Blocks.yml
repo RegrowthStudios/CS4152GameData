@@ -2,8 +2,8 @@ Platform:
   Weight: 1.0
   TexPosX: Metal
   TexNegX: Metal
-  TexPosY: Metal
-  TexNegY: Metal
+  TexPosY: SkyBlue
+  TexNegY: SkyBlue
   TexPosZ: Metal
   TexNegZ: Metal
 Spawn:
@@ -16,12 +16,12 @@ Spawn:
   TexNegZ: Red
 Goal:
   Weight: 0.0
-  TexPosX: Red
-  TexNegX: Red
-  TexPosY: Red
-  TexNegY: Red
-  TexPosZ: Red
-  TexNegZ: Red
+  TexPosX: Orange
+  TexNegX: Orange
+  TexPosY: Orange
+  TexNegY: Orange
+  TexPosZ: Orange
+  TexNegZ: Orange
 Turret:
   Weight: 0.0
   TexPosX: Red
@@ -30,36 +30,36 @@ Turret:
   TexNegY: Red
   TexPosZ: Red
   TexNegZ: Red
-Type1:
+Green:
   Weight: 0.0
-  TexPosX: Toxic
-  TexNegX: Toxic
-  TexPosY: Blue
-  TexNegY: Black
-  TexPosZ: Black
-  TexNegZ: Black
-Type2:
+  TexPosX: Green
+  TexNegX: Green
+  TexPosY: SkyBlue
+  TexNegY: SkyBlue
+  TexPosZ: Green
+  TexNegZ: Green
+Red:
   Weight: 0.0
-  TexPosX: Black
-  TexNegX: Black
-  TexPosY: Flesh
-  TexNegY: Black
-  TexPosZ: Black
-  TexNegZ: Black
+  TexPosX: Red
+  TexNegX: Red
+  TexPosY: SkyBlue
+  TexNegY: SkyBlue
+  TexPosZ: Red
+  TexNegZ: Red
 Type3:
   Weight: 0.0
-  TexPosX: Black
-  TexNegX: Black
-  TexPosY: Black
-  TexNegY: Black
-  TexPosZ: Black
-  TexNegZ: Black
+  TexPosX: Maroon
+  TexNegX: Maroon
+  TexPosY: SkyBlue
+  TexNegY: SkyBlue
+  TexPosZ: Maroon
+  TexNegZ: Maroon
 Type4:
   Weight: 0.0
-  TexPosX: Black
-  TexNegX: Black
-  TexPosY: Black
-  TexNegY: Black
-  TexPosZ: Black
-  TexNegZ: Black
+  TexPosX: White
+  TexNegX: White
+  TexPosY: SkyBlue
+  TexNegY: SkyBlue
+  TexPosZ: White
+  TexNegZ: White
   
