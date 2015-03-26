@@ -5,8 +5,7 @@ flags = {}
 
 
 function onGameUpdate (dt)
-  ECS.BulletObject.applyTorque(4, -50000)
-  ECS.BulletObject.setMass(7,0)
+  ECS.BulletObject.applyTorque(5, -50000)
   messageTime = messageTime + dt
   --[[
   if messageTime > 5.0 then
@@ -24,6 +23,7 @@ function onGameUpdate (dt)
 end
 
 function onRingContact(id)
+  print(id)
   Client.setMessage(id)
 end
 
