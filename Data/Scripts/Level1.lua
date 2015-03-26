@@ -13,6 +13,9 @@ function onGameBuild()
   y = 0.0
   x = -1.0
   ECS.Position.setPosition(cID, x, y, z)
+  
+  loadMusic()
+  Client.Sound.playMusicTrack("Electronic", 7.0)
 end
 
 function onGameUpdate (dt)

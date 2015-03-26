@@ -6,6 +6,7 @@ Environment: v2
 # Scripts loaded for the level
 Scripts:
   - Level1.lua
+  - Music.lua
 
 # Update function to call from the script
 BuildScript: onGameBuild
