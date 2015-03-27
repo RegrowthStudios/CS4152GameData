@@ -45,7 +45,6 @@ function createMessage(narration, strMessage)
 end
 
 function onRingContact(id)
-  print(id)
   if id == 3 and not flags["touched3"] then
     table.insert(messageQueue, createMessage("Narrative0", "I recently erased your memory,"))
     table.insert(messageQueue, createMessage("Narrative1", "so you might feel a bit confused about your environment."))
