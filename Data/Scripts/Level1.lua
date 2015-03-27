@@ -1,17 +1,19 @@
 messageTime = 100000.0
 messageQueue = {}
 flags = {}
-flags["touched3"] = false
-flags["touched5"] = false
+flags["touched4"] = false
 flags["touched6"] = false
 flags["touched7"] = false
+flags["touched8"] = false
+flags["touched12"] = false
+
 
 function onGameBuild()
   eID = ECS.Templates.Eiffel()
   cID = ECS.getComponentID("Position", eID)
-  z = -20.0
-  y = 0.0
-  x = -1.0
+  z = 7.0
+  y = 1.0
+  x = 1.0
   ECS.Position.setPosition(cID, x, y, z)
   
   loadMusic()
@@ -43,24 +45,28 @@ function createMessage(narration, strMessage)
 end
 
 function onRingContact(id) 
-  if id == 3 and not flags["touched3"] then
+  if id == 4 and not flags["touched4"] then
     table.insert(messageQueue, createMessage("Narrative0", "I recently erased your memory,"))
     table.insert(messageQueue, createMessage("Narrative1", "so you might feel a bit confused about your environment."))
-    flags["touched3"] = true 
-  end
-  if id == 5 and not flags["touched5"] then
-    table.insert(messageQueue, createMessage("Narrative2", "Oh, so you left that first ring?  Neat."))
-    table.insert(messageQueue, createMessage("Narrative3", "Spacebar to jump."))
-    flags["touched5"] = true
+    flags["touched4"] = true 
   end
   if id == 6 and not flags["touched6"] then
-    table.insert(messageQueue, createMessage("Narrative4", "You're on the Array,"))
-    table.insert(messageQueue, createMessage("Narrative5", "the last record of humanity in the universe."))
+    table.insert(messageQueue, createMessage("Narrative2", "Oh, so you left that first ring?  Neat."))
+    table.insert(messageQueue, createMessage("Narrative3", "Spacebar to jump."))
     flags["touched6"] = true
   end
   if id == 7 and not flags["touched7"] then
-    table.insert(messageQueue, createMessage("Narrative6", "You can rotate green rings like this one with Q and E."))
+    table.insert(messageQueue, createMessage("Narrative4", "You're on the Array,"))
+    table.insert(messageQueue, createMessage("Narrative5", "the last record of humanity in the universe."))
     flags["touched7"] = true
+  end
+  if id == 8 and not flags["touched8"] then
+    table.insert(messageQueue, createMessage("Narrative6", "You can rotate green rings like this one with Q and E."))
+    flags["touched8"] = true
+  end
+  if id == 12 and not flags["touched12"] then
+    table.insert(messageQueue, createMessage("Narrative6", "DON'T TOUCH THAT ORANGE."))
+    flags["touched12"] = true
   end
 end
 
