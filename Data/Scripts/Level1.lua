@@ -65,7 +65,7 @@ function onRingContact(id)
     flags["touched8"] = true
   end
   if id == 12 and not flags["touched12"] then
-    table.insert(messageQueue, createMessage("Narrative6", "DON'T TOUCH THAT ORANGE."))
+    table.insert(messageQueue, createMessage("Narrative7", "DON'T TOUCH THAT ORANGE."))
     flags["touched12"] = true
   end
 end
