@@ -25,7 +25,9 @@ function onGameUpdate (dt)
   end
   if messageTime > 5.5 then
     if tablelength(messageQueue) > 0 then
-      Client.setMessage(table.remove(messageQueue, 1))
+      message = table.remove(messageQueue, 1)
+      Client.setMessage(message.message)
+      Client.Sound.play2D(message.fx, 1.0)
       messageTime = 0.0
     else 
       Client.hideHUD()
@@ -33,24 +35,31 @@ function onGameUpdate (dt)
   end
 end
 
+function createMessage(narration, strMessage)
+  msg = {}
+  msg["fx"] = narration
+  msg["message"] = strMessage
+  return msg
+end
+
 function onRingContact(id) 
-  if id == 3 and not flags["touched3"] then 
-    table.insert(messageQueue, "I recently erased your memory,")
-    table.insert(messageQueue, "so you might feel a bit confused about your environment.")
+  if id == 3 and not flags["touched3"] then
+    table.insert(messageQueue, createMessage("Narrative0", "I recently erased your memory,"))
+    table.insert(messageQueue, createMessage("Narrative1", "so you might feel a bit confused about your environment."))
     flags["touched3"] = true 
   end
   if id == 5 and not flags["touched5"] then
-    table.insert(messageQueue, "Oh, so you left that first ring?  Neat.")
-    table.insert(messageQueue, "Spacebar to jump.")
+    table.insert(messageQueue, createMessage("Narrative2", "Oh, so you left that first ring?  Neat."))
+    table.insert(messageQueue, createMessage("Narrative3", "Spacebar to jump."))
     flags["touched5"] = true
   end
   if id == 6 and not flags["touched6"] then
-    table.insert(messageQueue, "You're on the Array,")
-    table.insert(messageQueue, "the last record of humanity in the universe.")
+    table.insert(messageQueue, createMessage("Narrative4", "You're on the Array,"))
+    table.insert(messageQueue, createMessage("Narrative5", "the last record of humanity in the universe."))
     flags["touched6"] = true
   end
   if id == 7 and not flags["touched7"] then
-    table.insert(messageQueue, "You can rotate green rings like this one with Q and E.")
+    table.insert(messageQueue, createMessage("Narrative6", "You can rotate green rings like this one with Q and E."))
     flags["touched7"] = true
   end
 end
