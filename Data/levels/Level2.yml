@@ -10,5 +10,5 @@ Scripts:
 
 # Update function to call from the script
 UpdateScript: onGameUpdate
-
+BuildScript: onGameBuild
 ContactScript: onRingContact
