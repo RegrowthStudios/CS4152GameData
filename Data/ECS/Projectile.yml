@@ -15,4 +15,4 @@ BulletObject:
     BodyType: Dynamic
   Shape:
     Type: Sphere
-    Radius: 0.3
+    Radius: 0.25
