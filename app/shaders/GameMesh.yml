@@ -1,0 +1,10 @@
+Vertex: GameMesh.vert
+Fragment: GameMesh.frag
+Attributes:
+  - Name: vPosition
+    Location: 0
+  - Name: vNormal
+    Location: 1
+  - Name: vUV
+    Location: 2
+    
