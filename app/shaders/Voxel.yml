@@ -1,2 +1,12 @@
 Vertex: Voxel.vert
 Fragment: Voxel.frag
+Attributes:
+  - Name: vPosition
+    Location: 0
+  - Name: vNormal
+    Location: 1
+  - Name: vUV
+    Location: 2
+  - Name: vColor
+    Location: 3
+    

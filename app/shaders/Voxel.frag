@@ -1,9 +1,10 @@
 // Uniforms
-uniform sampler2D unTexture;
+uniform sampler2DArray unTexture;
 uniform vec4 unTint;
 
 // Input
-in vec2 fUV;
+in vec3 fNormal;
+in vec3 fUV;
 in vec4 fColor;
 
 // Output
