@@ -1,56 +1,51 @@
-# Texture Atlas
-Textures:
-  - Data\Textures\Blocks1.png
-
-# Texture Indexing
 Black:
   ConnectionMode: Single
-  TextureIndex: [0, 0, 0]
+  Path: Data/Textures/block_black.png
 Toxic:
   ConnectionMode: Single
-  TextureIndex: [1, 0, 0]
+  Path: Data/Textures/block_toxic.png
 Flesh:
   ConnectionMode: Single
-  TextureIndex: [2, 0, 0]
+  Path: Data/Textures/block_red.png
 Red:
   ConnectionMode: Single
-  TextureIndex: [3, 0, 0]
+  Path: Data/Textures/block_crimson.png
 Purple:
   ConnectionMode: Single
-  TextureIndex: [4, 0, 0]
+  Path: Data/Textures/block_purple.png
 White:
   ConnectionMode: Single
-  TextureIndex: [5, 0, 0]
+  Path: Data/Textures/block_lightgrey.png
 Blue:
   ConnectionMode: Single
-  TextureIndex: [6, 0, 0]
+  Path: Data/Textures/block_blue.png
 SkyBlue:
   ConnectionMode: Single
-  TextureIndex: [7, 0, 0]
+  Path: Data/Textures/block_grey.png
 Green:
   ConnectionMode: Single
-  TextureIndex: [0, 1, 0]
+  Path: Data/Textures/block_green.png
 Rock:
   ConnectionMode: Single
-  TextureIndex: [1, 1, 0]
+  Path: Data/Textures/block_darkgrey.png
 Gray:
   ConnectionMode: Single
-  TextureIndex: [2, 1, 0]
+  Path: Data/Textures/block_lighttile.png
 Navy:
   ConnectionMode: Single
-  TextureIndex: [3, 1, 0]
+  Path: Data/Textures/block_darktile.png
 Metal:
   ConnectionMode: Single
-  TextureIndex: [4, 1, 0]
+  Path: Data/Textures/block_darkertile.png
 RustyMetal:
   ConnectionMode: Single
-  TextureIndex: [5, 1, 0]
+  Path: Data/Textures/block_rust.png
 Maroon:
   ConnectionMode: Single
-  TextureIndex: [6, 1, 0]
+  Path: Data/Textures/block_darkdirt.png
 Orange:
   ConnectionMode: Single
-  TextureIndex: [7, 1, 0]
+  Path: Data/Textures/block_brown.png
 SpaceWolf:
   ConnectionMode: Single
-  TextureIndex: [0, 2, 0]
+  Path: Data/Textures/block_blue.png
