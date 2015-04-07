@@ -15,7 +15,28 @@ function onGameBuild()
   y = 1.0
   x = 1.0
   ECS.Position.setPosition(cID, x, y, z)
-  
+
+  eID = ECS.Templates.RomanArch()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 0.0, -8.0, -8.0)
+
+  eID = ECS.Templates.Eiffel()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 0.0, -8.0, -45.0)
+
+  eID = ECS.Templates.SoLTorch()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -2.0, 6.0, 5.0)
+
+  eID = ECS.Templates.SoLTorch()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -2.0, 6.0, 7.0)
+
+  eID = ECS.Templates.SoLTorch()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -2.0, 6.0, 9.0)
+
+
   loadMusic()
   Client.Sound.playMusicTrack("Electronic", 7.0)
 end
@@ -29,12 +50,16 @@ function onGameUpdate (dt)
     if tablelength(messageQueue) > 0 then
       message = table.remove(messageQueue, 1)
       Client.setMessage(message.message)
-      Client.Sound.play2D(message.fx, 1.0)
+      -- Client.Sound.play2D(message.fx, 1.0)
       messageTime = 0.0
     else 
       Client.hideHUD()
     end
   end
+    pEID = State.getPlayer()
+  playerPosCID = ECS.getComponentID("Position", pEID)
+  x, y, z = ECS.Position.getPosition(playerPosCID)
+  Client.setMessage(string.format("%d, %d, %d", x, y, z))
 end
 
 function createMessage(narration, strMessage)

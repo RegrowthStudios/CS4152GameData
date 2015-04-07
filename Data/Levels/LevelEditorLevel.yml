@@ -5,8 +5,9 @@ Environment: v1
 
 # Scripts loaded for the level
 Scripts:
-  - Level2.lua
+  - Level3.lua
 
 # Update function to call from the script
-BuildScript: onGameBuild
 UpdateScript: onGameUpdate
+BuildScript: onGameBuild
+ContactScript: onRingContact

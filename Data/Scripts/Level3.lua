@@ -1,4 +1,13 @@
-turretForcePower = 1000.0
+function onGameBuild()
+  eIDBase, eIDTurret = makeTurret(-6, -5, 3)
+end
+
+function onGameUpdate (dt)
+	pEID = State.getPlayer()
+	playerPosCID = ECS.getComponentID("Position", pEID)
+	x, y, z = ECS.Position.getPosition(playerPosCID)
+  Client.setMessage(string.format("%i, %i, %i", x, y, z))
+end
 
 function makeTurret(x, y, z)
   eIDBase = ECS.Templates.TurretBase()
@@ -16,15 +25,6 @@ function makeTurret(x, y, z)
   return eIDBase, eIDTurret
 end
 
-function updateTurret(eID, dt)
-
-  cIDPos = ECS.getComponentID("Position", eID)
-  ux, uy, uz = ECS.Position.getUp(cIDPos)
-  print(string.format("%f,%f,%f", ux, uy, uz))
-  
-  cIDPhys = ECS.getComponentID("BulletObject", eID)
-  -- ECS.BulletObject.torque(cIDPhys, 0, 16, 0)
-  print(string.format("%d: %d,%d", eID, cIDPos, cIDPhys))
-end
-
-Vorb.register("Update.Turret", updateTurret)
+Vorb.register("onGameBuild", onGameBuild)
+Vorb.register("onGameUpdate", onGameUpdate)
+Vorb.register("onRingContact", onRingContact)
