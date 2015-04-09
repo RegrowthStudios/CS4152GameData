@@ -23,10 +23,10 @@ function onGameUpdate (dt)
 	playerPosCID = ECS.getComponentID("Position", pEID)
 	x, y, z = ECS.Position.getPosition(playerPosCID)
   t = t + dt
-  if t > 1 then
-    shootFromEntity(turret1)
-    shootFromEntity(turret2)
-    shootFromEntity(turret3)
+  if t > .2 then
+    shootFromTurret(turret1)
+    shootFromTurret(turret2)
+    shootFromTurret(turret3)
     t = 0    
   end
   Client.setMessage(string.format("%i, %i, %i", x, y, z))
@@ -41,21 +41,22 @@ function makeTurret(x, y, z)
   return eIDTurret
 end
 
-function shootFromEntity(eIDTurret)
+function shootFromTurret(eIDTurret)
   -- Get player info
   cID = ECS.getComponentID("Position", eIDTurret)
   x,y,z = ECS.Position.getPosition(cID)
   fx,fy,fz = ECS.Position.getForward(cID)
+  ux,uy,uz = ECS.Position.getUp(cID)
   
   -- Spawn ball
   eID = ECS.Templates.Projectile()
   cIDPos = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cIDPos, x, y, z) 
+  ECS.Position.setPosition(cIDPos, x + (1.25 * fx) + (.35 * ux), y + (1.25  * fy) + (.35 * uy), z + (1.25  * fz) + (.35 * uz)) 
 
   -- Shoot ball
   cIDPhys = ECS.getComponentID("BulletObject", eID)
   ECS.BulletObject.createBody(cIDPhys)
-  ECS.BulletObject.applyForce(cIDPhys, fx * 300, fy * 300, fz * 300)
+  ECS.BulletObject.applyForce(cIDPhys, fx * 1000, fy * 1000, fz * 1000)
 end
 
 Vorb.register("onGameBuild", onGameBuild)
