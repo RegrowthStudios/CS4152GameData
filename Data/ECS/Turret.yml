@@ -11,16 +11,16 @@ RenderMesh:
   # Position: [0, 1, 0]
 BulletObject:
   Body:
-    Friction: 0.0
+    Friction: 10.0
     Restitution: 0.0
-    LinearDamping: 0.0
-    AngularDamping: 0.0
-    Mass: 3.0
+    LinearDamping: 0.9
+    AngularDamping: 0.9
+    Mass: 10.0
     ObjectType: Turret
     BodyType: Dynamic
   Shape:
-    Type: Sphere
-    Radius: 0.5
+    Type: Cube
+    HalfSize: [.25, .2, .25]
 Script:
   Name: Update.Turret
   ExecutionRate: 30
