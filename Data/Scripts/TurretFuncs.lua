@@ -1,6 +1,6 @@
-local Turrets = {}
+local Turret = {}
 
-function Turrets.makeTurret(x, y, z)
+function Turret.generate(x, y, z)
   eIDTurret = ECS.Templates.Turret()
   cIDPhysTurret = ECS.getComponentID("BulletObject", eIDTurret)
   ECS.BulletObject.createBody(cIDPhysTurret)
@@ -9,7 +9,7 @@ function Turrets.makeTurret(x, y, z)
   return eIDTurret
 end
 
-function Turrets.shootFromTurret(eIDTurret)
+function Turret.shootFromTurret(eIDTurret, force)
   -- Get player info
   cID = ECS.getComponentID("Position", eIDTurret)
   x,y,z = ECS.Position.getPosition(cID)
@@ -24,7 +24,7 @@ function Turrets.shootFromTurret(eIDTurret)
   -- Shoot ball
   cIDPhys = ECS.getComponentID("BulletObject", eID)
   ECS.BulletObject.createBody(cIDPhys)
-  ECS.BulletObject.applyForce(cIDPhys, fx * 1000, fy * 1000, fz * 1000)
+  ECS.BulletObject.applyForce(cIDPhys, fx * force, fy * force, fz * force)
 end
 
-return Turrets
+return Turret
