@@ -9,7 +9,7 @@ flags["touched12"] = false
 
 
 function onGameBuild()
-  eID = ECS.Templates.Eiffel()
+  eID = ECS.Templates.LargeSpike()
   cID = ECS.getComponentID("Position", eID)
   z = 7.0
   y = 1.0
