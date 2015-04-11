@@ -1,15 +1,20 @@
 local Turret = {}
 
-function Turret.generate(x, y, z)
+
+-- generates a turret in the level at the specified x, y, and z coordinates
+-- the ex, ey, and ez params are the world space euler angles for orientation
+function Turret.generate(x, y, z, ex, ey, ez)
   eIDTurret = ECS.Templates.Turret()
   cIDPhysTurret = ECS.getComponentID("BulletObject", eIDTurret)
   ECS.BulletObject.createBody(cIDPhysTurret)
   ECS.BulletObject.setPosition(cIDPhysTurret, x, y, z)
+  ECS.BulletObject.setOrientation(cIDPhysTurret, ex, ey, ez) 
   
   return eIDTurret
 end
 
-function Turret.shootFromTurret(eIDTurret, force)
+-- shoots a projectile from the turret with the specified eID
+function Turret.shoot(eIDTurret, force)
   -- Get player info
   cID = ECS.getComponentID("Position", eIDTurret)
   x,y,z = ECS.Position.getPosition(cID)
@@ -25,6 +30,16 @@ function Turret.shootFromTurret(eIDTurret, force)
   cIDPhys = ECS.getComponentID("BulletObject", eID)
   ECS.BulletObject.createBody(cIDPhys)
   ECS.BulletObject.applyForce(cIDPhys, fx * force, fy * force, fz * force)
+end
+
+function Turret.updateTurrets(turretTable, dt)
+  for index, turret in pairs(turretTable) do
+    turret["timer"] = turret["timer"] + dt
+    if turret["timer"] > turret["shootRate"] then
+      Turret.shoot(turret["eid"], turret["force"])
+      turret["timer"] = 0
+    end
+  end
 end
 
 return Turret

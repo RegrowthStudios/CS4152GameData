@@ -11,11 +11,11 @@ RenderMesh:
   # Position: [0, 1, 0]
 BulletObject:
   Body:
-    Friction: 10.0
+    Friction: 1.0
     Restitution: 0.0
-    LinearDamping: 0.9
-    AngularDamping: 0.9
-    Mass: 10.0
+    LinearDamping: .95
+    AngularDamping: .95
+    Mass: 100.0
     ObjectType: Turret
     BodyType: Dynamic
   Shape:

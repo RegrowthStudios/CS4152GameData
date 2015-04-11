@@ -19,8 +19,8 @@ BulletObject:
     BodyType: Character
   Shape:
     Type: Capsule
-    Radius: 0.2
-    Height: 0.4
+    Radius: 0.25
+    Height: 0.5
 Character:
   SpringLength: 1.0
   SpringRestDisplacement: 0.75
