@@ -1,3 +1,6 @@
+LargeSpike = require "Data/Scripts/LargeSpikeFuncs"
+
+
 messageTime = 100000.0
 messageQueue = {}
 flags = {}
@@ -9,12 +12,13 @@ flags["touched12"] = false
 
 
 function onGameBuild()
-  eID = ECS.Templates.LargeSpike()
-  cID = ECS.getComponentID("Position", eID)
+
   z = 7.0
   y = 1.0
   x = 1.0
-  ECS.Position.setPosition(cID, x, y, z)
+
+  eIDLargeSpike = LargeSpike.generate(x,y,z)
+
 
   eID = ECS.Templates.RomanArch()
   cID = ECS.getComponentID("Position", eID)
