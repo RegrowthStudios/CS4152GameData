@@ -1,4 +1,3 @@
-LargeSpike = require "Data/Scripts/LargeSpikeFuncs"
 
 
 messageTime = 100000.0
@@ -12,13 +11,6 @@ flags["touched12"] = false
 
 
 function onGameBuild()
-
-  z = 7.0
-  y = 1.0
-  x = 1.0
-
-  eIDLargeSpike = LargeSpike.generate(x,y,z)
-
 
   eID = ECS.Templates.RomanArch()
   cID = ECS.getComponentID("Position", eID)
@@ -41,8 +33,8 @@ function onGameBuild()
   ECS.Position.setPosition(cID, -2.0, 6.0, 9.0)
 
 
-  loadMusic()
-  Client.Sound.playMusicTrack("Electronic", 7.0)
+  --loadMusic()
+  -- Client.Sound.playMusicTrack("Electronic", 7.0)
 end
 
 function onGameUpdate (dt)

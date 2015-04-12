@@ -1,11 +1,19 @@
+LargeBlade = require "Data/Scripts/LargeBladeFuncs"
+
+
 messageTime = 100000.0
 messageQueue = {}
 flags = {}
 
+function onGameBuild()
+  eIDBlade = LargeBlade.generate(-4,-7,6)
+end
 
 
 function onGameUpdate (dt)
-  ECS.BulletObject.applyTorque(5, -50000)
+  ECS.BulletObject.applyTorque(4, -50000)
+  ECS.BulletObject.applyTorque(11, 2000)
+
   messageTime = messageTime + dt
   --[[
   if messageTime > 5.0 then
@@ -20,11 +28,14 @@ function onGameUpdate (dt)
     end
   end
   --]]
+  pEID = State.getPlayer()
+  playerPosCID = ECS.getComponentID("Position", pEID)
+  x, y, z = ECS.Position.getPosition(playerPosCID)
+  Client.setMessage(string.format("%d, %d, %d", x, y, z))
 end
 
 function onRingContact(id)
   print(id)
-  Client.setMessage(id)
 end
 
 function tablelength(T)
@@ -80,3 +91,4 @@ universe will be much better off without all this crap, and you, in it."
 
 Vorb.register("onGameUpdate", onGameUpdate)
 Vorb.register("onRingContact", onRingContact)
+Vorb.register("onGameBuild", onGameBuild)
