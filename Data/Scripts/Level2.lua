@@ -6,7 +6,13 @@ messageQueue = {}
 flags = {}
 
 function onGameBuild()
-  eIDBlade = LargeBlade.generate(-4,-7,6)
+  eIDBlade = LargeBlade.generate(19,3,6)
+
+  cIDBlade = ECS.getComponentID("BulletObject", eIDBlade)
+  cIDPlatform = ECS.getComponentID("BulletObject", 11)
+  ECS.BulletObject.Constraint.addFixed(cIDBlade,"Whatever",cIDPlatform,0,0,0)
+
+
 end
 
 
@@ -15,6 +21,8 @@ function onGameUpdate (dt)
   ECS.BulletObject.applyTorque(11, 2000)
 
   messageTime = messageTime + dt
+
+
   --[[
   if messageTime > 5.0 then
     Client.setMessage(" ")
