@@ -1,0 +1,8 @@
+Vertex: VoxelRingPick.vert
+Fragment: VoxelRingPick.frag
+Attributes:
+  - Name: vPosition
+    Location: 0
+  - Name: vFace
+    Location: 2
+    

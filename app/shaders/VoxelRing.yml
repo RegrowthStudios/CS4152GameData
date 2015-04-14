@@ -1,0 +1,10 @@
+Vertex: VoxelRing.vert
+Fragment: VoxelRing.frag
+Attributes:
+  - Name: vPosition
+    Location: 0
+  - Name: vUV
+    Location: 1
+  - Name: vColor
+    Location: 3
+    
