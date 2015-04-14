@@ -29,7 +29,8 @@ Script:
   Name: debugAddForce
   ExecutionRate: 120
 CharacterMovementInput:
-  MovePower: 80
-  StrafePower: 70
-  JumpForce: 5000
+  MovePower: 30
+  StrafePower: 20
+  JumpForce: 800
   RotationSpeed: 6
+  PitchSpeed: 5
