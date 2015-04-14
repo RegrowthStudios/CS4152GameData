@@ -7,13 +7,12 @@ uniform mat4 mView;
 uniform mat4 projection;
 uniform mat3 mNormal;
 
-layout(location = 0) out vec3 fragPos;
-layout(location = 1) out vec3 fragNormal;
-layout(location = 2) out vec3 fragColor;
+out vec3 fragPos;
+out vec3 fragNormal;
 
 void main() {
     gl_Position = projection * mView * vec4(position, 1.0);
 	fragPos = (mView * vec4(position, 1.0)).xyz;
 	fragNormal = normalize(mNormal * normal);
-	fragColor = vec3(0);
+	//fragNormal = normalize(normal);
 }
