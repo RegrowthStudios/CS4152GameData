@@ -46,5 +46,6 @@ void main() {
 	vec3 specular = vec3(0);
 	if (ndotl >= 0) specular = pow(max(0.0f, dot(n, h)), specularPower) * vec3(s);
 
-	fragColor = vec4(lightColor * (diffuse * ssao + specular) / attenuation, 1);
+	//fragColor = vec4(lightColor * (diffuse * ssao + specular) / attenuation, 1);
+	fragColor = vec4(color, 1);
 }
