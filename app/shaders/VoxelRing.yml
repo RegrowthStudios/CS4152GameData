@@ -7,4 +7,6 @@ Attributes:
     Location: 1
   - Name: vColor
     Location: 3
-    
+  - Name: vNormal
+    Location: 4
+
