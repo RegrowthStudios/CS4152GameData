@@ -34,10 +34,14 @@ end
 
 function Turret.updateTurrets(turretTable, dt)
   for index, turret in pairs(turretTable) do
-    turret["timer"] = turret["timer"] + dt
-    if turret["timer"] > turret["shootRate"] then
-      Turret.shoot(turret["eid"], turret["force"])
-      turret["timer"] = 0
+    if turret["type"] == "laser" then 
+      Game.raycastFromPosition(ECS.getComponentID("Position", turret["eid"]), 1000)
+    else 
+      turret["timer"] = turret["timer"] + dt
+      if turret["timer"] > turret["shootRate"] then
+        Turret.shoot(turret["eid"], turret["force"])
+        turret["timer"] = 0
+      end
     end
   end
 end
