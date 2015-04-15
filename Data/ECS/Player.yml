@@ -34,3 +34,4 @@ CharacterMovementInput:
   JumpForce: 800
   RotationSpeed: 6
   PitchSpeed: 5
+Health:
