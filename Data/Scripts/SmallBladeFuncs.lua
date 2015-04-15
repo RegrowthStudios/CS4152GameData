@@ -6,7 +6,8 @@ function SmallBlade.generate(x, y, z)
   cIDSmallBlade = ECS.getComponentID("BulletObject", eIDSmallBlade)
   ECS.BulletObject.createBody(cIDSmallBlade)
   ECS.BulletObject.setPosition(cIDSmallBlade, x, y, z)
-  ECS.Position.setPosition(cIDSmallBlade, x, y, z)  
+  cIDPos = ECS.getComponentID("Position", eIDSmallBlade)
+  ECS.Position.setPosition(cIDPos, x, y, z)  
   return eIDSmallBlade
 end
 
