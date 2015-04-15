@@ -5,10 +5,13 @@ local Turret = {}
 -- the ex, ey, and ez params are the world space euler angles for orientation
 function Turret.generate(x, y, z, ex, ey, ez)
   eIDTurret = ECS.Templates.Turret()
+
+  cIDPos = ECS.getComponentID("Position", eIDTurret)
+  ECS.Position.setPosition(cIDPos, x, y, z)
+  ECS.Position.setOrientation(cIDPos, ex, ey, ez)
+
   cIDPhysTurret = ECS.getComponentID("BulletObject", eIDTurret)
   ECS.BulletObject.createBody(cIDPhysTurret)
-  ECS.BulletObject.setPosition(cIDPhysTurret, x, y, z)
-  ECS.BulletObject.setOrientation(cIDPhysTurret, ex, ey, ez) 
   
   return eIDTurret
 end
