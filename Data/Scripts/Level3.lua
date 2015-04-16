@@ -29,7 +29,7 @@ function onGameBuild()
   -- these three projectile turrets are grouped together on the second ring, creating a timing challenge
   turrets[3] = {}
   turrets[3]["eid"] = Turret.generate(5, 4, -9.6, 0, 1.40, 2.75)
-  turrets[3]["type"] = "laser"
+  turrets[3]["type"] = "projectile"
   turrets[3]["timer"] = 0
   turrets[3]["shootRate"] = 4
   turrets[3]["force"] = 250
@@ -37,7 +37,7 @@ function onGameBuild()
  
   turrets[4] = {}
   turrets[4]["eid"] = Turret.generate(5, 4, -10.6, 0, 1.40, 2.75)
-  turrets[4]["type"] = "laser"
+  turrets[4]["type"] = "projectile"
   turrets[4]["timer"] = 1.5
   turrets[4]["shootRate"] = 4
   turrets[4]["force"] = 250
@@ -45,7 +45,7 @@ function onGameBuild()
   
   turrets[5] = {}
   turrets[5]["eid"] = Turret.generate(5, 4, -11.6, 0, 1.40, 2.75)
-  turrets[5]["type"] = "laser"
+  turrets[5]["type"] = "projectile"
   turrets[5]["timer"] = 2.5
   turrets[5]["shootRate"] = 4
   turrets[5]["force"] = 250
