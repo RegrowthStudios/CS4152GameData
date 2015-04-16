@@ -49,3 +49,6 @@ Orange:
 SpaceWolf:
   ConnectionMode: Single
   Path: Data/Textures/block_blue.png
+Adorned:
+  ConnectionMode: Single
+  Path: Data/Textures/Adorned.png

@@ -56,10 +56,17 @@ Type3:
   TexNegZ: Maroon
 Type4:
   Weight: 0.0
-  TexPosX: White
-  TexNegX: White
-  TexPosY: SkyBlue
-  TexNegY: SkyBlue
-  TexPosZ: White
-  TexNegZ: White
-  
+  TexPosX: Adorned
+  TexNegX: Adorned
+  TexPosY: Adorned
+  TexNegY: Adorned
+  TexPosZ: Adorned
+  TexNegZ: Adorned
+# Adorned:
+  # Weight: 0.0
+  # TexPosX: Adorned
+  # TexNegX: Adorned
+  # TexPosY: Adorned
+  # TexNegY: Adorned
+  # TexPosZ: Adorned
+  # TexNegZ: Adorned
