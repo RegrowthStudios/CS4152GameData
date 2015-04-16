@@ -2,6 +2,7 @@
 BinaryData: Binary/level-3.le
 
 Environment: v1
+WorldPadding: 4
 
 # Scripts loaded for the level
 Scripts:

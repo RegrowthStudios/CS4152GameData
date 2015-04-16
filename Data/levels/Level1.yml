@@ -1,7 +1,9 @@
 # Voxel data (maybe ECS too)
 BinaryData: Binary/level-1.le
 
+# Skybox
 Environment: v2
+WorldPadding: 4
 
 # Scripts loaded for the level
 Scripts:

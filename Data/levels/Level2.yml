@@ -2,7 +2,7 @@
 BinaryData: Binary/level-2.le
 
 Environment: v1
-
+WorldPadding: 4
 
 # Scripts loaded for the level
 Scripts:

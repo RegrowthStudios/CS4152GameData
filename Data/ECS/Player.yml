@@ -35,3 +35,4 @@ CharacterMovementInput:
   RotationSpeed: 6
   PitchSpeed: 5
 Health:
+  Value: 100

@@ -26,7 +26,7 @@ function onGameBuild()
   turrets[2]["force"] = 1000
 
 
-  -- these three turrets are grouped together on the second ring, creating a timing challenge
+  -- these three projectile turrets are grouped together on the second ring, creating a timing challenge
   turrets[3] = {}
   turrets[3]["eid"] = Turret.generate(5, 4, -9.6, 0, 1.40, 2.75)
   turrets[3]["type"] = "laser"
