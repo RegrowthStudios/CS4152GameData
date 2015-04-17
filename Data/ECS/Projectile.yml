@@ -17,4 +17,4 @@ BulletObject:
     Type: Sphere
     Radius: 0.25
 Damage:
-  ContactDamage: 5
+  ContactDamage: 10
