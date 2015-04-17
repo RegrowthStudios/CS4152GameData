@@ -19,5 +19,6 @@ void main() {
 	position = vec4(fragPos, 1.0);
 	normal = vec4(fragNormal, specular);
 	//normal = vec4(fragNormal * 0.5 + 0.5, specular);
-	color = vec4(fragColor.xyz * texture(blockTexture, fragUV).xyz, 1.0);
+	color = vec4(vec3(1) * texture(blockTexture, fragUV).xyz, 1.0);
+	//color = vec4(diffuse, 1);
 }
