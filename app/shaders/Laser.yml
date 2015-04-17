@@ -1,0 +1,8 @@
+Vertex: Laser.vert
+Fragment: Laser.frag
+Attributes:
+  - Name: vPosition
+    Location: 0
+  - Name: vUV
+    Location: 2
+    
