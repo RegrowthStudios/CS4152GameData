@@ -2,15 +2,11 @@
 
 in vec2 coord;
 
-uniform mat4 mView;
-uniform mat3 mNormal;
-uniform mat4 projection;
-
 uniform sampler2D positionMap;
 uniform sampler2D normalMap;
 uniform sampler2D colorMap;
 uniform sampler2D depthMap;
-uniform sampler2D ssaoMap;
+//uniform sampler2D ssaoMap;
 
 out vec4 fragColor;
 
@@ -31,7 +27,7 @@ void main() {
 	vec3 pos = texture(positionMap, coord).xyz;
 	vec3 color = texture(colorMap, coord).xyz;
 	float depth = texture(depthMap, coord).x;
-	float ssao = texture(ssaoMap, coord).x;
+	//float ssao = texture(ssaoMap, coord).x;
 	
 	vec3 v = -normalize(pos);
 
@@ -46,6 +42,8 @@ void main() {
 	vec3 specular = vec3(0);
 	if (ndotl >= 0) specular = pow(max(0.0f, dot(n, h)), specularPower) * vec3(s);
 
+	fragColor = vec4(lightColor * (diffuse + specular) / attenuation, 1);
+	//fragColor = vec4(n, 1);
 	//fragColor = vec4(lightColor * (diffuse * ssao + specular) / attenuation, 1);
-	fragColor = vec4(color, 1);
+	//fragColor = vec4(color, 1);
 }
