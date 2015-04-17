@@ -2,10 +2,6 @@
 
 in vec2 coord;
 
-uniform mat4 mView;
-uniform mat3 mNormal;
-uniform mat4 projection;
-
 uniform sampler2D positionMap;
 uniform sampler2D normalMap;
 uniform sampler2D colorMap;
