@@ -1,0 +1,9 @@
+Name:
+  Name: Rifle
+Position:
+  Position: [0, 0, 0]
+Offset:
+  Position: [0, 0, 0]
+  UseEye: True
+RenderMesh:
+  Mesh: Rifle

@@ -1,0 +1,33 @@
+Name:
+  Name: Pagoda
+Position:
+  Position: [0, 0, 0]
+  Right: [-1, 0, 0]
+  Up: [0, 1, 0]
+  Back: [0, 0, -1]
+RenderMesh:
+  Mesh: Pagoda
+RingOrienting:
+  OrientationStrength: 5.0
+  SurfaceTouchFactor: 1.0
+BulletObject:
+  Body:
+    Friction: 1.0
+    Restitution: 0.0
+    LinearDamping: 0.0
+    AngularDamping: 0.6
+    Mass: 13.0
+    ObjectType: Blade
+    BodyType: Dynamic
+  Shape:
+    Type: Hull
+    Points:
+      - [ 0.65, 0.0,  0.65]
+      - [ 0.65, 0.0, -0.65]
+      - [-0.65, 0.0,  0.65]
+      - [-0.65, 0.0, -0.65]
+      - [ 0.65, 6.0,  0.65]
+      - [ 0.65, 6.0, -0.65]
+      - [-0.65, 6.0,  0.65]
+      - [-0.65, 6.0, -0.65]
+      - [  0.0, 6.3,   0.0]
