@@ -2,8 +2,6 @@
 
 in vec2 coord;
 
-uniform mat4 mView;
-uniform mat3 mNormal;
 uniform mat4 projection;
 
 uniform int kernelSize;
@@ -33,7 +31,7 @@ void main() {
     vec3 normal = normalize(texture(normalMap, coord).xyz);
 	//vec3 normal = normalize(texture(normalMap, coord).xyz);
 	vec3 pos = texture(positionMap, coord).xyz;
-	float depth = linearizeDepth(texture(depthMap, coord).x);
+	//loat depth = linearizeDepth(texture(depthMap, coord).x);
 
 	vec2 ndc = coord * 2.0 - 1.0;
 	vec3 viewRay = vec3(ndc.x * fov * 1, ndc.y * fov, 1.0);
