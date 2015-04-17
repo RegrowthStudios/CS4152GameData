@@ -10,7 +10,7 @@ uniform sampler2D positionMap;
 uniform sampler2D normalMap;
 uniform sampler2D colorMap;
 uniform sampler2D depthMap;
-uniform sampler2D ssaoMap;
+//uniform sampler2D ssaoMap;
 
 out vec4 fragColor;
 
@@ -31,7 +31,7 @@ void main() {
 	vec3 pos = texture(positionMap, coord).xyz;
 	vec3 color = texture(colorMap, coord).xyz;
 	float depth = texture(depthMap, coord).x;
-	float ssao = texture(ssaoMap, coord).x;
+	//float ssao = texture(ssaoMap, coord).x;
 	
 	vec3 v = -normalize(pos);
 
