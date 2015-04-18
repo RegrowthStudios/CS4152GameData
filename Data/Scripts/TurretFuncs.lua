@@ -45,7 +45,7 @@ function Turret.updateTurrets(turretTable, dt)
       px = px + (0.5 * fx) + (.32 * ux)
       py = py + (0.5 * fy) + (.32 * uy)
       pz = pz + (0.5 * fz) + (.32 * uz)
-      rayDistance = Game.raycastFromPosition(px,py,px, fx,fy,fz, 1000)
+      rayDistance = Game.raycastFromPosition(px,py,pz, fx,fy,fz, 1000)
       
       if (rayDistance < 0) then
         Client.Renderer.drawLaser(px,py,pz, fx,fy,fz, 1000, 0.05)
