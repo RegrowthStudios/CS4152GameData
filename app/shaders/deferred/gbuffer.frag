@@ -6,7 +6,7 @@ in vec4 fragColor;
 in vec3 fragUV;
 
 uniform vec3 diffuse;
-uniform float specular;
+//uniform float specular;
 
 uniform sampler2DArray blockTexture;
 //uniform vec4 tint;
