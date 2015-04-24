@@ -3,7 +3,6 @@
 in vec3 position;
 in vec3 normal;
 in vec3 uv;
-in vec4 color;
 
 uniform mat4 mView;
 uniform mat4 projection;
@@ -18,7 +17,5 @@ void main() {
     gl_Position = projection * mView * vec4(position, 1.0);
 	fragPos = (mView * vec4(position, 1.0)).xyz;
 	fragNormal = normalize(mNormal * normal);
-	//fragNormal = normalize(normal);
-	fragColor = color;
 	fragUV = uv;
 }
