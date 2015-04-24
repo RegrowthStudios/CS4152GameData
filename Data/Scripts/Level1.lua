@@ -12,9 +12,6 @@ flags["touched12"] = false
 
 function onGameBuild()
 
-  eID = ECS.Templates.RomanArch()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 0.0, -8.0, -8.0)
 
   eID = ECS.Templates.Eiffel()
   cID = ECS.getComponentID("Position", eID)
