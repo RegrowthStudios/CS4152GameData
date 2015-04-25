@@ -42,9 +42,9 @@ function Turret.updateTurrets(turretTable, dt)
       px, py, pz = ECS.Position.getPosition(cIDPos)
       fx, fy, fz = ECS.Position.getForward(cIDPos)
       ux, uy, uz = ECS.Position.getUp(cIDPos)
-      px = px + (0.5 * fx) + (.32 * ux)
-      py = py + (0.5 * fy) + (.32 * uy)
-      pz = pz + (0.5 * fz) + (.32 * uz)
+      px = px + (0.5 * fx) + (.25 * ux)
+      py = py + (0.5 * fy) + (.25 * uy)
+      pz = pz + (0.5 * fz) + (.25 * uz)
       rayDistance = Game.raycastFromPosition(px,py,pz, fx,fy,fz, 1000)
       
       if (rayDistance < 0) then

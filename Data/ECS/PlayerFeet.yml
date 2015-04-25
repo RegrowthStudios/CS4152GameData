@@ -1,0 +1,20 @@
+Name:
+  Name: PlayerFeet
+Position:
+  Position: [0, 0, 0]
+RenderMesh:
+  Mesh: Projectile
+BulletObject:
+  Body:
+    Friction: 0.9
+    Restitution: 0.0
+    LinearDamping: 0.4
+    AngularDamping: 0.95
+    AngularFactor: 1.0
+    RollingFriction: 0.99
+    Mass: 2.0
+    ObjectType: PlayerFeet
+    BodyType: Dynamic
+  Shape:
+    Type: Sphere
+    Radius: 0.25

@@ -17,8 +17,8 @@ end
 
 
 function onGameUpdate (dt)
-  ECS.BulletObject.applyTorque(4, -50000)
-  ECS.BulletObject.applyTorque(11, 2000)
+  ECS.BulletObject.applyTorque(5, -50000)
+  -- ECS.BulletObject.applyTorque(11, 2000)
 
   messageTime = messageTime + dt
 

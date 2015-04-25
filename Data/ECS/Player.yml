@@ -5,32 +5,29 @@ Position:
 RenderMesh:
   Mesh: Projectile
 RingOrienting:
-  OrientationStrength: 19.0
+  OrientationStrength: 40.0
   SurfaceTouchFactor: 2.0
 BulletObject:
   Body:
-    Friction: 0.0
+    Friction: 1.0
     Restitution: 0.0
-    LinearDamping: 0.98
+    LinearDamping: 0.5
     AngularDamping: 0.99
-    AngularFactor: 1.0
-    Mass: 1.0
-    ObjectType: Player
+    AngularFactor: 0.5
+    Mass: 3.0
+    ObjectType: PlayerBody
     BodyType: Character
   Shape:
     Type: Capsule
-    Radius: 0.25
-    Height: 0.5
+    Height: 0.4
+    Radius: 0.1
 Character:
   SpringLength: 1.0
   SpringRestDisplacement: 0.75
-  SpringPower: 80.0
-Script:
-  Name: debugAddForce
-  ExecutionRate: 120
+  SpringPower: 0.1
 CharacterMovementInput:
-  MovePower: 30
-  StrafePower: 20
+  MovePower: 40
+  StrafePower: 30
   JumpForce: 800
   RotationSpeed: 6
   PitchSpeed: 5
