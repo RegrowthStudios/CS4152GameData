@@ -33,4 +33,5 @@ void main() {
 	if (ndotl >= 0) specular = pow(max(0.0f, dot(n, h)), specularPower) * vec3(0);
 
 	fragColor = vec4(lightColor * (diffuse + specular) / attenuation, 1);
+	fragColor = vec4(1);
 }
