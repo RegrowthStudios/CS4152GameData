@@ -10,5 +10,5 @@ out vec3 fDirection;
 void main() {
   vec3 worldPos = vPosition;
   fDirection = vPosition;
-  gl_Position = unVP * vec4(vPosition, 1);
+  gl_Position = unVP * vec4(vPosition, 1.0);
 }

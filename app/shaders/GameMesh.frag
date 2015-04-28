@@ -1,22 +1,24 @@
 // Uniforms
 uniform sampler2D unTexture;
-uniform samplerCube unTextureEnvironment;
-uniform vec3 unEyePosition;
 
 // Input
-in vec4 fPos;
+in vec4 fPosition;
 in vec3 fNormal;
 in vec2 fUV;
 
 // Output
 out vec4 pColor;
+out vec4 pNormal;
+out vec4 pMaterial;
+out vec2 pDepth;
 
 void main() {
-  vec3 V = normalize(unEyePosition - fPos.xyz);
-  vec3 N = normalize(fNormal);
+    pColor = texture(unTexture, fUV);
   
-  vec4 cEnv = textureCube(unTextureEnvironment, reflect(-V, N));
-  vec4 cDiffuse = texture(unTexture, fUV);
-  
-  pColor = mix(cEnv, cDiffuse, 0.8);
+    pNormal.xyz = normalize(fNormal);
+    pNormal.a = 1.0;
+    
+    pMaterial = vec4(0.0, 0.5, 1.0, 1.0);
+    
+    pDepth = vec2(fPosition.z / fPosition.w, 0.0);
 }

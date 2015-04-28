@@ -9,4 +9,13 @@ Attributes:
     Location: 3
   - Name: vNormal
     Location: 4
+Fragments:
+  - Name: pColor
+    Location: 0
+  - Name: pNormal
+    Location: 1
+  - Name: pMaterial
+    Location: 2
+  - Name: pDepth
+    Location: 3
 

@@ -9,10 +9,12 @@ in vec3 vNormal;
 out vec3 fUV;
 out vec4 fColor;
 out vec3 fNormal;
+out vec4 fPosition;
 
 void main() {
     fUV = vUV;
-	fColor = vColor;
+    fColor = vColor;
     fNormal = (unWorld * vec4(vNormal, 0)).xyz;
-    gl_Position = unVP * (unWorld * vPosition);
+    fPosition = unVP * (unWorld * vPosition);
+    gl_Position = fPosition;
 }

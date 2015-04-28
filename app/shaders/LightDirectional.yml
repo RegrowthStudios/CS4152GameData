@@ -1,0 +1,5 @@
+Vertex: LightDirectional.vert
+Fragment: LightDirectional.frag
+Attributes:
+  - Name: vPosition
+    Location: 0

@@ -9,13 +9,13 @@ in vec2 vUV;
 in vec3 vNormal;
 
 // Output
-out vec4 fPos;
+out vec4 fPosition;
 out vec3 fNormal;
 out vec2 fUV;
 
 void main() {
-  fPos = unWorld * vPosition;
+  fPosition = unVP * (unWorld * vPosition);
   fNormal = unWorldNorm * vNormal;
-  gl_Position = unVP * fPos;
+  gl_Position = fPosition;
   fUV = vUV;
 }

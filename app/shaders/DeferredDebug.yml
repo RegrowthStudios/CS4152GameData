@@ -1,0 +1,5 @@
+Vertex: DeferredDebug.vert
+Fragment: DeferredDebug.frag
+Attributes:
+  - Name: vPosition
+    Location: 0
