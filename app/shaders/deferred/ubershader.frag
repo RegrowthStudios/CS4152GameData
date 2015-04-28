@@ -7,6 +7,7 @@ uniform mat4 inverseMView;
 uniform sampler2D positionMap;
 uniform sampler2D normalMap;
 uniform sampler2D colorMap;
+uniform sampler2D lightMap;
 uniform sampler2D ssaoMap;
 uniform sampler2DShadow shadowMap;
 
@@ -55,7 +56,8 @@ void main() {
     vec3 n = normalize(texture(normalMap, coord).xyz);
 	vec3 pos = texture(positionMap, coord).xyz;
 	vec3 color = texture(colorMap, coord).xyz;
-	//float ssao = texture(ssaoMap, coord).x;
+	vec3 light = texture(lightMap, coord).xyz;
+	float ssao = texture(ssaoMap, coord).x;
 
 	float shadowFactor = getShadowFactor(pos);
 
@@ -74,7 +76,9 @@ void main() {
 
 	//fragColor = vec4((ambient + finalColor) * ssao, 1);
 	//fragColor = vec4((ambient + finalColor), 1);
-	fragColor = vec4((ambient + finalColor * shadowFactor), 1);
+	//fragColor = vec4((ambient + (finalColor * shadowFactor)), 1);
+	fragColor = vec4(light + finalColor, 1);
+	//fragColor = vec4(light, 1);
 	//fragColor = vec4(ssao);
 	//fragColor = vec4(shadowFactor);
 	//fragColor = vec4(texture(shadowMap, vec3(coord, 1)));
