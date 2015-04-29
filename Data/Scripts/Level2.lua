@@ -13,12 +13,23 @@ function onGameBuild()
   ECS.BulletObject.Constraint.addFixed(cIDBlade,"Whatever",cIDPlatform,0,0,0)
 
 
+  eIDTurret = ECS.Templates.Turret()
+
+  cIDPos = ECS.getComponentID("Position", eIDTurret)
+  ECS.Position.setPosition(cIDPos, -6, 4, 7)
+
+  cIDPhysTurret = ECS.getComponentID("BulletObject", eIDTurret)
+  ECS.BulletObject.createBody(cIDPhysTurret)
+  ECS.BulletObject.setQuaternion(cIDPhysTurret, -.05, -.02, .89, -.44)
+
+
 end
 
 
 function onGameUpdate (dt)
   ECS.BulletObject.applyTorque(5, -50000)
   -- ECS.BulletObject.applyTorque(11, 2000)
+  ECS.BulletObject.setQuaternion(cIDPhysTurret, -.05, -.02, .89, -.44)
 
   messageTime = messageTime + dt
 
@@ -36,14 +47,16 @@ function onGameUpdate (dt)
     end
   end
   --]]
-  pEID = State.getPlayer()
+ pEID = State.getPlayer()
   playerPosCID = ECS.getComponentID("Position", pEID)
+  playerBulletCID = ECS.getComponentID("BulletObject", pEID)
   x, y, z = ECS.Position.getPosition(playerPosCID)
-  Client.setMessage(string.format("%d, %d, %d", x, y, z))
+  qx, qy, qz, qw = ECS.BulletObject.getQuaternion(playerBulletCID)
+  Client.setMessage(string.format("%d, %d, %d, %f, %f, %f, %f", x, y, z, qx, qy, qz, qw))
 end
 
 function onRingContact(id)
-  print(id)
+  -- print(id)
 end
 
 function tablelength(T)

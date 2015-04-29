@@ -1,3 +1,4 @@
+-- Debug = require "Data/Scripts/DebugFuncs"
 
 
 messageTime = 100000.0
@@ -8,6 +9,7 @@ flags["touched6"] = false
 flags["touched7"] = false
 flags["touched8"] = false
 flags["touched12"] = false
+currentRing = 0
 
 
 function onGameBuild()
@@ -49,10 +51,15 @@ function onGameUpdate (dt)
       Client.hideHUD()
     end
   end
-    pEID = State.getPlayer()
+  pEID = State.getPlayer()
   playerPosCID = ECS.getComponentID("Position", pEID)
+  playerBulletCID = ECS.getComponentID("BulletObject", pEID)
   x, y, z = ECS.Position.getPosition(playerPosCID)
-  Client.setMessage(string.format("%d, %d, %d", x, y, z))
+  -- qx, qy, qz, qw = ECS.Bullet.getQuaternion(playerBulletCID)
+  -- posStr = string.format("%.3f, %.3f, %.3f", x, y, z)
+  -- quatStr = string.format("%.3f, %.3f, %.3f, %.3f", qx, qy, qz, qw)
+  print("hi")
+  -- Debug.setInfo("sup", "sup", "one", "other", "other")
 end
 
 function createMessage(narration, strMessage)
@@ -63,6 +70,7 @@ function createMessage(narration, strMessage)
 end
 
 function onRingContact(id)
+  currentRing = id
   if id == 3 and not flags["touched3"] then
     table.insert(messageQueue, createMessage("Narrative0", "I recently erased your memory,"))
     table.insert(messageQueue, createMessage("Narrative1", "so you might feel a bit confused about your environment."))
