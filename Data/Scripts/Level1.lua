@@ -10,7 +10,13 @@ flags["touched8"] = false
 flags["touched12"] = false
 
 
+function file_exists(name)
+   local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
+
 function onGameBuild()
+
 
 
   eID = ECS.Templates.Eiffel()
@@ -29,12 +35,16 @@ function onGameBuild()
   cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, -2.0, 6.0, 9.0)
 
+  if(file_exists('level1') == true) then
+    State.load('level1')
+  end
 
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)
 end
 
 function onGameUpdate (dt)
+ 
   messageTime = messageTime + dt
   if messageTime > 5.0 then
     Client.setMessage(" ")
@@ -63,6 +73,7 @@ function createMessage(narration, strMessage)
 end
 
 function onRingContact(id)
+
   if id == 3 and not flags["touched3"] then
     table.insert(messageQueue, createMessage("Narrative0", "I recently erased your memory,"))
     table.insert(messageQueue, createMessage("Narrative1", "so you might feel a bit confused about your environment."))
