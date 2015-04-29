@@ -1,0 +1,25 @@
+Name:
+  Name: LaserTurret
+Position:
+  Position: [0, 0, 0]
+  Right: [-1, 0, 0]
+  Up: [0, 1, 0]
+  Back: [0, 0, -1]
+RenderMesh:
+  Mesh: LaserTurret
+BulletObject:
+  Body:
+    Friction: 1.0
+    Restitution: 0.0
+    LinearDamping: .95
+    AngularDamping: .95
+    Mass: 100.0
+    ObjectType: Turret
+    BodyType: Dynamic
+  Shape:
+    Type: Cube
+    HalfSize: [.41, .5, .41]
+Script:
+  Name: Update.Turret
+  ExecutionRate: 30
+  ExecutionOffset: 0

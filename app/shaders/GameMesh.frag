@@ -1,5 +1,6 @@
 // Uniforms
 uniform sampler2D unTexture;
+uniform float unEntity;
 
 // Input
 in vec4 fPosition;
@@ -20,5 +21,5 @@ void main() {
     
     pMaterial = vec4(0.0, 0.5, 1.0, 1.0);
     
-    pDepth = vec2(fPosition.z / fPosition.w, 0.0);
+    pDepth = vec2(fPosition.z / fPosition.w, unEntity);
 }

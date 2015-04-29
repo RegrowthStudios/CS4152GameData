@@ -1,5 +1,6 @@
 uniform sampler2DArray unTexture;
 uniform vec4 unTint;
+uniform float unEntity;
 
 in vec3 fUV;
 in vec4 fColor;
@@ -20,5 +21,5 @@ void main() {
     
     pMaterial = vec4(1.0, 0.5, 0.0, 1.0);
     
-    pDepth = vec2(fPosition.z / fPosition.w, 0.0);
+    pDepth = vec2(fPosition.z / fPosition.w, unEntity);
 }
