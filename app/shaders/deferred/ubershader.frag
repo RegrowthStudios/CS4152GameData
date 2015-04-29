@@ -10,6 +10,8 @@ uniform sampler2D colorMap;
 uniform sampler2D lightMap;
 uniform sampler2D ssaoMap;
 uniform sampler2DShadow shadowMap;
+uniform sampler2D skyboxMap;
+uniform sampler2D depthMap;
 
 uniform vec3 l;
 uniform mat4 shadowMapMVP;
@@ -58,6 +60,13 @@ void main() {
 	vec3 color = texture(colorMap, coord).xyz;
 	vec3 light = texture(lightMap, coord).xyz;
 	float ssao = texture(ssaoMap, coord).x;
+	vec3 sky = texture(skyboxMap, coord).xyz;
+	float depth = texture(depthMap, coord).x;
+
+	if (depth == 1.0) {
+		fragColor = vec4(sky, 1.0);
+		return;
+	}
 
 	float shadowFactor = getShadowFactor(pos);
 
