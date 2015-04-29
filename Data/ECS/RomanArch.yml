@@ -21,4 +21,4 @@ BulletObject:
     BodyType: Dynamic
   Shape:
     Type: Cube
-    HalfSize: [1.0, 0.8, 0.4]
+    HalfSize: [1.5, 1.05, 0.5]
