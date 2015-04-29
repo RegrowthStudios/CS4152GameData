@@ -64,7 +64,7 @@ void main() {
 	float depth = texture(depthMap, coord).x;
 
 	if (depth == 1.0) {
-		fragColor = vec4(sky * 0.5, 1.0);
+		fragColor = vec4(sky * 0.75, 1.0);
 		return;
 	}
 
