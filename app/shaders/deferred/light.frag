@@ -27,11 +27,12 @@ void main() {
 	vec3 h = normalize(v + l);
 
 	float ndotl = dot(n, l);
-	vec3 diffuse = max(0.0f, ndotl) * color;
+	vec3 diffuse = max(0.0f, abs(ndotl)) * color;
 
 	vec3 specular = vec3(0);
 	if (ndotl >= 0) specular = pow(max(0.0f, dot(n, h)), specularPower) * vec3(0);
 
 	fragColor = vec4(lightColor * (diffuse + specular) / attenuation, 1);
-	fragColor = vec4(1);
+	//fragColor = vec4(1);
+	//fragColor = vec4(color, 1);
 }

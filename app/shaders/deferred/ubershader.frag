@@ -64,7 +64,7 @@ void main() {
 	float depth = texture(depthMap, coord).x;
 
 	if (depth == 1.0) {
-		fragColor = vec4(sky, 1.0);
+		fragColor = vec4(sky * 0.5, 1.0);
 		return;
 	}
 
@@ -83,9 +83,9 @@ void main() {
 
 	vec3 finalColor = (lightColor * (diffuse + specular)) * shadowFactor;
 
-	//fragColor = vec4((ambient + finalColor) * ssao, 1);
-	fragColor = vec4((ambient + finalColor), 1);
-	//fragColor = vec4(light + finalColor, 1);
+	//fragColor = vec4((ambient + light + finalColor) * ssao, 1);
+	//fragColor = vec4((ambient + finalColor), 1);
+	fragColor = vec4(ambient + light + finalColor, 1);
 	//fragColor = vec4(color, 1);
 	//fragColor = vec4(light, 1);
 	//fragColor = vec4(ssao);
