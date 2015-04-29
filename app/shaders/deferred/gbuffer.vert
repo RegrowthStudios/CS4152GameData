@@ -10,7 +10,6 @@ uniform mat3 mNormal;
 
 out vec3 fragPos;
 out vec3 fragNormal;
-out vec4 fragColor;
 out vec3 fragUV;
 
 void main() {
