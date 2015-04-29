@@ -17,7 +17,7 @@ uniform sampler2D noiseMap;
 
 out vec4 fragColor;
 
-const float radius = 1;
+const float radius = .01;
 const int occlPower = 1;
 
 float linearizeDepth(float depth) {
