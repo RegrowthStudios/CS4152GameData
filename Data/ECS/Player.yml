@@ -2,8 +2,6 @@ Name:
   Name: Player
 Position:
   Position: [0, 0, 0]
-RenderMesh:
-  Mesh: Projectile
 RingOrienting:
   OrientationStrength: 40.0
   SurfaceTouchFactor: 2.0
