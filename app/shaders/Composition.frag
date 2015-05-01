@@ -18,5 +18,5 @@ void main() {
 
   // Scale albedo by color accumulations
   pColor = vec4(texColor.rgb * texLight, 1.0);
-  gl_FragDepth = texDepth.x;
+  // gl_FragDepth = texDepth.x;
 }
