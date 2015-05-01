@@ -23,10 +23,11 @@ Character:
   SpringLength: 1.0
   SpringRestDisplacement: 0.75
   SpringPower: 0.1
+  JumpCooldown: 0.25
 CharacterMovementInput:
   MovePower: 40
   StrafePower: 30
-  JumpForce: 800
+  JumpForce: 400
   RotationSpeed: 6
   PitchSpeed: 5
 Health:
