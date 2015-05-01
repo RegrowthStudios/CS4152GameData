@@ -1,0 +1,5 @@
+Vertex: LightPoint.vert
+Fragment: LightPoint.frag
+Attributes:
+  - Name: vPosition
+    Location: 0
