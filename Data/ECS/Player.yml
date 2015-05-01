@@ -32,3 +32,7 @@ CharacterMovementInput:
   PitchSpeed: 5
 Health:
   Value: 100
+Light:
+  Type: Point
+  Radius: 10
+  Intensity: [5, 0, 0]

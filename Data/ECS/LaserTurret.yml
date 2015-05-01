@@ -23,3 +23,7 @@ Script:
   Name: Update.LaserTurret
   ExecutionRate: 1
   ExecutionOffset: 0
+Light:
+  Type: Point
+  Radius: 8
+  Intensity: [3, 0, 3]
