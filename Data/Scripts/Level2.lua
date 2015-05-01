@@ -6,13 +6,6 @@ messageQueue = {}
 flags = {}
 
 function onGameBuild()
-  eIDBlade = LargeBlade.generate(19,3,6)
-
-  cIDBlade = ECS.getComponentID("BulletObject", eIDBlade)
-  cIDPlatform = ECS.getComponentID("BulletObject", 11)
-  ECS.BulletObject.Constraint.addFixed(cIDBlade,"Whatever",cIDPlatform,0,0,0)
-
-
   eIDTurret = ECS.Templates.Turret()
 
   cIDPos = ECS.getComponentID("Position", eIDTurret)
@@ -21,13 +14,11 @@ function onGameBuild()
   cIDPhysTurret = ECS.getComponentID("BulletObject", eIDTurret)
   ECS.BulletObject.createBody(cIDPhysTurret)
   ECS.BulletObject.setQuaternion(cIDPhysTurret, -.05, -.02, .89, -.44)
-
-
 end
 
 
 function onGameUpdate (dt)
-  ECS.BulletObject.applyTorque(5, -50000)
+  ECS.BulletObject.applyTorque(11, -50000)
   -- ECS.BulletObject.applyTorque(11, 2000)
   ECS.BulletObject.setQuaternion(cIDPhysTurret, -.05, -.02, .89, -.44)
 
@@ -47,7 +38,7 @@ function onGameUpdate (dt)
     end
   end
   --]]
- pEID = State.getPlayer()
+  pEID = State.getPlayer()
   playerPosCID = ECS.getComponentID("Position", pEID)
   playerBulletCID = ECS.getComponentID("BulletObject", pEID)
   x, y, z = ECS.Position.getPosition(playerPosCID)

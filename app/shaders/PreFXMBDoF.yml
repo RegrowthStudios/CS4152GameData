@@ -1,0 +1,8 @@
+Vertex: PassThrough.vert
+Fragment: PreFX.frag
+Attributes:
+  - Name: vPosition
+    Location: 0
+Defines:
+  - MOTION_BLUR
+  - DEPTH_OF_FIELD
