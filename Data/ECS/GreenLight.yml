@@ -1,0 +1,8 @@
+Name:
+  Name: GreenLight
+Position:
+  Position: [0, 0, 0]
+Light:
+  Type: Point
+  Radius: 8
+  Intensity: [0, 3, 0]
