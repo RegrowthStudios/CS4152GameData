@@ -13,14 +13,14 @@ function onGameBuild()
 
   cIDPhysTurret = ECS.getComponentID("BulletObject", eIDTurret)
   ECS.BulletObject.createBody(cIDPhysTurret)
-  ECS.BulletObject.setQuaternion(cIDPhysTurret, -.05, -.02, .89, -.44)
+  -- ECS.BulletObject.setQuaternion(cIDPhysTurret, -.05, -.02, .89, -.44)
 end
 
 
 function onGameUpdate (dt)
-  ECS.BulletObject.applyTorque(11, -50000)
+  -- ECS.BulletObject.applyTorque(11, -50000)
   -- ECS.BulletObject.applyTorque(11, 2000)
-  ECS.BulletObject.setQuaternion(cIDPhysTurret, -.05, -.02, .89, -.44)
+  -- ECS.BulletObject.setQuaternion(cIDPhysTurret, -.05, -.02, .89, -.44)
 
   messageTime = messageTime + dt
 

@@ -1,4 +1,4 @@
--- Debug = require "Data/Scripts/DebugFuncs"
+Debug = require "Data/Scripts/DebugFuncs"
 
 
 messageTime = 100000.0
@@ -55,11 +55,11 @@ function onGameUpdate (dt)
   playerPosCID = ECS.getComponentID("Position", pEID)
   playerBulletCID = ECS.getComponentID("BulletObject", pEID)
   x, y, z = ECS.Position.getPosition(playerPosCID)
-  -- qx, qy, qz, qw = ECS.Bullet.getQuaternion(playerBulletCID)
-  -- posStr = string.format("%.3f, %.3f, %.3f", x, y, z)
-  -- quatStr = string.format("%.3f, %.3f, %.3f, %.3f", qx, qy, qz, qw)
-  print("hi")
-  -- Debug.setInfo("sup", "sup", "one", "other", "other")
+  qx, qy, qz, qw = ECS.BulletObject.getQuaternion(playerBulletCID)
+  posStr = string.format("%g, %g, %g", x, y, z)
+  quatStr = string.format("%.3f, %.3f, %.3f, %.3f", qx, qy, qz, qw)
+  ringStr = string.format("Current Ring: %d", currentRing)
+  Debug.setInfo(posStr, quatStr, ringStr, "other", "other")
 end
 
 function createMessage(narration, strMessage)
