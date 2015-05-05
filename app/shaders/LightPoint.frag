@@ -27,7 +27,7 @@ void main() {
   vec3 N = normalize(texNormal.xyz);
 
   // Attenuation
-  vec3 L = fPos.xyz - unLightPosition;
+  vec3 L = unLightPosition - fPos.xyz;
   float distance = length(L);
   float attenuation = 1 / (distance * distance);
   attenuation *= step(distance, unLightRadius); 

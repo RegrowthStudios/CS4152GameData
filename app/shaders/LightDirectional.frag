@@ -16,7 +16,7 @@ void main() {
   vec3 N = normalize(texNormal.xyz);
 
   // Diffuse component
-  float dotNL = max(0.0, dot(N, unLightDirection));
+  float dotNL = max(0.0, -dot(N, unLightDirection));
   
   pColor = unLightIntensity * dotNL;
 }
