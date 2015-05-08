@@ -15,21 +15,22 @@ currentRing = 0
 function onGameBuild()
 
 
-  eID = ECS.Templates.Eiffel()
+  eID = ECS.Templates.RomanArch()
   cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, 0.0, -8.0, -45.0)
 
-  eID = ECS.Templates.SoLTorch()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -2.0, 6.0, 5.0)
 
-  eID = ECS.Templates.SoLTorch()
+  eID = ECS.Templates.Torch()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -2.0, 6.0, 7.0)
+  ECS.Position.setPosition(cID, 5.0, -5.0, 7.0)
 
-  eID = ECS.Templates.SoLTorch()
+  eID = ECS.Templates.LargeBlade()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -2.0, 6.0, 9.0)
+  ECS.Position.setPosition(cID, -6.6, -3.8, 7.0)
+
+  -- Make ring static (unmovable)
+  ring4CID = ECS.getComponentID("BulletObject", 6)
+  ECS.BulletObject.setMass(ring4CID, 0)
 
 
   --loadMusic()

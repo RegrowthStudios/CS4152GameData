@@ -6,7 +6,7 @@ Position:
   Up: [0, 1, 0]
   Back: [0, 0, -1]
 RenderMesh:
-  Mesh: EmpireStateBuilding
+  Mesh: EmpireBuilding
 RingOrienting:
   OrientationStrength: 5.0
   SurfaceTouchFactor: 1.0

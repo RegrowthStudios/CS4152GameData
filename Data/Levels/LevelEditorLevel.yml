@@ -6,7 +6,7 @@ WorldPadding: 4
 
 # Scripts loaded for the level
 Scripts:
-  - Level2.lua
+  - Level1.lua
   
 # Update function to call from the script
 UpdateScript: onGameUpdate
