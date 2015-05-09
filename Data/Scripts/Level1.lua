@@ -29,15 +29,23 @@ function onGameBuild()
   ECS.Position.setPosition(cID, -6.6, -3.8, 7.0)
 
   -- Make ring static (unmovable)
-  ring4CID = ECS.getComponentID("BulletObject", 6)
-  ECS.BulletObject.setMass(ring4CID, 0)
+  ring6CID = ECS.getComponentID("BulletObject", 8)
+  ECS.BulletObject.setMass(ring6CID, 0)
 
+  -- Make ring rotatable by player
+  ring7CID = ECS.getComponentID("RingRotationFactor", 7)
+  ECS.RingRotationFactor.set(ring7CID, 0.9)
 
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)
 end
 
 function onGameUpdate (dt)
+
+  -- Make ring spin
+  ring5CID = ECS.getComponentID("BulletObject", 6)
+  ECS.BulletObject.applyTorque(ring5CID, 10000)
+
   messageTime = messageTime + dt
   if messageTime > 5.0 then
     Client.setMessage(" ")
