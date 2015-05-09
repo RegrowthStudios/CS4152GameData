@@ -1,54 +1,39 @@
-Black:
+BlackLight:
   ConnectionMode: Single
-  Path: Data/Textures/block_black.png
-Toxic:
+  Path: Data/Textures/block_black_light.png
+BlackDark:
   ConnectionMode: Single
-  Path: Data/Textures/block_toxic.png
-Flesh:
+  Path: Data/Textures/block_black_dark.png
+RedLight:
   ConnectionMode: Single
-  Path: Data/Textures/block_red.png
-Red:
+  Path: Data/Textures/block_red_light.png
+RedDark:
   ConnectionMode: Single
-  Path: Data/Textures/block_crimson.png
+  Path: Data/Textures/block_red_dark.png
+GreenLight:
+  ConnectionMode: Single
+  Path: Data/Textures/block_green_light.png
+GreenDark:
+  ConnectionMode: Single
+  Path: Data/Textures/block_green_dark.png
+GreyLight:
+  ConnectionMode: Single
+  Path: Data/Textures/block_grey_light.png
+GreyDark:
+  ConnectionMode: Single
+  Path: Data/Textures/block_grey_dark.png
+Adorned:
+  ConnectionMode: Single
+  Path: Data/Textures/block_adorned.png
 Purple:
   ConnectionMode: Single
   Path: Data/Textures/block_purple.png
-White:
-  ConnectionMode: Single
-  Path: Data/Textures/block_lightgrey.png
 Blue:
   ConnectionMode: Single
   Path: Data/Textures/block_blue.png
-SkyBlue:
-  ConnectionMode: Single
-  Path: Data/Textures/block_grey.png
-Green:
-  ConnectionMode: Single
-  Path: Data/Textures/block_green.png
-Rock:
-  ConnectionMode: Single
-  Path: Data/Textures/block_darkgrey.png
-Gray:
-  ConnectionMode: Single
-  Path: Data/Textures/block_lighttile.png
-Navy:
-  ConnectionMode: Single
-  Path: Data/Textures/block_darktile.png
-Metal:
-  ConnectionMode: Single
-  Path: Data/Textures/block_darkertile.png
-RustyMetal:
-  ConnectionMode: Single
-  Path: Data/Textures/block_rust.png
-Maroon:
-  ConnectionMode: Single
-  Path: Data/Textures/block_darkdirt.png
 Orange:
   ConnectionMode: Single
-  Path: Data/Textures/block_brown.png
-SpaceWolf:
+  Path: Data/Textures/block_orange.png
+Dirt:
   ConnectionMode: Single
-  Path: Data/Textures/block_blue.png
-Adorned:
-  ConnectionMode: Single
-  Path: Data/Textures/Adorned.png
+  Path: Data/Textures/block_dirt.png

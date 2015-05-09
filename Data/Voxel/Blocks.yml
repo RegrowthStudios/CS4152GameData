@@ -1,19 +1,37 @@
+# Legacy Blocks
 Platform:
   Weight: 1.0
-  TexPosX: Metal
-  TexNegX: Metal
-  TexPosY: SkyBlue
-  TexNegY: SkyBlue
-  TexPosZ: Metal
-  TexNegZ: Metal
+  TexPosX: GreyDark
+  TexNegX: GreyDark
+  TexPosY: GreyLight
+  TexNegY: GreyLight
+  TexPosZ: GreyDark
+  TexNegZ: GreyDark
+Type3:
+  Weight: 0.0
+  TexPosX: Adorned
+  TexNegX: Adorned
+  TexPosY: Adorned
+  TexNegY: Adorned
+  TexPosZ: Adorned
+  TexNegZ: Adorned
+Type4:
+  Weight: 0.0
+  TexPosX: Adorned
+  TexNegX: Adorned
+  TexPosY: Adorned
+  TexNegY: Adorned
+  TexPosZ: Adorned
+  TexNegZ: Adorned
+# Actual Blocks We Use
 Spawn:
   Weight: 0.0
-  TexPosX: Red
-  TexNegX: Red
-  TexPosY: SpaceWolf
-  TexNegY: SpaceWolf
-  TexPosZ: Red
-  TexNegZ: Red
+  TexPosX: RedDark
+  TexNegX: RedDark
+  TexPosY: Blue
+  TexNegY: Blue
+  TexPosZ: RedDark
+  TexNegZ: RedDark
 Goal:
   Weight: 0.0
   TexPosX: Orange
@@ -24,49 +42,81 @@ Goal:
   TexNegZ: Orange
 Turret:
   Weight: 0.0
-  TexPosX: Red
-  TexNegX: Red
-  TexPosY: Red
-  TexNegY: Red
-  TexPosZ: Red
-  TexNegZ: Red
+  TexPosX: RedDark
+  TexNegX: RedDark
+  TexPosY: RedDark
+  TexNegY: RedDark
+  TexPosZ: RedDark
+  TexNegZ: RedDark
+Grey:
+  Weight: 1.0
+  TexPosX: GreyDark
+  TexNegX: GreyDark
+  TexPosY: GreyLight
+  TexNegY: GreyLight
+  TexPosZ: GreyDark
+  TexNegZ: GreyDark
+GreyWall:
+  Weight: 1.0
+  TexPosX: GreyDark
+  TexNegX: GreyDark
+  TexPosY: GreyDark
+  TexNegY: GreyDark
+  TexPosZ: GreyDark
+  TexNegZ: GreyDark
+Black:
+  Weight: 1.0
+  TexPosX: BlackDark
+  TexNegX: BlackDark
+  TexPosY: BlackLight
+  TexNegY: BlackLight
+  TexPosZ: BlackDark
+  TexNegZ: BlackDark
+BlackWall:
+  Weight: 1.0
+  TexPosX: BlackDark
+  TexNegX: BlackDark
+  TexPosY: BlackDark
+  TexNegY: BlackDark
+  TexPosZ: BlackDark
+  TexNegZ: BlackDark
 Green:
-  Weight: 0.0
-  TexPosX: Green
-  TexNegX: Green
-  TexPosY: SkyBlue
-  TexNegY: SkyBlue
-  TexPosZ: Green
-  TexNegZ: Green
+  Weight: 1.0
+  TexPosX: GreenDark
+  TexNegX: GreenDark
+  TexPosY: GreenLight
+  TexNegY: GreenLight
+  TexPosZ: GreenDark
+  TexNegZ: GreenDark
+GreenWall:
+  Weight: 1.0
+  TexPosX: GreenDark
+  TexNegX: GreenDark
+  TexPosY: GreenDark
+  TexNegY: GreenDark
+  TexPosZ: GreenDark
+  TexNegZ: GreenDark
 Red:
-  Weight: 0.0
-  TexPosX: Red
-  TexNegX: Red
-  TexPosY: SkyBlue
-  TexNegY: SkyBlue
-  TexPosZ: Red
-  TexNegZ: Red
-Type3:
-  Weight: 0.0
-  TexPosX: Maroon
-  TexNegX: Maroon
-  TexPosY: SkyBlue
-  TexNegY: SkyBlue
-  TexPosZ: Maroon
-  TexNegZ: Maroon
-Type4:
-  Weight: 0.0
+  Weight: 1.0
+  TexPosX: RedDark
+  TexNegX: RedDark
+  TexPosY: RedLight
+  TexNegY: RedLight
+  TexPosZ: RedDark
+  TexNegZ: RedDark
+RedWall:
+  Weight: 1.0
+  TexPosX: RedDark
+  TexNegX: RedDark
+  TexPosY: RedDark
+  TexNegY: RedDark
+  TexPosZ: RedDark
+  TexNegZ: RedDark
+Adorned:
+  Weight: 1.0
   TexPosX: Adorned
   TexNegX: Adorned
   TexPosY: Adorned
   TexNegY: Adorned
   TexPosZ: Adorned
   TexNegZ: Adorned
-# Adorned:
-  # Weight: 0.0
-  # TexPosX: Adorned
-  # TexNegX: Adorned
-  # TexPosY: Adorned
-  # TexNegY: Adorned
-  # TexPosZ: Adorned
-  # TexNegZ: Adorned
