@@ -19,33 +19,18 @@ function onGameBuild()
   cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, 0.0, -8.0, -45.0)
 
+  -- Make rings rotatable by player
+  rrfCID = ECS.getComponentID("RingRotationFactor", 4)
+  ECS.RingRotationFactor.set(rrfCID, 0.9)
 
-  eID = ECS.Templates.Torch()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 5.0, -5.0, 7.0)
-
-  eID = ECS.Templates.LargeBlade()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -6.6, -3.8, 7.0)
-
-  -- Make ring static (unmovable)
-  ring6CID = ECS.getComponentID("BulletObject", 8)
-  ECS.BulletObject.setMass(ring6CID, 0)
-
-  -- Make ring rotatable by player
-  ring7CID = ECS.getComponentID("RingRotationFactor", 7)
-  ECS.RingRotationFactor.set(ring7CID, 0.9)
+  rrfCID = ECS.getComponentID("RingRotationFactor", 6)
+  ECS.RingRotationFactor.set(rrfCID, 0.9)
 
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)
 end
 
 function onGameUpdate (dt)
-
-  -- Make ring spin
-  ring5CID = ECS.getComponentID("BulletObject", 6)
-  ECS.BulletObject.applyTorque(ring5CID, 10000)
-
   messageTime = messageTime + dt
   if messageTime > 5.0 then
     Client.setMessage(" ")

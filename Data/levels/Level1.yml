@@ -1,5 +1,5 @@
 # Voxel data (maybe ECS too)
-BinaryData: Binary/level-1.le
+BinaryData: Binary/LE-level.le
 
 # Skybox
 Environment: v2

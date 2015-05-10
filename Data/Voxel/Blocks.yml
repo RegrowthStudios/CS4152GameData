@@ -120,3 +120,19 @@ Adorned:
   TexNegY: Adorned
   TexPosZ: Adorned
   TexNegZ: Adorned
+Blue:
+  Weight: 1.0
+  TexPosX: Blue
+  TexNegX: Blue
+  TexPosY: Blue
+  TexNegY: Blue
+  TexPosZ: Blue
+  TexNegZ: Blue
+Purple:
+  Weight: 1.0
+  TexPosX: Purple
+  TexNegX: Purple
+  TexPosY: Purple
+  TexNegY: Purple
+  TexPosZ: Purple
+  TexNegZ: Purple
