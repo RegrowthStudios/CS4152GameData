@@ -1,0 +1,22 @@
+Name:
+  Name: Portal
+Position:
+  Position: [0, 0, 0]
+RenderMesh:
+  Mesh: Portal
+BulletObject:
+  Body:
+    Friction: 1.0
+    Restitution: 0.0
+    LinearDamping: 0.0
+    AngularDamping: 0.0
+    Mass: 1.0
+    ObjectType: Goal
+    BodyType: Dynamic
+  Shape:
+    Type: Cube
+    HalfSize: [1.0, 1.0, 1.0]
+Light:
+  Type: Point
+  Radius: 8
+  Intensity: [0.5, 3, 4]
