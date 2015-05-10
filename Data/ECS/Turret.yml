@@ -25,3 +25,5 @@ Script:
   Name: Update.Turret
   ExecutionRate: 30
   ExecutionOffset: 0
+Health:
+  Value: 20

@@ -4,6 +4,7 @@ turrets = {}
 
 function onGameBuild()
   -- these will be laser turrets 
+  --[[
   turrets[0] = {}
   turrets[0]["eid"] = Turret.generate(7, 3.5, 8, 0, 0, 1.57)
   turrets[0]["type"] = "laser"
@@ -25,10 +26,10 @@ function onGameBuild()
   turrets[2]["shootRate"] = .2
   turrets[2]["force"] = 1000
 
-
+]]
   -- these three projectile turrets are grouped together on the second ring, creating a timing challenge
   turrets[3] = {}
-  turrets[3]["eid"] = Turret.generate(5, 4, -9.6, 0, 1.40, 2.75)
+  turrets[3]["eid"] = 8
   turrets[3]["type"] = "projectile"
   turrets[3]["timer"] = 0
   turrets[3]["shootRate"] = 4
@@ -36,7 +37,7 @@ function onGameBuild()
 
  
   turrets[4] = {}
-  turrets[4]["eid"] = Turret.generate(5, 4, -10.6, 0, 1.40, 2.75)
+  turrets[4]["eid"] = 9
   turrets[4]["type"] = "projectile"
   turrets[4]["timer"] = 1.5
   turrets[4]["shootRate"] = 4
@@ -44,11 +45,14 @@ function onGameBuild()
 
   
   turrets[5] = {}
-  turrets[5]["eid"] = Turret.generate(5, 4, -11.6, 0, 1.40, 2.75)
+  turrets[5]["eid"] = 10
   turrets[5]["type"] = "projectile"
   turrets[5]["timer"] = 2.5
   turrets[5]["shootRate"] = 4
   turrets[5]["force"] = 250
+
+  rrfCID = ECS.getComponentID("RingRotationFactor", 4)
+  ECS.RingRotationFactor.set(rrfCID, 1.5)
 
 end
 

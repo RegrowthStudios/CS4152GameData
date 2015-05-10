@@ -27,3 +27,5 @@ Light:
   Type: Point
   Radius: 8
   Intensity: [3, 0, 3]
+Health:
+  Value: 10

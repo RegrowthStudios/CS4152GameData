@@ -9,6 +9,14 @@ function spawnEntity(name)
   end
 end
 
+function orientLikePlayer(eID)
+  pEID = State.getPlayer()
+  playerBulletCID = ECS.getComponentID("BulletObject", pEID)
+  qx, qy, qz, qw = ECS.BulletObject.getQuaternion(playerBulletCID)
+  tCID = ECS.getComponentID("BulletObject", eID)
+  ECS.BulletObject.setQuaternion(tCID, qx, qy, qz, qw)
+end
+
 function popLastSpawnedEntity ()
   if #spawnStack > 0 then
     local eID = spawnStack[#spawnStack]

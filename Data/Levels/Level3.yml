@@ -1,11 +1,13 @@
 # Voxel data (maybe ECS too)
-BinaryData: Binary/level-3.le
+ECSData: Binary/level-3.ecs
 
 Environment: v1
 WorldPadding: 4
 
 # Scripts loaded for the level
 Scripts:
+  - Editing.lua
+  - LaserTurret.lua
   - Level3.lua
   
 # Update function to call from the script
