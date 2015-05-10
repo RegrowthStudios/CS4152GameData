@@ -6,8 +6,8 @@ RenderMesh:
   Mesh: Projectile
 BulletObject:
   Body:
-    Friction: 0.9
-    Restitution: 0.0
+    Friction: 0.95
+    Restitution: 0.1
     LinearDamping: 0.4
     AngularDamping: 0.95
     AngularFactor: 1.0
