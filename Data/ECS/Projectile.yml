@@ -18,3 +18,7 @@ BulletObject:
     Radius: 0.25
 Damage:
   ContactDamage: 10
+Light:
+  Type: Point
+  Radius: 2
+  Intensity: [3, 0, 0]

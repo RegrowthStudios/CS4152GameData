@@ -35,4 +35,4 @@ Health:
 Light:
   Type: Point
   Radius: 10
-  Intensity: [5, 0, 0]
+  Intensity: [0, 5, 0]

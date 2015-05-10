@@ -26,6 +26,6 @@ Script:
 Light:
   Type: Point
   Radius: 8
-  Intensity: [3, 0, 3]
+  Intensity: [3, 0, 1]
 Health:
   Value: 10
