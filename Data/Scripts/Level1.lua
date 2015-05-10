@@ -11,13 +11,15 @@ flags["touched8"] = false
 flags["touched12"] = false
 currentRing = 0
 
-
 function onGameBuild()
 
 
-  eID = ECS.Templates.RomanArch()
+
+  eID = ECS.Templates.Portal()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 0.0, -8.0, -45.0)
+  ECS.Position.setPosition(cID, 1.5, 11.26, -46.0)
+  ECS.Position.setQuaternion(cID, 0.73, -0.06, -0.67, -0.05)
+
 
   -- Make rings rotatable by player
   rrfCID = ECS.getComponentID("RingRotationFactor", 4)
@@ -49,7 +51,7 @@ function onGameUpdate (dt)
   playerPosCID = ECS.getComponentID("Position", pEID)
   playerBulletCID = ECS.getComponentID("BulletObject", pEID)
   x, y, z = ECS.Position.getPosition(playerPosCID)
-  qx, qy, qz, qw = ECS.BulletObject.getQuaternion(playerBulletCID)
+  qx, qy, qz, qw = ECS.Position.getQuaternion(playerPosCID)
   fx, fy, fz = ECS.Position.getForward(playerPosCID)
   posStr = string.format("%g, %g, %g", x, y, z)
   quatStr = string.format("%.3f, %.3f, %.3f, %.3f", qx, qy, qz, qw)

@@ -11,10 +11,10 @@ end
 
 function orientLikePlayer(eID)
   pEID = State.getPlayer()
-  playerBulletCID = ECS.getComponentID("BulletObject", pEID)
-  qx, qy, qz, qw = ECS.BulletObject.getQuaternion(playerBulletCID)
-  tCID = ECS.getComponentID("BulletObject", eID)
-  ECS.BulletObject.setQuaternion(tCID, qx, qy, qz, qw)
+  playerPosCID = ECS.getComponentID("Position", pEID)
+  qx, qy, qz, qw = ECS.BulletObject.getQuaternion(playerPosCID)
+  tCID = ECS.getComponentID("Position", eID)
+  ECS.Position.setQuaternion(tCID, qx, qy, qz, qw)
 end
 
 function popLastSpawnedEntity ()

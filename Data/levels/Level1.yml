@@ -1,5 +1,5 @@
 # Voxel data (maybe ECS too)
-BinaryData: Binary/LE-level.le
+BinaryData: Binary/level-1.le
 
 # Skybox
 Environment: v2
@@ -10,6 +10,7 @@ Scripts:
   - Level1.lua
   - Music.lua
   - Turret.lua
+  - Editing.lua
 
 # Update function to call from the script
 BuildScript: onGameBuild
