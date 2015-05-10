@@ -30,7 +30,7 @@ CharacterMovementInput:
   JumpForce: 400
   RotationSpeed: 6
   PitchSpeed: 5
-  AirControlFactor: 5
+  AirControlFactor: 7
 Health:
   Value: 100
 Light:

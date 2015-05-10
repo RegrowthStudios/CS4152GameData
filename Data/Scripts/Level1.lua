@@ -50,10 +50,13 @@ function onGameUpdate (dt)
   playerBulletCID = ECS.getComponentID("BulletObject", pEID)
   x, y, z = ECS.Position.getPosition(playerPosCID)
   qx, qy, qz, qw = ECS.BulletObject.getQuaternion(playerBulletCID)
+  fx, fy, fz = ECS.Position.getForward(playerPosCID)
   posStr = string.format("%g, %g, %g", x, y, z)
   quatStr = string.format("%.3f, %.3f, %.3f, %.3f", qx, qy, qz, qw)
   ringStr = string.format("Current Ring: %d", currentRing)
-  Debug.setInfo(posStr, quatStr, ringStr, "other", "other")
+  forwardStr = string.format("%g, %g, %g", fx, fy, fz)
+
+  Debug.setInfo(posStr, quatStr, ringStr, forwardStr, "other")
 end
 
 function createMessage(narration, strMessage)
