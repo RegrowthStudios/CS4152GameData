@@ -1,14 +1,19 @@
 # Voxel data (maybe ECS too)
-BinaryData: Binary/level-2.le
+BinaryData: Binary/LE-level.le
 
-Environment: v1
+# Skybox
+Environment: v2
 WorldPadding: 4
 
 # Scripts loaded for the level
 Scripts:
   - Level2.lua
+  - Music.lua
+  - Turret.lua
+  - Editing.lua
 
 # Update function to call from the script
-UpdateScript: onGameUpdate
 BuildScript: onGameBuild
+UpdateScript: onGameUpdate
+
 ContactScript: onRingContact
