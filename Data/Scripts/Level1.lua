@@ -12,14 +12,11 @@ flags["touched12"] = false
 currentRing = 0
 
 function onGameBuild()
-
-
-
+  -- Create End Portal
   eID = ECS.Templates.Portal()
   cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, 1.5, 11.26, -46.0)
   ECS.Position.setQuaternion(cID, 0.73, -0.06, -0.67, -0.05)
-
 
   -- Make rings rotatable by player
   rrfCID = ECS.getComponentID("RingRotationFactor", 4)
@@ -27,12 +24,13 @@ function onGameBuild()
 
   rrfCID = ECS.getComponentID("RingRotationFactor", 6)
   ECS.RingRotationFactor.set(rrfCID, 0.9)
-
+  print("onbuild")
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)
 end
 
 function onGameUpdate (dt)
+  Debug.show(currentRing)
   messageTime = messageTime + dt
   if messageTime > 5.0 then
     Client.setMessage(" ")
@@ -42,23 +40,9 @@ function onGameUpdate (dt)
       message = table.remove(messageQueue, 1)
       Client.setMessage(message.message)
       -- Client.Sound.play2D(message.fx, 1.0)
-      messageTime = 0.0
-    else 
-      Client.hideHUD()
+      messageTime = 0.0 
     end
   end
-  pEID = State.getPlayer()
-  playerPosCID = ECS.getComponentID("Position", pEID)
-  playerBulletCID = ECS.getComponentID("BulletObject", pEID)
-  x, y, z = ECS.Position.getPosition(playerPosCID)
-  qx, qy, qz, qw = ECS.Position.getQuaternion(playerPosCID)
-  fx, fy, fz = ECS.Position.getForward(playerPosCID)
-  posStr = string.format("%g, %g, %g", x, y, z)
-  quatStr = string.format("%.3f, %.3f, %.3f, %.3f", qx, qy, qz, qw)
-  ringStr = string.format("Current Ring: %d", currentRing)
-  forwardStr = string.format("%g, %g, %g", fx, fy, fz)
-
-  Debug.setInfo(posStr, quatStr, ringStr, forwardStr, "other")
 end
 
 function createMessage(narration, strMessage)
