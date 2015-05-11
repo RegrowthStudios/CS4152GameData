@@ -7,8 +7,8 @@ RenderMesh:
 BulletObject:
   Body:
     Friction: 0.95
-    Restitution: 0.1
-    LinearDamping: 0.4
+    Restitution: 0.0
+    LinearDamping: 0.5
     AngularDamping: 0.95
     AngularFactor: 1.0
     RollingFriction: 0.99

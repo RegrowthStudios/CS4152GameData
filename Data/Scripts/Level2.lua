@@ -21,6 +21,17 @@ function onGameBuild()
   ]]
   -- Make rings rotatable by player
 
+  eID = ECS.Templates.Portal()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 0.0, 8.0, -40.0)
+  ECS.Position.setQuaternion(cID, 0.005, -0.306, 0.014, 0.952)
+
+
+  eID = ECS.Templates.JumpPad()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -10.0, 5.8, -23)
+  ECS.Position.setQuaternion(cID, 0.6, 0.36, 0.59, -0.35)
+
 
   -- Make fixed ring
   bCID = ECS.getComponentID("BulletObject", 11)
@@ -30,7 +41,7 @@ function onGameBuild()
   ECS.RingRotationFactor.set(rrfCID, 0.5)
 
   rrfCID = ECS.getComponentID("RingRotationFactor", 9)
-  ECS.RingRotationFactor.set(rrfCID, 1.0)
+  ECS.RingRotationFactor.set(rrfCID, 3.0)
   print("onbuild")
   
   --loadMusic()
