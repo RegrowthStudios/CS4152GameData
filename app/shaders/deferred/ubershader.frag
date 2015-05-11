@@ -59,7 +59,7 @@ void main() {
 	vec3 light = texture(lightMap, coord).xyz;
 	float ssao = texture(ssaoMap, coord).x;
 
-	float shadowFactor = getShadowFactor(pos);
+	//float shadowFactor = getShadowFactor(pos);
 
 	vec3 ambient = color * 0.2;
 
@@ -72,7 +72,7 @@ void main() {
 	vec3 specular = vec3(0);
 	if (ndotl >= 0) specular = pow(max(0.0f, dot(n, h)), specularPower) * vec3(0);
 
-	vec3 finalColor = (lightColor * (diffuse + specular)) * shadowFactor;
+	vec3 finalColor = (lightColor * (diffuse + specular));
 
 	//fragColor = vec4((ambient + light + finalColor) * ssao, 1);
 	//fragColor = vec4((ambient + finalColor), 1);
