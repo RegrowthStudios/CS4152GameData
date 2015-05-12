@@ -8,5 +8,5 @@ in vec2 fUV;
 out vec4 pColor;
 
 void main() {
-  pColor = texture(unTexture, fUV);
+    pColor = texture(unTexture, fUV);
 }

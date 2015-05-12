@@ -2,6 +2,9 @@
 uniform sampler2D unTextureColor;
 uniform sampler2D unTextureLight;
 uniform sampler2D unTextureDepth;
+uniform vec2 unInvTextureSize;
+uniform float unEdgeThreshold;
+uniform float unEdgePower;
 
 #ifdef SSAO
 #define SSAO_MAX_SAMPLES 40
@@ -24,8 +27,24 @@ void main() {
     vec2 texDepth = texture(unTextureDepth, fUV).xy;
     if (texDepth.x == 1.0) discard;
 
-    vec4 texColor = texture(unTextureColor, fUV);
+    // vec3 texColor = texture(unTextureColor, fUV).rgb;
+    vec3 color[9];
+    color[0] = texture(unTextureColor, fUV + vec2(-1, -1) * unInvTextureSize).rgb;
+    color[1] = texture(unTextureColor, fUV + vec2( 0, -1) * unInvTextureSize).rgb;
+    color[2] = texture(unTextureColor, fUV + vec2( 1, -1) * unInvTextureSize).rgb;
+    color[3] = texture(unTextureColor, fUV + vec2(-1,  0) * unInvTextureSize).rgb;
+    color[4] = texture(unTextureColor, fUV + vec2( 0,  0) * unInvTextureSize).rgb;
+    color[5] = texture(unTextureColor, fUV + vec2( 1,  0) * unInvTextureSize).rgb;
+    color[6] = texture(unTextureColor, fUV + vec2(-1,  1) * unInvTextureSize).rgb;
+    color[7] = texture(unTextureColor, fUV + vec2( 0,  1) * unInvTextureSize).rgb;
+    color[8] = texture(unTextureColor, fUV + vec2( 1,  1) * unInvTextureSize).rgb;
     vec3 texLight = texture(unTextureLight, fUV).rgb;
+
+    // Sobel operator
+    float gx = dot(color[0] - color[2] + 2 * (color[3] - color[5]) + color[6] - color[8], vec3(0.2,0.7,0.1)) * unEdgeThreshold;
+    float gy = dot(color[0] - color[6] + 2 * (color[1] - color[7]) + color[2] - color[8], vec3(0.2,0.7,0.1)) * unEdgeThreshold;
+    float sobel = 1 - min(1, sqrt(gx * gx + gy * gy)) * unEdgePower;
+
     
 #ifdef SSAO
     // Reconstruct position in world space
@@ -64,5 +83,5 @@ void main() {
 #endif
 
     // Scale albedo by color accumulations
-    pColor = vec4(texColor.rgb * texLight, 1.0);
+    pColor = vec4(sobel * texLight * color[4], 1.0);
 }
