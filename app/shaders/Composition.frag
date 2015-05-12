@@ -83,5 +83,5 @@ void main() {
 #endif
 
     // Scale albedo by color accumulations
-    pColor = vec4(sobel * texLight * texture(unTextureColor, fUV), 1.0);
+    pColor = vec4(sobel * texLight * color[4], 1.0);
 }
