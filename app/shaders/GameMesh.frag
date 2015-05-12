@@ -19,7 +19,7 @@ void main() {
     pNormal.xyz = normalize(fNormal);
     pNormal.a = 1.0;
     
-    pMaterial = vec4(0.0, 0.5, 1.0, 1.0);
+    pMaterial = vec4(0.0, 0.0, 0.0, 0.0);
     
     pDepth = vec2(fPosition.z / fPosition.w, unEntity);
 }
