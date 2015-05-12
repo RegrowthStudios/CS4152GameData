@@ -3,7 +3,7 @@ Name:
 Position:
   Position: [0, 0, 0]
 RenderMesh:
-  Mesh: Projectile
+  Mesh: Player
 BulletObject:
   Body:
     Friction: 0.95

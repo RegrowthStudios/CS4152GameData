@@ -9,4 +9,5 @@ void main() {
   pGBuffer1 = vec4(0, 0, 0, 0);
   pGBuffer2 = vec4(0, 0, 0, 0);
   pGBuffer3 = vec2(1.0, 0.0);
+  gl_FragDepth = 1.0;
 }
