@@ -3,7 +3,7 @@ BinaryData: Binary/level-3.le
 
 # Skybox
 Environment: v2
-WorldPadding: 4
+WorldPadding: 8
 
 # Scripts loaded for the level
 Scripts:

@@ -12,6 +12,8 @@ flags["touched12"] = false
 currentRing = 0
 
 function onGameBuild()
+    Client.Renderer.SSAO.setActive(false)
+  Client.Renderer.DoF.setActive(false)
   -- Create End Portal
   --[[
   eID = ECS.Templates.Portal()

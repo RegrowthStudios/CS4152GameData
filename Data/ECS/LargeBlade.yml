@@ -16,7 +16,7 @@ BulletObject:
     Restitution: 0.0
     LinearDamping: 0.0
     AngularDamping: 0.6
-    Mass: 13.0
+    Mass: 0.0
     ObjectType: Blade
     BodyType: Dynamic
   Shape:
@@ -27,3 +27,6 @@ BulletObject:
       - [-0.65, 0.0,  0.65]
       - [-0.65, 0.0, -0.65]
       - [  0.0, 2.8,   0.0]
+Damage:
+  ContactDamage: 20
+

@@ -13,7 +13,7 @@ BulletObject:
     BodyType: Dynamic
   Shape:
     Type: Cube
-    HalfSize: [1.5, 0.01, 1.5]
+    HalfSize: [1.5, 0.05, 1.5]
 Light:
   Type: Point
   Radius: 8

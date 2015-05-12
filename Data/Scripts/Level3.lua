@@ -11,31 +11,54 @@ flags["touched8"] = false
 flags["touched12"] = false
 currentRing = 0
 
-FIRST_RED_RING = 5
+FIRST_RED_RING = 10
+SECOND_RED_RING = 5
+THIRD_RED_RING = 7
 
 
 function onGameBuild()
+  Client.Renderer.SSAO.setActive(false)
+  Client.Renderer.DoF.setActive(false)
+  --Client.Renderer.MotionBlur.setActive(false)
   -- Create End Portal
-  --[[
+  
+
+  eID = ECS.Templates.LargeBlade()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 7.5, 0.9, -52.0)
+  ECS.Position.setOrientation(cID, -1.57, 0.0, 2.1)
+  --bCID = ECS.getComponentID("BulletObject", eID)
+  --ECS.BulletObject.setMass(bCID, 0)
+
+  eID = ECS.Templates.LargeBlade()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 7.5, 0.9, -48.0)
+  ECS.Position.setOrientation(cID, -1.57, 0.0, 2.1)
+  --bCID = ECS.getComponentID("BulletObject", eID)
+  --ECS.BulletObject.setMass(bCID, 0)
+
+  eID = ECS.Templates.LargeBlade()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -7.5, 0.9, -52.0)
+  ECS.Position.setOrientation(cID, -1.57, 0.0, -1.3)
+  --bCID = ECS.getComponentID("BulletObject", eID)
+  --ECS.BulletObject.setMass(bCID, 0)
+
+  eID = ECS.Templates.LargeBlade()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -7.5, 0.9, -48.0)
+  ECS.Position.setOrientation(cID, -1.57, 0.0, -1.3)
+
   eID = ECS.Templates.Portal()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 1.5, 11.26, -46.0)
-  ECS.Position.setQuaternion(cID, 0.73, -0.06, -0.67, -0.05)
-  
-  -- Make rings rotatable by player
+  ECS.Position.setPosition(cID, 6.2, -6.3, -58.0)
+  ECS.Position.setQuaternion(cID, -0.22, 0.57, 0.29, 0.73)
 
+  eID = ECS.Templates.Portal()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -6.2, 6.3, -58.0)
+  ECS.Position.setQuaternion(cID, -0.22, 0.57, 0.29, 0.73)
 
-  -- Make fixed ring
-  bCID = ECS.getComponentID("BulletObject", 11)
-  ECS.BulletObject.setMass(bCID, 0)
-
-  rrfCID = ECS.getComponentID("RingRotationFactor", 6)
-  ECS.RingRotationFactor.set(rrfCID, 0.5)
-
-  rrfCID = ECS.getComponentID("RingRotationFactor", 9)
-  ECS.RingRotationFactor.set(rrfCID, 1.0)
-  print("onbuild")
-  ]]
   
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)
@@ -46,6 +69,12 @@ function onGameUpdate (dt)
 
   bCID = ECS.getComponentID("BulletObject", FIRST_RED_RING)
   ECS.BulletObject.applyTorque(bCID, 0, 0, 1000)
+
+  bCID = ECS.getComponentID("BulletObject", SECOND_RED_RING)
+  ECS.BulletObject.applyTorque(bCID, 0, 0, -1750)
+
+    bCID = ECS.getComponentID("BulletObject", THIRD_RED_RING)
+  ECS.BulletObject.applyTorque(bCID, 0, 0, 1250)
 
   Debug.show(currentRing)
   --[[
