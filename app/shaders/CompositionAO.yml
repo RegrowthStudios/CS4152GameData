@@ -1,0 +1,7 @@
+Vertex: Composition.vert
+Fragment: Composition.frag
+Attributes:
+  - Name: vPosition
+    Location: 0
+Defines:
+  - SSAO
