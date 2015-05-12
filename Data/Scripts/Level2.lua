@@ -12,17 +12,9 @@ flags["touched12"] = false
 currentRing = 0
 
 function onGameBuild()
-    Client.Renderer.SSAO.setActive(false)
-  Client.Renderer.DoF.setActive(false)
-  -- Create End Portal
-  --[[
-  eID = ECS.Templates.Portal()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 1.5, 11.26, -46.0)
-  ECS.Position.setQuaternion(cID, 0.73, -0.06, -0.67, -0.05)
-  ]]
-  -- Make rings rotatable by player
+  Debug.potato()
 
+  -- Make end portal
   eID = ECS.Templates.Portal()
   cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, 0.0, 8.0, -40.0)
@@ -44,7 +36,6 @@ function onGameBuild()
 
   rrfCID = ECS.getComponentID("RingRotationFactor", 9)
   ECS.RingRotationFactor.set(rrfCID, 3.0)
-  print("onbuild")
   
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)

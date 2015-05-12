@@ -11,9 +11,9 @@ BulletObject:
   Body:
     Friction: 1.0
     Restitution: 0.0
-    LinearDamping: .95
-    AngularDamping: .95
-    Mass: 100.0
+    LinearDamping: .90
+    AngularDamping: .8
+    Mass: 200.0
     ObjectType: Turret
     BodyType: Dynamic
   Shape:

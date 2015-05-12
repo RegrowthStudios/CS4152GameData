@@ -19,5 +19,12 @@ function Debug.show(currentRing)
   Client.setDebugInfo(posStr, quatStr, ringStr, forwardStr, lineFive)
 end
 
+function Debug.potato()
+  Client.Renderer.SSAO.setActive(false)
+  Client.Renderer.DoF.setActive(false)
+  Client.Renderer.MotionBlur.setActive(false)
+  Client.Renderer.Bloom.setActive(false)
+end
+
 
 return Debug

@@ -17,37 +17,31 @@ THIRD_RED_RING = 7
 
 
 function onGameBuild()
-  Client.Renderer.SSAO.setActive(false)
-  Client.Renderer.DoF.setActive(false)
-  --Client.Renderer.MotionBlur.setActive(false)
-  -- Create End Portal
-  
+  -- Enable compatability with potato computers
+  Debug.potato()
 
+  -- Place blades hanging overing spinning ring
   eID = ECS.Templates.LargeBlade()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 7.5, 0.9, -52.0)
+  ECS.Position.setPosition(cID, 7.6, 0.9, -52.0)
   ECS.Position.setOrientation(cID, -1.57, 0.0, 2.1)
-  --bCID = ECS.getComponentID("BulletObject", eID)
-  --ECS.BulletObject.setMass(bCID, 0)
 
   eID = ECS.Templates.LargeBlade()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 7.5, 0.9, -48.0)
+  ECS.Position.setPosition(cID, 7.6, 0.9, -48.0)
   ECS.Position.setOrientation(cID, -1.57, 0.0, 2.1)
-  --bCID = ECS.getComponentID("BulletObject", eID)
-  --ECS.BulletObject.setMass(bCID, 0)
 
   eID = ECS.Templates.LargeBlade()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -7.5, 0.9, -52.0)
+  ECS.Position.setPosition(cID, -7.6, 0.9, -52.0)
   ECS.Position.setOrientation(cID, -1.57, 0.0, -1.3)
-  --bCID = ECS.getComponentID("BulletObject", eID)
-  --ECS.BulletObject.setMass(bCID, 0)
 
   eID = ECS.Templates.LargeBlade()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -7.5, 0.9, -48.0)
+  ECS.Position.setPosition(cID, -7.6, 0.9, -48.0)
   ECS.Position.setOrientation(cID, -1.57, 0.0, -1.3)
+
+  -- Create two end portals
 
   eID = ECS.Templates.Portal()
   cID = ECS.getComponentID("Position", eID)
@@ -74,7 +68,7 @@ function onGameUpdate (dt)
   ECS.BulletObject.applyTorque(bCID, 0, 0, -1750)
 
     bCID = ECS.getComponentID("BulletObject", THIRD_RED_RING)
-  ECS.BulletObject.applyTorque(bCID, 0, 0, 1250)
+  ECS.BulletObject.applyTorque(bCID, 0, 0, 1500)
 
   Debug.show(currentRing)
   --[[
