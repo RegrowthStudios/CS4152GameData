@@ -3,7 +3,7 @@ Name:
 Position:
   Position: [0, 0, 0]
 RenderMesh:
-  Mesh: Projectile
+  Mesh: Player
 BulletObject:
   Body:
     Friction: 0.95
@@ -17,4 +17,4 @@ BulletObject:
     BodyType: Dynamic
   Shape:
     Type: Sphere
-    Radius: 0.25
+    Radius: 0.42
