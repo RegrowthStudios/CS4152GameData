@@ -8,7 +8,7 @@ uniform sampler2D positionMap;
 uniform sampler2D normalMap;
 uniform sampler2D colorMap;
 uniform sampler2D lightMap;
-uniform sampler2D ssaoMap;
+//uniform sampler2D ssaoMap;
 uniform sampler2DShadow shadowMap;
 
 uniform vec3 l;
@@ -57,7 +57,7 @@ void main() {
 	vec3 pos = texture(positionMap, coord).xyz;
 	vec3 color = texture(colorMap, coord).xyz;
 	vec3 light = texture(lightMap, coord).xyz;
-	float ssao = texture(ssaoMap, coord).x;
+	//float ssao = texture(ssaoMap, coord).x;
 
 	float shadowFactor = getShadowFactor(pos);
 
@@ -74,12 +74,11 @@ void main() {
 
 	vec3 finalColor = (lightColor * (diffuse + specular)) * shadowFactor;
 
-	//fragColor = vec4((ambient + light + finalColor) * ssao, 1);
+	//fragColor = vec4((ambient + light + finalColor), 1);
 	//fragColor = vec4((ambient + finalColor), 1);
 	fragColor = vec4(ambient + light + finalColor, 1);
 	//fragColor = vec4(color, 1);
 	//fragColor = vec4(light, 1);
-	//fragColor = vec4(ssao);
 	//fragColor = vec4(n, 1);
 	//fragColor = vec4(shadowFactor);
 	//fragColor = vec4(texture(shadowMap, vec3(coord, 1)));
