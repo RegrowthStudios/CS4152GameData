@@ -25,9 +25,10 @@ Character:
   SpringPower: 0.1
   JumpCooldown: 0.25
 CharacterMovementInput:
-  MovePower: 30
-  StrafePower: 25
-  JumpForce: 250
+# fun fact: move power and strafe power are swapped
+  MovePower: 20
+  StrafePower: 20
+  JumpForce: 275  
   RotationSpeed: 6
   PitchSpeed: 5
   AirControlFactor: 7

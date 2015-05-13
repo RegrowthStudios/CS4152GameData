@@ -4,11 +4,13 @@ Debug = require "Data/Scripts/DebugFuncs"
 messageTime = 100000.0
 messageQueue = {}
 flags = {}
+flags["touched5"] = false
+flags["touched8"] = false
+flags["touched7"] = false
+flags["touched9"] = false
 flags["touched4"] = false
 flags["touched6"] = false
 flags["touched7"] = false
-flags["touched8"] = false
-flags["touched12"] = false
 currentRing = 0
 
 function onGameBuild()
@@ -17,16 +19,19 @@ function onGameBuild()
   -- Create End Portal
   eID = ECS.Templates.Portal()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 1.5, 11.26, -46.0)
+  ECS.Position.setPosition(cID, 1.5, 11.26, -53.0)
   ECS.Position.setQuaternion(cID, 0.73, -0.06, -0.67, -0.05)
 
   -- Make rings rotatable by player
   rrfCID = ECS.getComponentID("RingRotationFactor", 4)
-  ECS.RingRotationFactor.set(rrfCID, 0.9)
+  ECS.RingRotationFactor.set(rrfCID, 1.3)
 
   rrfCID = ECS.getComponentID("RingRotationFactor", 6)
-  ECS.RingRotationFactor.set(rrfCID, 0.9)
-  print("onbuild")
+  ECS.RingRotationFactor.set(rrfCID, 1.3  )
+
+  -- make fixed ring
+  bCID = ECS.getComponentID("BulletObject", 10)
+  ECS.BulletObject.setMass(bCID, 0)
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)
 end
@@ -34,10 +39,10 @@ end
 function onGameUpdate (dt)
   Debug.show(currentRing)
   messageTime = messageTime + dt
-  if messageTime > 5.0 then
+  if messageTime > 7.0 then
     Client.setMessage(" ")
   end
-  if messageTime > 5.5 then
+  if messageTime > 7.0 then
     if tablelength(messageQueue) > 0 then
       message = table.remove(messageQueue, 1)
       Client.setMessage(message.message)
@@ -56,28 +61,32 @@ end
 
 function onRingContact(id)
   currentRing = id
-  if id == 3 and not flags["touched3"] then
-    table.insert(messageQueue, createMessage("Narrative0", "I recently erased your memory,"))
-    table.insert(messageQueue, createMessage("Narrative1", "so you might feel a bit confused about your environment."))
-    flags["touched3"] = true 
-  end
   if id == 5 and not flags["touched5"] then
+    table.insert(messageQueue, createMessage("Narrative0", "You are a sphere."))
+    table.insert(messageQueue, createMessage("Narrative1", "Use WASD to roll."))
+    flags["touched5"] = true 
+  end
+  if id == 8 and not flags["touched8"] then
     table.insert(messageQueue, createMessage("Narrative2", "Oh, so you left that first ring?  Neat."))
-    table.insert(messageQueue, createMessage("Narrative3", "Spacebar to jump."))
-    flags["touched5"] = true
+    table.insert(messageQueue, createMessage("Narrative3", "SPACEBAR to jump."))
+    flags["touched8"] = true
+  end
+  if id == 9 and not flags["touched9"] then
+    table.insert(messageQueue, createMessage("Narrative4", "You can roll up walls by pressing SPACEBAR repeatedly,"))
+    table.insert(messageQueue, createMessage("Narrative5", "while rolling into said wall."))
+    flags["touched9"] = true
+  end
+  if id == 4 and not flags["touched4"] then
+    table.insert(messageQueue, createMessage("Narrative6", "You can rotate GREEN RINGS like this one with Q and E."))
+    flags["touched4"] = true
   end
   if id == 6 and not flags["touched6"] then
-    table.insert(messageQueue, createMessage("Narrative4", "You're on the Array,"))
-    table.insert(messageQueue, createMessage("Narrative5", "the last record of humanity in the universe."))
+    table.insert(messageQueue, createMessage("Narrative7", "GREEN RINGS are blocked by BLACK RINGS."))
     flags["touched6"] = true
   end
   if id == 7 and not flags["touched7"] then
-    table.insert(messageQueue, createMessage("Narrative6", "You can rotate green rings like this one with Q and E."))
+    table.insert(messageQueue, createMessage("Narrative7", "Throw yourselves into the blue flames."))
     flags["touched7"] = true
-  end
-  if id == 11 and not flags["touched11"] then
-    table.insert(messageQueue, createMessage("Narrative7", "Don't go near that glowing portal thing..."))
-    flags["touched11"] = true
   end
 end
 
