@@ -16,6 +16,7 @@ FIRST_GREEN = 5
 FIRST_BLACK = 6
 SECOND_GREEN = 9
 FIRST_RED = 8
+EID_ROTATING_TURRET_1=0
 
 function onGameBuild()
   Debug.potato()
@@ -55,21 +56,39 @@ function onGameBuild()
   ECS.Position.setQuaternion(cID, 0.011, 1.0, 0.0, -0.01)
 
   rrfCID = ECS.getComponentID("RingRotationFactor", FIRST_GREEN)
-  ECS.RingRotationFactor.set(rrfCID, 1.1)
+  ECS.RingRotationFactor.set(rrfCID, 1.75)
 
   -- add the lasers to the fixed black ring
   bCID = ECS.getComponentID("BulletObject", FIRST_BLACK)
   ECS.BulletObject.setMass(bCID, 0)
 
-  -- sweep this laser on this ring over the other lasers
+  eID = ECS.Templates.LaserTurret()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 7.42, 3.4, -22.4)
+  ECS.Position.setQuaternion(cID, 0.016, -0.015, 0.717, 0.697)
+
 
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 7.27, 1.65, -27.4)
+  ECS.Position.setQuaternion(cID, 0.78, -0.624, 0.011, 0.009)
+
+
+  eID = ECS.Templates.LargeBlade()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 8.3, 2.0, -22.4)
+  ECS.Position.setQuaternion(cID, 0.016, -0.015, 0.717, 0.697)
+
+
+  -- sweep this laser on this ring over the other lasers
+
+  EID_ROTATING_TURRET_1  = ECS.Templates.LaserTurret()
+  cID = ECS.getComponentID("Position", EID_ROTATING_TURRET_1)
   ECS.Position.setPosition(cID, 5.9, -4.89, -40.0)
   ECS.Position.setQuaternion(cID, -0.546, 0.838, 0.002, 0.004)
 
   rrfCID = ECS.getComponentID("RingRotationFactor", SECOND_GREEN)
-  ECS.RingRotationFactor.set(rrfCID, 1.7)
+  ECS.RingRotationFactor.set(rrfCID, 3.2)
 
 
 
@@ -102,7 +121,11 @@ function onGameBuild()
 end
 
 function onGameUpdate (dt)
-
+  if EID_ROTATING_TURRET_1 ~= 0 then
+    cID = ECS.getComponentID("Position", EID_ROTATING_TURRET_1)
+    ex, ey, ez = ECS.Position.getOrientation(cID)
+    ECS.Position.setOrientation(cID, 0, 3.14, ez)
+  end
   --Turret.updateTurrets(turrets, dt)
   playerPosCID = ECS.getComponentID("Position", State.getPlayer())
   x, y, z = ECS.Position.getPosition(playerPosCID)

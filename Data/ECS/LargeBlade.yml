@@ -28,5 +28,5 @@ BulletObject:
       - [-0.35, 0.0, -0.10]
       - [  0.0, 2.8,   0.0]
 Damage:
-  ContactDamage: 20
+  ContactDamage: 2
 

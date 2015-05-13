@@ -9,11 +9,12 @@ RenderMesh:
   Mesh: LaserTurret
 BulletObject:
   Body:
-    Friction: 1.0
+    Friction: 0.9
     Restitution: 0.0
     LinearDamping: .90
     AngularDamping: .8
-    Mass: 200.0
+    AngularFactor: 0.1
+    Mass: 900.0
     ObjectType: Turret
     BodyType: Dynamic
   Shape:
@@ -29,3 +30,4 @@ Light:
   Intensity: [3, 0, 1]
 Health:
   Value: 10
+  DeathLinger: 1.0

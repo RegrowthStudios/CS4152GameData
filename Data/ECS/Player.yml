@@ -33,6 +33,7 @@ CharacterMovementInput:
   AirControlFactor: 7
 Health:
   Value: 100
+  DeathLinger: 0.42
 Light:
   Type: Point
   Radius: 10
