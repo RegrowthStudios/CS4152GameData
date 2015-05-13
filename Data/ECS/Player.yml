@@ -26,8 +26,8 @@ Character:
   JumpCooldown: 0.25
 CharacterMovementInput:
 # fun fact: move power and strafe power are swapped
-  MovePower: 20
-  StrafePower: 20
+  MovePower: 21
+  StrafePower: 21
   JumpForce: 275  
   RotationSpeed: 6
   PitchSpeed: 5
