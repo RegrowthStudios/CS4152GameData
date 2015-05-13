@@ -9,7 +9,7 @@ BulletObject:
   Body:
     Friction: 1.0
     Restitution: 0.0
-    LinearDamping: 0.4
+    LinearDamping: 0.5
     AngularDamping: 0.99
     AngularFactor: 0.5
     Mass: 3.0
@@ -26,12 +26,12 @@ Character:
   JumpCooldown: 0.25
 CharacterMovementInput:
 # fun fact: move power and strafe power are swapped
-  MovePower: 21
-  StrafePower: 21
-  JumpForce: 275  
+  MovePower: 20
+  StrafePower: 20
+  JumpForce: 225 
   RotationSpeed: 6
   PitchSpeed: 5
-  AirControlFactor: 7
+  AirControlFactor: 6
 Health:
   Value: 100
   DeathLinger: 0.42
