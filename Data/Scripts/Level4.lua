@@ -11,7 +11,11 @@ flags["touched7"] = false
 flags["touched8"] = false
 flags["touched12"] = false
 currentRing = 0
-
+time = 0.0
+FIRST_GREEN = 5
+FIRST_BLACK = 6
+SECOND_GREEN = 7
+FIRST_RED = 9
 
 
 
