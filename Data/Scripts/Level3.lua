@@ -23,22 +23,22 @@ function onGameBuild()
   -- Place blades hanging overing spinning ring
   eID = ECS.Templates.LargeBlade()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 7.6, 0.9, -52.0)
+  ECS.Position.setPosition(cID, 8.5, 0.0, -52.0)
   ECS.Position.setOrientation(cID, -1.57, 0.0, 2.1)
 
   eID = ECS.Templates.LargeBlade()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 7.6, 0.9, -48.0)
+  ECS.Position.setPosition(cID, 8.5, 0.0, -48.0)
   ECS.Position.setOrientation(cID, -1.57, 0.0, 2.1)
 
   eID = ECS.Templates.LargeBlade()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -7.6, 0.9, -52.0)
+  ECS.Position.setPosition(cID, -8.5, 0.0, -52.0)
   ECS.Position.setOrientation(cID, -1.57, 0.0, -1.3)
 
   eID = ECS.Templates.LargeBlade()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -7.6, 0.9, -48.0)
+  ECS.Position.setPosition(cID, -8.5, 0.0, -48.0)
   ECS.Position.setOrientation(cID, -1.57, 0.0, -1.3)
 
   -- Create two end portals
@@ -62,7 +62,7 @@ end
 function onGameUpdate (dt)
 
   bCID = ECS.getComponentID("BulletObject", FIRST_RED_RING)
-  ECS.BulletObject.applyTorque(bCID, 0, 0, 1000)
+  ECS.BulletObject.applyTorque(bCID, 0, 0, 1250)
 
   bCID = ECS.getComponentID("BulletObject", SECOND_RED_RING)
   ECS.BulletObject.applyTorque(bCID, 0, 0, -1750)

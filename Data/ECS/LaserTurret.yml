@@ -13,8 +13,7 @@ BulletObject:
     Restitution: 0.0
     LinearDamping: .90
     AngularDamping: .8
-    AngularFactor: 0.1
-    Mass: 900.0
+    Mass: 200.0
     ObjectType: Turret
     BodyType: Dynamic
   Shape:
@@ -30,4 +29,4 @@ Light:
   Intensity: [3, 0, 1]
 Health:
   Value: 10
-  DeathLinger: 1.0
+  DeathLinger: 0.25

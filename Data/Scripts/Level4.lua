@@ -14,49 +14,43 @@ currentRing = 0
 
 FIRST_GREEN = 5
 FIRST_BLACK = 6
-SECOND_GREEN = 9
-FIRST_RED = 8
+SECOND_GREEN = 7
+FIRST_RED = 9
 EID_ROTATING_TURRET_1=0
+EID_ROTATING_TURRET_2=0
+EID_ROTATING_TURRET_3=0
+
+
 
 function onGameBuild()
   Debug.potato()
 
   -- tutorial turrets on first ring, firing into blades
+
+
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 5.27, -5.27, 7.7)
+  ECS.Position.setPosition(cID, 5.2, -5.2, 6.75)
   ECS.Position.setQuaternion(cID, -0.37, 0.926, 0.010, 0.024)
 
-  eID = ECS.Templates.LargeBlade()
+  eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 5.95, -5.95, 10.7)
-  ECS.Position.setQuaternion(cID, 0.005, -0.011, 0.397, 0.981)
+  ECS.Position.setPosition(cID, 6.5, 0.0, 12.5)
+  ECS.Position.setQuaternion(cID, -0.005, 0.005, 0.694, 0.719)
 
 
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 6.8, 0.0, 13.4)
-  ECS.Position.setQuaternion(cID, -0.005, 0.005, 0.694, 0.719)
-
-  eID = ECS.Templates.LargeBlade()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 8.4, 0.0, 10.0)
-  ECS.Position.setQuaternion(cID, -0.005, 0.005, 0.694, 0.719)
-  
-
-
-  eID = ECS.Templates.LaserTurret()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -7.4, -1.01, -23.1)
+  ECS.Position.setPosition(cID, -7.4, -1.01, -24.1)
   ECS.Position.setQuaternion(cID, 0.65, 0.75, -0.012, 0.013)
 
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 0.0, -7.4, -23.1)
+  ECS.Position.setPosition(cID, 1.0, -7.4, -24.1)
   ECS.Position.setQuaternion(cID, 0.011, 1.0, 0.0, -0.01)
 
   rrfCID = ECS.getComponentID("RingRotationFactor", FIRST_GREEN)
-  ECS.RingRotationFactor.set(rrfCID, 1.75)
+  ECS.RingRotationFactor.set(rrfCID, 2.75)
 
   -- add the lasers to the fixed black ring
   bCID = ECS.getComponentID("BulletObject", FIRST_BLACK)
@@ -64,35 +58,57 @@ function onGameBuild()
 
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 7.42, 3.4, -22.4)
+  ECS.Position.setPosition(cID, 6.42, 4.4, -23.4)
   ECS.Position.setQuaternion(cID, 0.016, -0.015, 0.717, 0.697)
 
 
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 7.27, 1.65, -27.4)
+  ECS.Position.setPosition(cID, 7.42, 3.4, -28.5)
   ECS.Position.setQuaternion(cID, 0.78, -0.624, 0.011, 0.009)
 
 
   eID = ECS.Templates.LargeBlade()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 8.3, 2.0, -22.4)
+  ECS.Position.setPosition(cID, 8.0, 3.4, -22.9)
   ECS.Position.setQuaternion(cID, 0.016, -0.015, 0.717, 0.697)
 
 
-  -- sweep this laser on this ring over the other lasers
 
+  -- sweep this laser on this ring over the other lasers
+  
   EID_ROTATING_TURRET_1  = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", EID_ROTATING_TURRET_1)
-  ECS.Position.setPosition(cID, 5.9, -4.89, -40.0)
-  ECS.Position.setQuaternion(cID, -0.546, 0.838, 0.002, 0.004)
+  ECS.Position.setPosition(cID, 7.39, 0.93, -42.0)
+  ECS.Position.setQuaternion(cID, 0.748, -0.663, 0.002, 0.001)
 
   rrfCID = ECS.getComponentID("RingRotationFactor", SECOND_GREEN)
   ECS.RingRotationFactor.set(rrfCID, 3.2)
 
+  -- turrets on the red ring
+  
+  EID_ROTATING_TURRET_2  = ECS.Templates.LaserTurret()
+  cID = ECS.getComponentID("Position", EID_ROTATING_TURRET_2)
+  ECS.Position.setPosition(cID, 7.45, 0.89, -76.0)
+  ECS.Position.setQuaternion(cID, 0.752, -0.659, -0.003, -0.003)
+
+  EID_ROTATING_TURRET_3  = ECS.Templates.LaserTurret()
+  cID = ECS.getComponentID("Position", EID_ROTATING_TURRET_3)
+  ECS.Position.setPosition(cID, -7.28, -0.89, -76.0)
+  ECS.Position.setQuaternion(cID, 0.653, 0.757, -0.012, 0.013)
 
 
-  -- these three projectile turrets are grouped together on the second ring, creating a timing challenge
+  -- end portal!  yay!  this level was hard to make!
+
+  eID  = ECS.Templates.Portal()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 1.98, -7.44, -87.5)
+  ECS.Position.setQuaternion(cID, -0.12, 0.99, -0.003, -0.02)
+
+
+
+--[[
+
   turrets[3] = {}
   turrets[3]["eid"] = 8
   turrets[3]["type"] = "projectile"
@@ -115,17 +131,35 @@ function onGameBuild()
   turrets[5]["timer"] = 2.5
   turrets[5]["shootRate"] = 4
   turrets[5]["force"] = 250
-
+]]
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)
 end
 
 function onGameUpdate (dt)
+
+  -- turret stabilizings?
+  --[[
   if EID_ROTATING_TURRET_1 ~= 0 then
     cID = ECS.getComponentID("Position", EID_ROTATING_TURRET_1)
     ex, ey, ez = ECS.Position.getOrientation(cID)
+    ECS.Position.setOrientation(cID, 0, -3.14, ez)
+  end
+  if EID_ROTATING_TURRET_2 ~= 0 then
+    cID = ECS.getComponentID("Position", EID_ROTATING_TURRET_2)
+    ex, ey, ez = ECS.Position.getOrientation(cID)
     ECS.Position.setOrientation(cID, 0, 3.14, ez)
   end
+
+    if EID_ROTATING_TURRET_3 ~= 0 then
+    cID = ECS.getComponentID("Position", EID_ROTATING_TURRET_3)
+    ex, ey, ez = ECS.Position.getOrientation(cID)
+    ECS.Position.setOrientation(cID, 0, 3.14, ez)
+  end
+]]
+  bCID = ECS.getComponentID("BulletObject", FIRST_RED)
+  ECS.BulletObject.applyTorque(bCID, 0, 0, 3000)
+
   --Turret.updateTurrets(turrets, dt)
   playerPosCID = ECS.getComponentID("Position", State.getPlayer())
   x, y, z = ECS.Position.getPosition(playerPosCID)

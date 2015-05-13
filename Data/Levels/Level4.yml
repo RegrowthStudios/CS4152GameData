@@ -1,5 +1,5 @@
 # Voxel data (maybe ECS too)
-BinaryData: Binary/LE-level.le
+BinaryData: Binary/level-4.le
 
 Environment: v1
 WorldPadding: 4
@@ -8,7 +8,6 @@ WorldPadding: 4
 Scripts:
   - Level4.lua
   - Music.lua
-  - Turret.lua
   - Editing.lua
   - LaserTurret.lua
   

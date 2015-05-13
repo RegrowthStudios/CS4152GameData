@@ -18,6 +18,8 @@ BulletObject:
     Radius: 0.25
 Damage:
   ContactDamage: 10
+Health:
+  DeathTimer: 10.0
 Light:
   Type: Point
   Radius: 2
