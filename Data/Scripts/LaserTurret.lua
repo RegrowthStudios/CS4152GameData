@@ -12,10 +12,10 @@ Vorb.register("Update.LaserTurret", function (eID, dt)
   if ex < 1.52 and ex > -1.52 then 
     -- todo?  check if abs(ex-0), abs(ey-3.14) etc is too big?
   -- snap towards forwards
-    ECS.Position.setOrientation(cIDPos, 0, 0.0, ez)
+    ECS.Position.setOrientation(cIDPos, 0.0, 0.0, ez)
   else 
   -- snap towards backwards
-    ECS.Position.setOrientation(cIDPos, 0, -3.14, ez)
+    ECS.Position.setOrientation(cIDPos, 0.0, math.pi, ez)
   end 
 
   local px, py, pz = ECS.Position.getPosition(cIDPos)

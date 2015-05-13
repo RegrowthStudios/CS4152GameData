@@ -29,4 +29,4 @@ Light:
   Intensity: [3, 0, 1]
 Health:
   Value: 10
-  DeathLinger: 0.4
+  DeathLinger: 0.25
