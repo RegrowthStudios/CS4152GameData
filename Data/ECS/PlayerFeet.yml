@@ -6,7 +6,7 @@ RenderMesh:
   Mesh: Player
 BulletObject:
   Body:
-    Friction: 0.95
+    Friction: 2.0
     Restitution: 0.0
     LinearDamping: 0.5
     AngularDamping: 0.95
