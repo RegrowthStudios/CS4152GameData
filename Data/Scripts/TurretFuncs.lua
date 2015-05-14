@@ -37,27 +37,10 @@ end
 
 function Turret.updateTurrets(turretTable, dt)
   for index, turret in pairs(turretTable) do
-    if turret["type"] == "laser" then 
-      cIDPos = ECS.getComponentID("Position", turret["eid"])
-      px, py, pz = ECS.Position.getPosition(cIDPos)
-      fx, fy, fz = ECS.Position.getForward(cIDPos)
-      ux, uy, uz = ECS.Position.getUp(cIDPos)
-      px = px + (0.5 * fx) + (.25 * ux)
-      py = py + (0.5 * fy) + (.25 * uy)
-      pz = pz + (0.5 * fz) + (.25 * uz)
-      rayDistance = Game.raycastFromPosition(px,py,pz, fx,fy,fz, 1000)
-      
-      if (rayDistance < 0) then
-        Client.Renderer.drawLaser(px,py,pz, fx,fy,fz, 1000, 0.05)
-      else
-        Client.Renderer.drawLaser(px,py,pz, fx,fy,fz, rayDistance, 0.05)
-      end
-    else 
-      turret["timer"] = turret["timer"] + dt
-      if turret["timer"] > turret["shootRate"] then
-        Turret.shoot(turret["eid"], turret["force"])
-        turret["timer"] = 0
-      end
+    turret["timer"] = turret["timer"] + dt
+    if turret["timer"] > turret["shootRate"] then
+      Turret.shoot(turret["eid"], turret["force"])
+      turret["timer"] = 0
     end
   end
 end

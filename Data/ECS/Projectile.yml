@@ -7,10 +7,10 @@ RenderMesh:
 BulletObject:
   Body:
     Friction: 0.0
-    Restitution: 0.05
+    Restitution: 0.1
     LinearDamping: 0.0
     AngularDamping: 0.0
-    Mass: 0.4
+    Mass: 0.5
     ObjectType: Projectile
     BodyType: Dynamic
   Shape:
@@ -19,8 +19,8 @@ BulletObject:
 Damage:
   ContactDamage: 10
 Health:
-  DeathTimer: 10.0
+  DeathTimer: 10  
 Light:
   Type: Point
   Radius: 2
-  Intensity: [3, 0, 0]
+  Intensity: [2, 0, 0]

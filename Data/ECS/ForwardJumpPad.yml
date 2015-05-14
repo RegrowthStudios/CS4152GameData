@@ -19,5 +19,5 @@ Light:
   Radius: 8
   Intensity: [6, 6, 0]
 Thrust:
-  ContactThrustUp: 400
-  ContactThrustUp: 0
+  ContactThrustUp: 100
+  ContactThrustForward: -150
