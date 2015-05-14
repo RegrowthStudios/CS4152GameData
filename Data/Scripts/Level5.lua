@@ -1,34 +1,46 @@
 Debug = require "Data/Scripts/DebugFuncs"
 Turret = require "Data/Scripts/TurretFuncs"
+Player = require "Data/Scripts/PlayerFuncs"
+
 -- turrets is a table of all of the different turrets in the level
 turrets = {}
-messageTime = 100000.0
-messageQueue = {}
-flags = {}
-flags["touched4"] = false
-flags["touched6"] = false
-flags["touched7"] = false
-flags["touched8"] = false
-flags["touched12"] = false
-currentRing = 0
-time = 0.0
+
 FIRST_RED = 8
 FIRST_GREEN = 5
 FIRST_BLACK = 6
-PROJ_1 = 0 
-PROJ_2 = 0
-PROJ_3 = 0
 
-
-
+rings = {}
+rings["first_grey"] = {}
+rings["first_grey"]["color"] = "grey"
+rings["first_grey"]["eid"] = 4
+rings["first_grey"]["message"] = "Being hit by a PROJECTILE will hurt you."
+rings["first_grey"]["touched"] = false
+rings["first_green"] = {}
+rings["first_green"]["color"] = "green"
+rings["first_green"]["eid"] = FIRST_GREEN
+rings["first_green"]["message"] = false
+rings["first_green"]["touched"] = false
+rings["first_black"] = {}
+rings["first_black"]["color"] = "black"
+rings["first_black"]["eid"] = FIRST_BLACK
+rings["first_black"]["message"] = "PROJECTILES will destroy LASER TURRETS."
+rings["first_black"]["touched"] = false
+rings["first_red"] = {}
+rings["first_red"]["color"] = "red"
+rings["first_red"]["eid"] = FIRST_RED
+rings["first_red"]["message"] = false
+rings["first_red"]["touched"] = false
+rings["goal"] = {}
+rings["goal"]["color"] = "purple"
+rings["goal"]["eid"] = 7
+rings["goal"]["message"] = false
+rings["goal"]["touched"] = false
 
 
 function onGameBuild()
   --Client.Renderer.setMode("Low")
 
   -- tutorial turrets on first ring, firing into blades
-
-
   PROJ_1 = ECS.Templates.Turret()
   cID = ECS.getComponentID("Position", PROJ_1)
   ECS.Position.setPosition(cID, 0.0, 7.5, 9)
@@ -118,22 +130,18 @@ function onGameBuild()
   ECS.Position.setPosition(cID, -7.0, 0, -59.5)
   ECS.Position.setOrientation(cID, math.pi, -math.pi/2, 2.2)
 
-
-
-
+  -- turret table controls turret behavior
   turrets[1] = {}
   turrets[1]["eid"] = PROJ_1
   turrets[1]["timer"] = 0
   turrets[1]["shootRate"] = 4
   turrets[1]["force"] = 300
 
- 
   turrets[2] = {}
   turrets[2]["eid"] = PROJ_2
   turrets[2]["timer"] = 1
   turrets[2]["shootRate"] = 4
   turrets[2]["force"] = 300
-
   
   turrets[3] = {}
   turrets[3]["eid"] = PROJ_3
@@ -203,7 +211,6 @@ function onGameBuild()
   ECS.RingRotationFactor.set(rrfCID, 2.75)
 
 
-
   eID = ECS.Templates.ForwardJumpPad()
   cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, 2.75, -13.1, -56.5)
@@ -213,7 +220,6 @@ function onGameBuild()
   cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, 5.15, -12.43, -56.5)
   ECS.Position.setOrientation(cID, 0.0, -0.031, 0.234)
-
 
   eID = ECS.Templates.JumpPad()
   cID = ECS.getComponentID("Position", eID)
@@ -225,13 +231,10 @@ function onGameBuild()
   ECS.Position.setPosition(cID, -12.9, -3.4, -51.5)
   ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
 
-
-
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, -5.12, -12.43, -55.7)
   ECS.Position.setOrientation(cID, 0.0, -0.117, -0.399)
-
 
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
@@ -242,8 +245,6 @@ function onGameBuild()
   cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, -1.75, -13.34, -55.7)
   ECS.Position.setOrientation(cID, 0.0, -0.117, -0.399)
-
-
 
   eID = ECS.Templates.Portal()
   cID = ECS.getComponentID("Position", eID)
@@ -261,21 +262,8 @@ function onGameUpdate (dt)
   ECS.BulletObject.applyTorque(bCID, 0, 0, 1300)
 
   Turret.updateTurrets(turrets, dt)
-
-
   Debug.show(currentRing)
-  messageTime = messageTime + dt
-  if messageTime > 5.0 then
-    Client.hideHUD()
-  end
-  if messageTime > 5.5 then
-    if tablelength(messageQueue) > 0 then
-      message = table.remove(messageQueue, 1)
-      Client.setMessage(message.message)
-      -- Client.Sound.play2D(message.fx, 1.0)
-      messageTime = 0.0 
-    end
-  end
+  Player.processMessageQueue(dt)
 end
 
 function createMessage(narration, strMessage)
@@ -287,35 +275,8 @@ end
 
 function onRingContact(id)
   currentRing = id
-  if id == 3 and not flags["touched3"] then
-    table.insert(messageQueue, createMessage("Narrative0", "I recently erased your memory,"))
-    table.insert(messageQueue, createMessage("Narrative1", "so you might feel a bit confused about your environment."))
-    flags["touched3"] = true 
-  end
-  if id == 5 and not flags["touched5"] then
-    table.insert(messageQueue, createMessage("Narrative2", "Oh, so you left that first ring?  Neat."))
-    table.insert(messageQueue, createMessage("Narrative3", "Spacebar to jump."))
-    flags["touched5"] = true
-  end
-  if id == 6 and not flags["touched6"] then
-    table.insert(messageQueue, createMessage("Narrative4", "You're on the Array,"))
-    table.insert(messageQueue, createMessage("Narrative5", "the last record of humanity in the universe."))
-    flags["touched6"] = true
-  end
-  if id == 7 and not flags["touched7"] then
-    table.insert(messageQueue, createMessage("Narrative6", "You can rotate green rings like this one with Q and E."))
-    flags["touched7"] = true
-  end
-  if id == 11 and not flags["touched11"] then
-    table.insert(messageQueue, createMessage("Narrative7", "Don't go near that glowing portal thing..."))
-    flags["touched11"] = true
-  end
-end
-
-function tablelength(T)
-  local count = 0
-  for _ in pairs(T) do count = count + 1 end
-  return count
+  Player.setLight(rings, currentRing)
+  Player.checkAddMessage(rings, currentRing)
 end
 
 Vorb.register("onGameBuild", onGameBuild)

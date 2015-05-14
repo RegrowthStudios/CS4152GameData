@@ -1,14 +1,29 @@
 Debug = require "Data/Scripts/DebugFuncs"
+Player = require "Data/Scripts/PlayerFuncs"
 
 
-messageTime = 100000.0
-messageQueue = {}
-flags = {}
-flags["touched4"] = false
-flags["touched6"] = false
-flags["touched7"] = false
-flags["touched8"] = false
-flags["touched9"] = false
+rings = {}
+rings["first_green"] = {}
+rings["first_green"]["color"] = "green"
+rings["first_green"]["eid"] = 6
+rings["first_green"]["message"] = "You can push around GREY RINGS with GREEN RINGS."
+rings["first_green"]["touched"] = false
+rings["second_grey"] = {}
+rings["second_grey"]["color"] = "green"
+rings["second_grey"]["eid"] = 9
+rings["second_grey"]["message"] = "You can push around a GREY RING to create a bridge."
+rings["second_grey"]["touched"] = false
+rings["second_green"] = {}
+rings["second_green"]["color"] = "green"
+rings["second_green"]["eid"] = 9
+rings["second_green"]["message"] = "Try rolling over the YELLOW JUMPPAD to get back up."
+rings["second_green"]["touched"] = false
+rings["goal"] = {}
+rings["goal"]["color"] = "purple"
+rings["goal"]["eid"] = 8
+rings["goal"]["message"] = false
+rings["goal"]["touched"] = false
+
 currentRing = 0
 
 function onGameBuild()
@@ -31,15 +46,14 @@ function onGameBuild()
   ECS.Position.setPosition(cID, -9.2, -10.3, -23.5)
   ECS.Position.setQuaternion(cID, -0.44, -0.127, -0.26, 0.96)
 
-
   -- Make fixed ring
   bCID = ECS.getComponentID("BulletObject", 11)
   ECS.BulletObject.setMass(bCID, 0)
 
-  rrfCID = ECS.getComponentID("RingRotationFactor", 6)
-  ECS.RingRotationFactor.set(rrfCID, 0.5)
+  rrfCID = ECS.getComponentID("RingRotationFactor", rings["first_green"]["eid"])
+  ECS.RingRotationFactor.set(rrfCID, 0.75)
 
-  rrfCID = ECS.getComponentID("RingRotationFactor", 9)
+  rrfCID = ECS.getComponentID("RingRotationFactor", rings["second_green"]["eid"])
   ECS.RingRotationFactor.set(rrfCID, 6.0)
   
   --loadMusic()
@@ -47,34 +61,14 @@ function onGameBuild()
 end
 
 function onGameUpdate (dt)
-
   Debug.show(currentRing)
-
-end
-
-function createMessage(narration, strMessage)
-  msg = {}
-  msg["fx"] = narration
-  msg["message"] = strMessage
-  return msg
+  Player.processMessageQueue(dt)
 end
 
 function onRingContact(id)
   currentRing = id
-  if id == 9 and not flags["touched9"] then
-    table.insert(messageQueue, createMessage("Narrative0", "Trying rolling over the YELLOW JUMPPAD."))
-    flags["touched9"] = true 
-  end
-  if id == 6 and not flags["touched6"] then
-    table.insert(messageQueue, createMessage("Narrative2", "You can push around GREY RINGS with GREEN RINGS."))
-    flags["touched6"] = true
-  end
-end
-
-function tablelength(T)
-  local count = 0
-  for _ in pairs(T) do count = count + 1 end
-  return count
+  Player.setLight(rings, currentRing)
+  Player.checkAddMessage(rings, currentRing)
 end
 
 Vorb.register("onGameBuild", onGameBuild)

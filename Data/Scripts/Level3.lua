@@ -1,19 +1,33 @@
 Debug = require "Data/Scripts/DebugFuncs"
+Player = require "Data/Scripts/PlayerFuncs"
 
-
-messageTime = 100000.0
-messageQueue = {}
-flags = {}
-flags["touched4"] = false
-flags["touched6"] = false
-flags["touched7"] = false
-flags["touched8"] = false
-flags["touched12"] = false
 currentRing = 0
 
 FIRST_RED_RING = 10
 SECOND_RED_RING = 5
 THIRD_RED_RING = 7
+
+rings = {}
+rings["first_red"] = {}
+rings["first_red"]["color"] = "red"
+rings["first_red"]["eid"] = FIRST_RED_RING
+rings["first_red"]["message"] = "RED RINGS rotate at a set speed."
+rings["first_red"]["touched"] = false
+rings["second_red"] = {}
+rings["second_red"]["color"] = "red"
+rings["second_red"]["eid"] = SECOND_RED_RING
+rings["second_red"]["message"] = false
+rings["second_red"]["touched"] = false
+rings["third_red"] = {}
+rings["third_red"]["color"] = "red"
+rings["third_red"]["eid"] = THIRD_RED_RING
+rings["third_red"]["message"] = false
+rings["third_red"]["touched"] = false
+rings["last_grey"] = {}
+rings["last_grey"]["color"] = "grey"
+rings["last_grey"]["eid"] = 6
+rings["last_grey"]["message"] = "The BLADES on this ring are sharp."
+rings["last_grey"]["touched"] = false
 
 
 function onGameBuild()
@@ -60,71 +74,24 @@ function onGameBuild()
 end
 
 function onGameUpdate (dt)
-
+  -- spin rings
   bCID = ECS.getComponentID("BulletObject", FIRST_RED_RING)
   ECS.BulletObject.applyTorque(bCID, 0, 0, 1250)
 
   bCID = ECS.getComponentID("BulletObject", SECOND_RED_RING)
   ECS.BulletObject.applyTorque(bCID, 0, 0, -1750)
 
-    bCID = ECS.getComponentID("BulletObject", THIRD_RED_RING)
+  bCID = ECS.getComponentID("BulletObject", THIRD_RED_RING)
   ECS.BulletObject.applyTorque(bCID, 0, 0, 1500)
 
   Debug.show(currentRing)
-
-  messageTime = messageTime + dt
-  if messageTime > 5.0 then
-    Client.hideHUD()
-  end
-  if messageTime > 5.5 then
-    if tablelength(messageQueue) > 0 then
-      message = table.remove(messageQueue, 1)
-      Client.setMessage(message.message)
-      -- Client.Sound.play2D(message.fx, 1.0)
-      messageTime = 0.0 
-    end
-  end
-  
-end
-
-function createMessage(narration, strMessage)
-  msg = {}
-  msg["fx"] = narration
-  msg["message"] = strMessage
-  return msg
+  Player.processMessageQueue(dt)
 end
 
 function onRingContact(id)
   currentRing = id
-  if id == 3 and not flags["touched3"] then
-    table.insert(messageQueue, createMessage("Narrative0", "I recently erased your memory,"))
-    table.insert(messageQueue, createMessage("Narrative1", "so you might feel a bit confused about your environment."))
-    flags["touched3"] = true 
-  end
-  if id == 5 and not flags["touched5"] then
-    table.insert(messageQueue, createMessage("Narrative2", "Oh, so you left that first ring?  Neat."))
-    table.insert(messageQueue, createMessage("Narrative3", "Spacebar to jump."))
-    flags["touched5"] = true
-  end
-  if id == 6 and not flags["touched6"] then
-    table.insert(messageQueue, createMessage("Narrative4", "You're on the Array,"))
-    table.insert(messageQueue, createMessage("Narrative5", "the last record of humanity in the universe."))
-    flags["touched6"] = true
-  end
-  if id == 7 and not flags["touched7"] then
-    table.insert(messageQueue, createMessage("Narrative6", "You can rotate green rings like this one with Q and E."))
-    flags["touched7"] = true
-  end
-  if id == 11 and not flags["touched11"] then
-    table.insert(messageQueue, createMessage("Narrative7", "Don't go near that glowing portal thing..."))
-    flags["touched11"] = true
-  end
-end
-
-function tablelength(T)
-  local count = 0
-  for _ in pairs(T) do count = count + 1 end
-  return count
+  Player.setLight(rings, currentRing)
+  Player.checkAddMessage(rings, currentRing)
 end
 
 Vorb.register("onGameBuild", onGameBuild)
