@@ -4,9 +4,9 @@ Position:
   Position: [0, 0, 0]
 BulletObject:
   Body:
-    Friction: 1.0
+    Friction: 10.0
     Restitution: 0.0
-    LinearDamping: 0.0
+    LinearDamping: 0.9
     AngularDamping: 0.0
     Mass: 1.0
     ObjectType: JumpPad

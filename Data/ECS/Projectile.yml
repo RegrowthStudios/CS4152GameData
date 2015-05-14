@@ -19,7 +19,7 @@ BulletObject:
 Damage:
   ContactDamage: 10
 Health:
-  DeathTimer: 10  
+  DeathTimer: 15  
 Light:
   Type: Point
   Radius: 2

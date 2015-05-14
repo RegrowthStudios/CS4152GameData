@@ -108,6 +108,9 @@ function onGameBuild()
   ECS.Position.setPosition(cID, 1.98, -7.44, -87.5)
   ECS.Position.setQuaternion(cID, -0.12, 0.99, -0.003, -0.02)
 
+
+
+
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)
 end
