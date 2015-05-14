@@ -74,9 +74,7 @@ function onGameBuild()
   ECS.Position.setPosition(cID, 8.5, 0.0, -15.0)
   ECS.Position.setOrientation(cID, -1.57, 0.0, 2.1)
 
-
-
-
+  -- grey ring turrets
 
   PROJ_5 = ECS.Templates.Turret()
   cID = ECS.getComponentID("Position", PROJ_5)
@@ -98,6 +96,7 @@ function onGameBuild()
   ECS.Position.setPosition(cID, -7.0, 0, -36.5)
   ECS.Position.setOrientation(cID, math.pi, -math.pi/2, 2.2)
 
+  -- green ring turrets
 
   PROJ_9 = ECS.Templates.Turret()
   cID = ECS.getComponentID("Position", PROJ_9)
@@ -151,25 +150,25 @@ function onGameBuild()
   turrets[5] = {}
   turrets[5]["eid"] = PROJ_5
   turrets[5]["timer"] = 0
-  turrets[5]["shootRate"] = 2
+  turrets[5]["shootRate"] = 3
   turrets[5]["force"] = 400
 
   turrets[6] = {}
   turrets[6]["eid"] = PROJ_6
-  turrets[6]["timer"] = 0.5
-  turrets[6]["shootRate"] = 2
+  turrets[6]["timer"] = 0.66
+  turrets[6]["shootRate"] = 3
   turrets[6]["force"] = 400
 
   turrets[7] = {}
   turrets[7]["eid"] = PROJ_7
-  turrets[7]["timer"] = 1.0
-  turrets[7]["shootRate"] = 2
+  turrets[7]["timer"] = 1.33
+  turrets[7]["shootRate"] = 3
   turrets[7]["force"] = 400
 
   turrets[8] = {}
   turrets[8]["eid"] = PROJ_8
-  turrets[8]["timer"] = 1.5
-  turrets[8]["shootRate"] = 2
+  turrets[8]["timer"] = 2.33
+  turrets[8]["shootRate"] = 3
   turrets[8]["force"] = 400
 
   turrets[9] = {}
@@ -259,7 +258,7 @@ end
 function onGameUpdate (dt)
 
   bCID = ECS.getComponentID("BulletObject", FIRST_RED)
-  ECS.BulletObject.applyTorque(bCID, 0, 0, 1500)
+  ECS.BulletObject.applyTorque(bCID, 0, 0, 1300)
 
   Turret.updateTurrets(turrets, dt)
 

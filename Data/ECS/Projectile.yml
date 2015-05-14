@@ -19,8 +19,8 @@ BulletObject:
 Damage:
   ContactDamage: 10
 Health:
-  DeathTimer: 15  
+  DeathTimer: 13  
 Light:
   Type: Point
-  Radius: 2
-  Intensity: [2, 0, 0]
+  Radius: 1
+  Intensity: [1, 0, 0]
