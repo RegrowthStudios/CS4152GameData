@@ -1,0 +1,23 @@
+Name:
+  Name: JumpPad
+Position:
+  Position: [0, 0, 0]
+BulletObject:
+  Body:
+    Friction: 1.0
+    Restitution: 0.0
+    LinearDamping: 0.0
+    AngularDamping: 0.0
+    Mass: 1.0
+    ObjectType: JumpPad
+    BodyType: Dynamic
+  Shape:
+    Type: Cube
+    HalfSize: [1.5, 0.05, 1.5]
+Light:
+  Type: Point
+  Radius: 8
+  Intensity: [6, 6, 0]
+Thrust:
+  ContactThrustUp: 400
+  ContactThrustUp: 0
