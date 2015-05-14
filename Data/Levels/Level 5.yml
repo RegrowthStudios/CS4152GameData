@@ -7,7 +7,6 @@ WorldPadding: 4
 # Scripts loaded for the level
 Scripts:
   - Level5.lua
-  - Music.lua
   - Editing.lua
   - LaserTurret.lua
   

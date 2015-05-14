@@ -22,7 +22,7 @@ FIRST_RED = 9
 
 
 function onGameBuild()
-  Client.Renderer.setMode("Low")
+  --Client.Renderer.setMode("Low")
 
   -- tutorial turrets on first ring, firing into blades
 
@@ -128,7 +128,7 @@ function onGameUpdate (dt)
   Debug.show(currentRing)
   messageTime = messageTime + dt
   if messageTime > 5.0 then
-    Client.setMessage(" ")
+    Client.hideHUD()
   end
   if messageTime > 5.5 then
     if tablelength(messageQueue) > 0 then

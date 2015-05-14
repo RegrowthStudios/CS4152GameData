@@ -23,25 +23,30 @@ function onGameBuild()
 
   -- Make rings rotatable by player
   rrfCID = ECS.getComponentID("RingRotationFactor", 4)
-  ECS.RingRotationFactor.set(rrfCID, 1.3)
+  ECS.RingRotationFactor.set(rrfCID, 1.5)
 
   rrfCID = ECS.getComponentID("RingRotationFactor", 6)
-  ECS.RingRotationFactor.set(rrfCID, 1.3  )
+  ECS.RingRotationFactor.set(rrfCID, 1.5)
 
   -- make fixed ring
   bCID = ECS.getComponentID("BulletObject", 10)
   ECS.BulletObject.setMass(bCID, 0)
-  --loadMusic()
-  -- Client.Sound.playMusicTrack("Electronic", 7.0)
+
+  -- decorative meshes
+
+  eID = ECS.Templates.PaintingPillar()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -7.5, 0, 10.0)
+  ECS.Position.setQuaternion(cID, 0.55, 0.55, 0.443, -0.43)
 end
 
 function onGameUpdate (dt)
   Debug.show(currentRing)
   messageTime = messageTime + dt
-  if messageTime > 7.0 then
-    Client.setMessage(" ")
+  if messageTime > 6.0 then
+    Client.hideHUD()
   end
-  if messageTime > 7.0 then
+  if messageTime > 6.0 then
     if tablelength(messageQueue) > 0 then
       message = table.remove(messageQueue, 1)
       Client.setMessage(message.message)
@@ -61,22 +66,19 @@ end
 function onRingContact(id)
   currentRing = id
   if id == 5 and not flags["touched5"] then
-    table.insert(messageQueue, createMessage("Narrative0", "You are a sphere."))
-    table.insert(messageQueue, createMessage("Narrative1", "Use WASD to roll."))
+    table.insert(messageQueue, createMessage("Narrative1", "Use WASD to roll, and the MOUSE to look around."))
     flags["touched5"] = true 
   end
   if id == 8 and not flags["touched8"] then
-    table.insert(messageQueue, createMessage("Narrative2", "Oh, so you left that first ring?  Neat."))
-    table.insert(messageQueue, createMessage("Narrative3", "SPACEBAR to jump."))
+    table.insert(messageQueue, createMessage("Narrative3", "Use SPACEBAR to jump."))
     flags["touched8"] = true
   end
   if id == 9 and not flags["touched9"] then
-    table.insert(messageQueue, createMessage("Narrative4", "You can roll up walls by pressing SPACEBAR repeatedly,"))
-    table.insert(messageQueue, createMessage("Narrative5", "while rolling into said wall."))
+    table.insert(messageQueue, createMessage("Narrative4", "You can roll up walls by pressing SPACEBAR repeatedly."))
     flags["touched9"] = true
   end
   if id == 4 and not flags["touched4"] then
-    table.insert(messageQueue, createMessage("Narrative6", "You can rotate GREEN RINGS like this one with Q and E."))
+    table.insert(messageQueue, createMessage("Narrative6", "You can rotate GREEN RINGS with Q and E."))
     flags["touched4"] = true
   end
   if id == 6 and not flags["touched6"] then
@@ -84,7 +86,7 @@ function onRingContact(id)
     flags["touched6"] = true
   end
   if id == 7 and not flags["touched7"] then
-    table.insert(messageQueue, createMessage("Narrative7", "Throw yourselves into the blue flames."))
+    table.insert(messageQueue, createMessage("Narrative7", "Throw yourself into the BLUE FLAMES."))
     flags["touched7"] = true
   end
 end

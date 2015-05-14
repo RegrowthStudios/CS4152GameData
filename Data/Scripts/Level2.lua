@@ -40,7 +40,7 @@ function onGameBuild()
   ECS.RingRotationFactor.set(rrfCID, 0.5)
 
   rrfCID = ECS.getComponentID("RingRotationFactor", 9)
-  ECS.RingRotationFactor.set(rrfCID, 5.0)
+  ECS.RingRotationFactor.set(rrfCID, 6.0)
   
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)
@@ -51,7 +51,7 @@ function onGameUpdate (dt)
   Debug.show(currentRing)
   messageTime = messageTime + dt
   if messageTime > 5.0 then
-    Client.setMessage(" ")
+    Client.hideHUD()
   end
   if messageTime > 5.5 then
     if tablelength(messageQueue) > 0 then
@@ -73,8 +73,7 @@ end
 function onRingContact(id)
   currentRing = id
   if id == 9 and not flags["touched9"] then
-    table.insert(messageQueue, createMessage("Narrative0", "If you roll over the YELLOW JUMPPAD,"))
-    table.insert(messageQueue, createMessage("Narrative1", "you'll get a break from solving puzzles."))
+    table.insert(messageQueue, createMessage("Narrative0", "Trying rolling over the YELLOW JUMPPAD."))
     flags["touched9"] = true 
   end
   if id == 6 and not flags["touched6"] then

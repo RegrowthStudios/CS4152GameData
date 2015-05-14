@@ -71,10 +71,10 @@ function onGameUpdate (dt)
   ECS.BulletObject.applyTorque(bCID, 0, 0, 1500)
 
   Debug.show(currentRing)
-  --[[
+
   messageTime = messageTime + dt
   if messageTime > 5.0 then
-    Client.setMessage(" ")
+    Client.hideHUD()
   end
   if messageTime > 5.5 then
     if tablelength(messageQueue) > 0 then
@@ -84,7 +84,7 @@ function onGameUpdate (dt)
       messageTime = 0.0 
     end
   end
-  ]]
+  
 end
 
 function createMessage(narration, strMessage)
