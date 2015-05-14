@@ -17,7 +17,7 @@ BulletObject:
 Light:
   Type: Point
   Radius: 8
-  Intensity: [6, 6, 0]
+  Intensity: [0, 0, 6]
 Thrust:
   ContactThrustUp: 100
   ContactThrustForward: -150

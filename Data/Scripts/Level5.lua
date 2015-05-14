@@ -101,7 +101,7 @@ function onGameBuild()
 
   PROJ_9 = ECS.Templates.Turret()
   cID = ECS.getComponentID("Position", PROJ_9)
-  ECS.Position.setPosition(cID, -7.0, 0, -56.5)
+  ECS.Position.setPosition(cID, -7.0, 0, -56.0)
   ECS.Position.setOrientation(cID, math.pi, -math.pi/2, 2.2)
 
   PROJ_10 = ECS.Templates.Turret()
@@ -114,8 +114,8 @@ function onGameBuild()
   ECS.Position.setPosition(cID, -7.0, 0, -58.5)
   ECS.Position.setOrientation(cID, math.pi, -math.pi/2, 2.2)
 
-  PROJ_11 = ECS.Templates.Turret()
-  cID = ECS.getComponentID("Position", PROJ_11)
+  PROJ_12 = ECS.Templates.Turret()
+  cID = ECS.getComponentID("Position", PROJ_12)
   ECS.Position.setPosition(cID, -7.0, 0, -59.5)
   ECS.Position.setOrientation(cID, math.pi, -math.pi/2, 2.2)
 
@@ -175,26 +175,26 @@ function onGameBuild()
   turrets[9] = {}
   turrets[9]["eid"] = PROJ_9
   turrets[9]["timer"] = 0
-  turrets[9]["shootRate"] = 2
-  turrets[9]["force"] = 400
+  turrets[9]["shootRate"] = 4
+  turrets[9]["force"] = 150
 
   turrets[10] = {}
   turrets[10]["eid"] = PROJ_10
-  turrets[10]["timer"] = 0.5
-  turrets[10]["shootRate"] = 2
-  turrets[10]["force"] = 400
+  turrets[10]["timer"] = 1.0
+  turrets[10]["shootRate"] = 4
+  turrets[10]["force"] = 150
 
   turrets[11] = {}
   turrets[11]["eid"] = PROJ_11
-  turrets[11]["timer"] = 1.0
-  turrets[11]["shootRate"] = 2
-  turrets[11]["force"] = 400
+  turrets[11]["timer"] = 2.0
+  turrets[11]["shootRate"] = 4
+  turrets[11]["force"] = 150
 
   turrets[12] = {}
   turrets[12]["eid"] = PROJ_12
-  turrets[12]["timer"] = 1.5
-  turrets[12]["shootRate"] = 2
-  turrets[12]["force"] = 400
+  turrets[12]["timer"] = 3.0
+  turrets[12]["shootRate"] = 4
+  turrets[12]["force"] = 150
 
 
   bCID = ECS.getComponentID("BulletObject", FIRST_BLACK)
@@ -218,8 +218,14 @@ function onGameBuild()
 
   eID = ECS.Templates.JumpPad()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -12.9, -3, -53.5)
-  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.8)
+  ECS.Position.setPosition(cID, -12.9, -3.4, -53.5)
+  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
+
+  eID = ECS.Templates.JumpPad()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -12.9, -3.4, -51.5)
+  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
+
 
 
   eID = ECS.Templates.LaserTurret()
@@ -237,6 +243,13 @@ function onGameBuild()
   cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, -1.75, -13.34, -55.7)
   ECS.Position.setOrientation(cID, 0.0, -0.117, -0.399)
+
+
+
+  eID = ECS.Templates.Portal()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -1.27, 0.65, -76.1)
+  ECS.Position.setOrientation(cID, -3.14, 0.042, 1.108)
 
 
   --loadMusic()

@@ -20,4 +20,4 @@ Light:
   Intensity: [6, 6, 0]
 Thrust:
   ContactThrustUp: 400
-  ContactThrustUp: 0
+  ContactThrustForward: 0
