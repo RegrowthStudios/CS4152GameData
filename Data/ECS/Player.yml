@@ -37,5 +37,5 @@ Health:
   DeathLinger: 0.42
 Light:
   Type: Point
-  Radius: 10
-  Intensity: [0, 5, 0]
+  Radius: 7
+  Intensity: [2, 3, 2]

@@ -26,7 +26,7 @@ Script:
 Light:
   Type: Point
   Radius: 8
-  Intensity: [3, 0, 1]
+  Intensity: [2, 0, 0.25]
 Health:
   Value: 10
-  DeathLinger: 0.25
+  DeathLinger: 0.3

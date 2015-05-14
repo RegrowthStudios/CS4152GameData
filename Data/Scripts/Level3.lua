@@ -18,7 +18,7 @@ THIRD_RED_RING = 7
 
 function onGameBuild()
   -- Enable compatability with potato computers
-  Debug.potato()
+  --Client.Renderer.setMode("Low")
 
   -- Place blades hanging overing spinning ring
   eID = ECS.Templates.LargeBlade()

@@ -22,7 +22,7 @@ FIRST_RED = 9
 
 
 function onGameBuild()
-  Debug.potato()
+  --Client.Renderer.setMode("Low")
 
   -- tutorial turrets on first ring, firing into blades
 

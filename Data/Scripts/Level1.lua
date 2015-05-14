@@ -14,8 +14,7 @@ flags["touched7"] = false
 currentRing = 0
 
 function onGameBuild()
-  Debug.potato()
-
+  --Client.Renderer.setMode("Low")
   -- Create End Portal
   eID = ECS.Templates.Portal()
   cID = ECS.getComponentID("Position", eID)
