@@ -35,7 +35,3 @@ CharacterMovementInput:
 Health:
   Value: 100
   DeathLinger: 0.42
-Light:
-  Type: Point
-  Radius: 7
-  Intensity: [2, 3, 2]
