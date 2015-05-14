@@ -49,18 +49,7 @@ end
 function onGameUpdate (dt)
 
   Debug.show(currentRing)
-  messageTime = messageTime + dt
-  if messageTime > 5.0 then
-    Client.hideHUD()
-  end
-  if messageTime > 5.5 then
-    if tablelength(messageQueue) > 0 then
-      message = table.remove(messageQueue, 1)
-      Client.setMessage(message.message)
-      -- Client.Sound.play2D(message.fx, 1.0)
-      messageTime = 0.0 
-    end
-  end
+
 end
 
 function createMessage(narration, strMessage)

@@ -21,4 +21,4 @@ BulletObject:
 Light:
   Type: Point
   Radius: 7
-  Intensity: [0.08, 0.15, 0.08]
+  Intensity: [0.08, 0.08, 0.08]
