@@ -8,22 +8,22 @@ turrets = {}
 rings = {}
 rings["first_green"] = {}
 rings["first_green"]["color"] = "green"
-rings["first_green"]["eid"] = 8
+rings["first_green"]["eid"] = 5
 rings["first_green"]["message"] = false
 rings["first_green"]["touched"] = false
 rings["second_green"] = {}
 rings["second_green"]["color"] = "green"
-rings["second_green"]["eid"] = 9
+rings["second_green"]["eid"] = 6
 rings["second_green"]["message"] = false
 rings["second_green"]["touched"] = false
 rings["first_black"] = {}
 rings["first_black"]["color"] = "black"
-rings["first_black"]["eid"] = 11
+rings["first_black"]["eid"] = 10
 rings["first_black"]["message"] = false
 rings["first_black"]["touched"] = false
 rings["third_green"] = {}
 rings["third_green"]["color"] = "green"
-rings["third_green"]["eid"] = 10
+rings["third_green"]["eid"] = 8
 rings["third_green"]["message"] = false
 rings["third_green"]["touched"] = false
 
@@ -35,16 +35,14 @@ function onGameBuild()
   rrfCID = ECS.getComponentID("RingRotationFactor", rings["first_green"]["eid"])
   ECS.RingRotationFactor.set(rrfCID, 1.75)
 
-    rrfCID = ECS.getComponentID("RingRotationFactor", rings["second_green"]["eid"])
+  rrfCID = ECS.getComponentID("RingRotationFactor", rings["second_green"]["eid"])
   ECS.RingRotationFactor.set(rrfCID, 1.75)
-  --[[
-      rrfCID = ECS.getComponentID("RingRotationFactor", rings["third_green"]["eid"])
-  ECS.RingRotationFactor.set(rrfCID, 1.75)
+  
+  rrfCID = ECS.getComponentID("RingRotationFactor", rings["third_green"]["eid"])
+  ECS.RingRotationFactor.set(rrfCID, 5.0)
 
 
-  bCID = ECS.getComponentID("BulletObject", rings["first_black"]["eid"])
-  ECS.BulletObject.setMass(bCID, 0)
-]]
+  
 
 
   eID = ECS.Templates.JumpPad()
@@ -59,12 +57,23 @@ function onGameBuild()
 
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -1.5, -1.5, -1.7)
+  ECS.Position.setOrientation(cID, 3.14, 0.06, 2.35)
+
+  eID = ECS.Templates.LaserTurret()
+  cID = ECS.getComponentID("Position", eID)
   ECS.Position.setPosition(cID, -6.88, 2.84, 26.4)
   ECS.Position.setOrientation(cID, 0.0, -0.012, -1.96)
 
-    eID = ECS.Templates.LaserTurret()
+
+  eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 2.2, 0.6, 24.35)
+  ECS.Position.setPosition(cID, 3.25, -1.2, 22.35)
+  ECS.Position.setOrientation(cID, 0.0, 0.175, 1.2)
+
+  eID = ECS.Templates.LaserTurret()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 3.25, 1.6, 22.35)
   ECS.Position.setOrientation(cID, 0.0, -0.13, 2)
 
 
@@ -105,46 +114,21 @@ function onGameBuild()
   turrets[3]["force"] = 500
 
 
-
-
-
-
- 
-  eID = ECS.Templates.ForwardJumpPad()
+  eID = ECS.Templates.JumpPad()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, 5.15, -12.43, -56.5)
-  ECS.Position.setOrientation(cID, 0.0, -0.031, 0.234)
+  ECS.Position.setPosition(cID, 9.7, -3.8, -13.2)
+  ECS.Position.setOrientation(cID, 3.14, 1.5, -1.94)
 
   eID = ECS.Templates.JumpPad()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -12.9, -3.4, -53.5)
-  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
+  ECS.Position.setPosition(cID, -9.37, -1.25, -29.2)
+  ECS.Position.setOrientation(cID, -0.0, -0.021, -1.442)
 
-  eID = ECS.Templates.JumpPad()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -12.9, -3.4, -51.5)
-  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
-
-  eID = ECS.Templates.LaserTurret()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -5.12, -12.43, -55.7)
-  ECS.Position.setOrientation(cID, 0.0, -0.117, -0.399)
-
-  eID = ECS.Templates.LaserTurret()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -3.48, -13.0, -59.55)
-  ECS.Position.setOrientation(cID, -3.14, 0.119, 0.286)
-
-  eID = ECS.Templates.LaserTurret()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -1.75, -13.34, -55.7)
-  ECS.Position.setOrientation(cID, 0.0, -0.117, -0.399)
 
   eID = ECS.Templates.Portal()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -1.27, 0.65, -76.1)
-  ECS.Position.setOrientation(cID, -3.14, 0.042, 1.108)
-
+  ECS.Position.setPosition(cID, 0.01, 7.3, -42.25)
+  ECS.Position.setOrientation(cID, 3.14, -0.227, 0.007)
 
   --loadMusic()
   -- Client.Sound.playMusicTrack("Electronic", 7.0)
