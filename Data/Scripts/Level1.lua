@@ -29,9 +29,9 @@ rings["second_green"]["eid"] = 6
 rings["second_green"]["message"] = "GREEN RINGS are blocked by BLACK RINGS."
 rings["second_green"]["touched"] = false
 rings["goal"] = {}
-rings["goal"]["color"] = "purple"
+rings["goal"]["color"] = "goal"
 rings["goal"]["eid"] = 7
-rings["goal"]["message"] = "Throw yourself into the PURPLE FLAMES."
+rings["goal"]["message"] = "Throw yourself into the BLUE FLAMES."
 rings["goal"]["touched"] = false
 
 currentRing = 0

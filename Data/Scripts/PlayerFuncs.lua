@@ -13,8 +13,8 @@ function Player.setLight(rings, currentRing)
     elseif ring["eid"] == currentRing and ring["color"] == "red" then
       ECS.Light.set(lightCID, 5, 0.75, 0, 0)
       colorSet = true   
-    elseif ring["eid"] == currentRing and ring["color"] == "purple" then
-      ECS.Light.set(lightCID, 5, 0.75, 0.2, 0.75)
+    elseif ring["eid"] == currentRing and ring["color"] == "goal" then
+      ECS.Light.set(lightCID, 5, 0.125, .75, 1)
       colorSet = true  
     end
   end

@@ -31,7 +31,7 @@ rings["first_red"]["eid"] = FIRST_RED
 rings["first_red"]["message"] = false
 rings["first_red"]["touched"] = false
 rings["goal"] = {}
-rings["goal"]["color"] = "purple"
+rings["goal"]["color"] = "goal"
 rings["goal"]["eid"] = 7
 rings["goal"]["message"] = false
 rings["goal"]["touched"] = false
@@ -264,13 +264,6 @@ function onGameUpdate (dt)
   Turret.updateTurrets(turrets, dt)
   Debug.show(currentRing)
   Player.processMessageQueue(dt)
-end
-
-function createMessage(narration, strMessage)
-  msg = {}
-  msg["fx"] = narration
-  msg["message"] = strMessage
-  return msg
 end
 
 function onRingContact(id)
