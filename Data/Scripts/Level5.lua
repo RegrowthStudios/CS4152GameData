@@ -231,10 +231,20 @@ function onGameBuild()
   ECS.Position.setPosition(cID, -12.9, -3.4, -51.5)
   ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
 
-  eID = ECS.Templates.LaserTurret()
+  eID = ECS.Templates.JumpPad()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -5.12, -12.43, -55.7)
-  ECS.Position.setOrientation(cID, 0.0, -0.117, -0.399)
+  ECS.Position.setPosition(cID, -12.9, -3.4, -53.5)
+  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
+
+  eID = ECS.Templates.JumpPad()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -12.43, 5.1, -51.5)
+  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
+
+  eID = ECS.Templates.JumpPad()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -12.43, 5.1, -53.5)
+  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
 
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
