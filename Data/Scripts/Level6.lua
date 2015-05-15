@@ -137,7 +137,6 @@ end
 function onGameUpdate (dt)
 
   Turret.updateTurrets(turrets, dt)
-  Debug.show(currentRing)
   Player.processMessageQueue(dt)
 end
 

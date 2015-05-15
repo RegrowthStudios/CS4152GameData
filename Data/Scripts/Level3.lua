@@ -84,7 +84,6 @@ function onGameUpdate (dt)
   bCID = ECS.getComponentID("BulletObject", THIRD_RED_RING)
   ECS.BulletObject.applyTorque(bCID, 0, 0, 1500)
 
-  Debug.show(currentRing)
   Player.processMessageQueue(dt)
 end
 

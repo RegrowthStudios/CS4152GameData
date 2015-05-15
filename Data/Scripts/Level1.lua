@@ -78,7 +78,6 @@ function onGameBuild()
 end
 
 function onGameUpdate (dt)
-  Debug.show(currentRing)
   Player.processMessageQueue(dt)
 end
 

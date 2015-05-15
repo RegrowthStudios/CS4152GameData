@@ -273,7 +273,6 @@ function onGameUpdate (dt)
   ECS.BulletObject.applyTorque(bCID, 0, 0, 1300)
 
   Turret.updateTurrets(turrets, dt)
-  Debug.show(currentRing)
   Player.processMessageQueue(dt)
 end
 
