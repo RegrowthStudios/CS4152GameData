@@ -37,14 +37,14 @@ function onGameBuild()
 
     rrfCID = ECS.getComponentID("RingRotationFactor", rings["second_green"]["eid"])
   ECS.RingRotationFactor.set(rrfCID, 1.75)
-
+  --[[
       rrfCID = ECS.getComponentID("RingRotationFactor", rings["third_green"]["eid"])
   ECS.RingRotationFactor.set(rrfCID, 1.75)
 
 
   bCID = ECS.getComponentID("BulletObject", rings["first_black"]["eid"])
   ECS.BulletObject.setMass(bCID, 0)
-
+]]
 
 
   eID = ECS.Templates.JumpPad()

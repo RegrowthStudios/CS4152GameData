@@ -117,18 +117,19 @@ function onGameBuild()
 
   PROJ_10 = ECS.Templates.Turret()
   cID = ECS.getComponentID("Position", PROJ_10)
-  ECS.Position.setPosition(cID, -7.0, 0, -57.5)
+  ECS.Position.setPosition(cID, -7.0, 0, -57.0)
   ECS.Position.setOrientation(cID, math.pi, -math.pi/2, 2.2)
 
   PROJ_11 = ECS.Templates.Turret()
   cID = ECS.getComponentID("Position", PROJ_11)
-  ECS.Position.setPosition(cID, -7.0, 0, -58.5)
+  ECS.Position.setPosition(cID, -7.0, 0, -58.0)
   ECS.Position.setOrientation(cID, math.pi, -math.pi/2, 2.2)
 
   PROJ_12 = ECS.Templates.Turret()
   cID = ECS.getComponentID("Position", PROJ_12)
-  ECS.Position.setPosition(cID, -7.0, 0, -59.5)
+  ECS.Position.setPosition(cID, -7.0, 0, -59.0)
   ECS.Position.setOrientation(cID, math.pi, -math.pi/2, 2.2)
+
 
   -- turret table controls turret behavior
   turrets[1] = {}
@@ -182,25 +183,25 @@ function onGameBuild()
   turrets[9] = {}
   turrets[9]["eid"] = PROJ_9
   turrets[9]["timer"] = 0
-  turrets[9]["shootRate"] = 4
+  turrets[9]["shootRate"] = 2.5
   turrets[9]["force"] = 150
 
   turrets[10] = {}
   turrets[10]["eid"] = PROJ_10
-  turrets[10]["timer"] = 1.0
-  turrets[10]["shootRate"] = 4
+  turrets[10]["timer"] = .5
+  turrets[10]["shootRate"] = 2.5
   turrets[10]["force"] = 150
 
   turrets[11] = {}
   turrets[11]["eid"] = PROJ_11
-  turrets[11]["timer"] = 2.0
-  turrets[11]["shootRate"] = 4
+  turrets[11]["timer"] = 1.0
+  turrets[11]["shootRate"] = 2.5
   turrets[11]["force"] = 150
 
   turrets[12] = {}
   turrets[12]["eid"] = PROJ_12
-  turrets[12]["timer"] = 3.0
-  turrets[12]["shootRate"] = 4
+  turrets[12]["timer"] = 1.5
+  turrets[12]["shootRate"] = 2.5
   turrets[12]["force"] = 150
 
 
@@ -231,10 +232,20 @@ function onGameBuild()
   ECS.Position.setPosition(cID, -12.9, -3.4, -51.5)
   ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
 
-  eID = ECS.Templates.LaserTurret()
+  eID = ECS.Templates.JumpPad()
   cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -5.12, -12.43, -55.7)
-  ECS.Position.setOrientation(cID, 0.0, -0.117, -0.399)
+  ECS.Position.setPosition(cID, -12.9, -3.4, -53.5)
+  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
+
+  eID = ECS.Templates.JumpPad()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -12.43, 5.1, -51.5)
+  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
+
+  eID = ECS.Templates.JumpPad()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -12.43, 5.1, -53.5)
+  ECS.Position.setOrientation(cID, 3.14, -1.4, 1.2)
 
   eID = ECS.Templates.LaserTurret()
   cID = ECS.getComponentID("Position", eID)
