@@ -39,6 +39,23 @@ currentRing = 0
 function onGameBuild()
   --Client.Renderer.setMode("Low")
 
+  -- decorative meshes
+  eID = ECS.Templates.RomanTower1()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 3.725, -6.48, -21)
+  ECS.Position.setQuaternion(cID, 0.163, -0.623, 0.194, 0.740)
+
+  eID = ECS.Templates.Eiffel()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 3.725, -6.48, -21)
+  ECS.Position.setQuaternion(cID, 0.163, -0.623, 0.194, 0.740)
+
+
+  eID = ECS.Templates.Pagoda()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 4.85, -2, 11.03)
+  ECS.Position.setQuaternion(cID, 0.099, -0.285, 0.311, 0.901)
+
   -- Create End Portal
   eID = ECS.Templates.Portal()
   cID = ECS.getComponentID("Position", eID)
@@ -56,11 +73,8 @@ function onGameBuild()
   bCID = ECS.getComponentID("BulletObject", 10)
   ECS.BulletObject.setMass(bCID, 0)
 
-  -- decorative meshes
-  eID = ECS.Templates.PaintingPillar()
-  cID = ECS.getComponentID("Position", eID)
-  ECS.Position.setPosition(cID, -7.5, 0, 10.0)
-  ECS.Position.setQuaternion(cID, 0.55, 0.55, 0.443, -0.43)
+
+
 end
 
 function onGameUpdate (dt)
