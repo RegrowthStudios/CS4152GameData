@@ -1,6 +1,5 @@
 Debug = require "Data/Scripts/DebugFuncs"
 Player = require "Data/Scripts/PlayerFuncs"
-messageTime = 100000.0
 
 
 rings = {}
@@ -79,10 +78,6 @@ function onGameBuild()
 end
 
 function onGameUpdate (dt)
-  messageTime = messageTime + dt
-  if math.fmod(messageTime,120) ==0 then
-    ECS.save("ta")
-  end
   Debug.show(currentRing)
   Player.processMessageQueue(dt)
 end

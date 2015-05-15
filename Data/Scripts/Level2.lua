@@ -28,6 +28,20 @@ currentRing = 0
 
 function onGameBuild()
   --Client.Renderer.setMode("Low")
+  eID = ECS.Templates.Torch()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, -0.92, -7.2, 12.02)
+  ECS.Position.setQuaternion(cID, 0.125, 0.947, -0.038, 0.292)
+
+
+  eID = ECS.Templates.RomanArch ()
+  cID = ECS.getComponentID("Position", eID)
+  ECS.Position.setPosition(cID, 2.57, -14.29, -21.6)
+  ECS.Position.setQuaternion(cID, -0.102, 0.700, -0.132, -0.689)
+
+
+
+
 
   -- Make end portal
   eID = ECS.Templates.Portal()
