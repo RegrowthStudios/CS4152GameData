@@ -61,7 +61,7 @@ void main() {
 
 	float shadowFactor = getShadowFactor(pos);
 
-	vec3 ambient = color * 0.6;
+	vec3 ambient = color * 0.7;
 
 	vec3 v = -normalize(pos);
 	vec3 h = normalize(v + l);
