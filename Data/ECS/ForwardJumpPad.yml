@@ -3,7 +3,7 @@ Name:
 Position:
   Position: [0, 0, 0]
 RenderMesh:
-  Mesh: JumpPad
+  Mesh: ForwardJumpPad
 BulletObject:
   Body:
     Friction: 10.0
