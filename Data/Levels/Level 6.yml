@@ -1,0 +1,16 @@
+# Voxel data (maybe ECS too)
+BinaryData: Binary/LE-level.le
+
+Environment: v1
+WorldPadding: 4
+
+# Scripts loaded for the level
+Scripts:
+  - Level6.lua
+  - Editing.lua
+  - LaserTurret.lua
+  
+# Update function to call from the script
+UpdateScript: onGameUpdate
+BuildScript: onGameBuild
+ContactScript: onRingContact

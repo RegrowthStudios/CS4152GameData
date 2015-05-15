@@ -20,10 +20,11 @@ BulletObject:
     BodyType: Dynamic
   Shape:
     Type: Cube
-    HalfSize: [.25, .20, .25]
+    HalfSize: [.5, .4, .5]
 Script:
   Name: Update.Turret
   ExecutionRate: 30
   ExecutionOffset: 0
 Health:
-  Value: 20
+  Value: 1000
+  DeathLinger: 0.1
