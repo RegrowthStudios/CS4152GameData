@@ -47,6 +47,18 @@ function Player.processMessageQueue(dt)
   end
 end
 
+Vorb.register("Update.Player", function(eID, dt)
+  local cIDPhys = ECS.getComponentID("BulletObject", eID)
+  local r = ECS.BulletObject.getSpeed(cIDPhys)
+  r = math.pow(r, 1.2) / 14.0
+  r = math.min(1.0, math.max(0.0, r))
+  Client.Renderer.DoF.setLensArea(8 - 4 * r)
+  Client.Renderer.Bloom.setPower(1 + 6 * r)
+  Client.Renderer.Bloom.setSize(0.01 + 0.01 * r)
+  Client.Renderer.HDR.setGamma(1 + 0.3 * r)
+  Client.Renderer.HDR.setExposure(1 + 0.8 * r)
+end)
+
 function tablelength(T)
   local count = 0
   for _ in pairs(T) do count = count + 1 end

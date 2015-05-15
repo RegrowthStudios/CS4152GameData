@@ -22,3 +22,7 @@ Light:
   Type: Point
   Radius: 7
   Intensity: [0.08, 0.08, 0.08]
+Script:
+  Name: Update.Player
+  ExecutionRate: 1
+  ExecutionOffset: 0
