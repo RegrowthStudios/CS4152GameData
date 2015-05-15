@@ -8,18 +8,18 @@ function Player.setLight(rings, currentRing)
 
   for index, ring in pairs(rings) do
     if ring["eid"] == currentRing and ring["color"] == "green" then
-      ECS.Light.set(lightCID, 5, 0, 0.75, 0)
+      ECS.Light.set(lightCID, 10, 0, 1.5, 0)
       colorSet = true   
     elseif ring["eid"] == currentRing and ring["color"] == "red" then
-      ECS.Light.set(lightCID, 5, 0.75, 0, 0)
+      ECS.Light.set(lightCID, 10, 1.5, 0, 0)
       colorSet = true   
     elseif ring["eid"] == currentRing and ring["color"] == "goal" then
-      ECS.Light.set(lightCID, 5, 0.125, .75, 1)
+      ECS.Light.set(lightCID, 10, 0.25, 1.25, 1.5)
       colorSet = true  
     end
   end
   if not colorSet then
-    ECS.Light.set(lightCID, 7, 0.08, 0.08, 0.08)
+    ECS.Light.set(lightCID, 10, 0.5, 0.5, 0.5)
   end
 end
 

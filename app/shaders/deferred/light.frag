@@ -23,7 +23,7 @@ void main() {
 	float r = length(lPos - pos);
 	//float attenuation = 1 / (r*r);
 	//attenuation *= step(r, radius);
-	float attenuation = clamp(1.0 - r*r / (radius*radius), 0.0, 1.0);
+	float attenuation = clamp(1.0 - r*r / (radius), 0.0, 1.0);
 	attenuation *= attenuation;
 	vec3 l = (lPos - pos) / r;
 	vec3 v = -normalize(pos);
