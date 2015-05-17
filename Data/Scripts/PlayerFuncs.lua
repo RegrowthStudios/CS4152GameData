@@ -34,10 +34,10 @@ end
 
 function Player.processMessageQueue(dt)
   messageTime = messageTime + dt
-  if messageTime > 5.0 then
+  if messageTime > 8.0 then
     Client.hideHUD()
   end
-  if messageTime > 5.0 then
+  if messageTime > 8.0 then
     if tablelength(messageQueue) > 0 then
       message = table.remove(messageQueue, 1)
       Client.setMessage(message)
@@ -52,13 +52,19 @@ Vorb.register("Update.Player", function(eID, dt)
   local r = ECS.BulletObject.getSpeed(cIDPhys)
   r = math.pow(r, 1.2) / 14.0
   r = math.min(1.0, math.max(0.0, r))
-  Client.Renderer.DoF.setLensArea(8 - 4 * r)
+  --Client.Renderer.DoF.setLensArea(8 - 4 * r)
   Client.Renderer.DoF.setActive(false)
   Client.Renderer.MotionBlur.setActive(false)
-  Client.Renderer.Bloom.setPower(1 + 0.1 * r)
-  Client.Renderer.Bloom.setSize(0.01 + 0.01 * r)
+  Client.Renderer.Bloom.setActive(false)
+  --Client.Renderer.Bloom.setPower(1 + 0.1 * r)
+  --Client.Renderer.Bloom.setSize(0.01 + 0.01 * r)
   Client.Renderer.HDR.setGamma(1 + 0.05 * r)
   Client.Renderer.HDR.setExposure(1 + 0.1 * r)
+  Client.Renderer.ssaoSetActive(false);
+  Client.Renderer.Sobel.setSize(0.0)
+  Client.Renderer.Sobel.setPower(0.0)
+
+
 end)
 
 function tablelength(T)
